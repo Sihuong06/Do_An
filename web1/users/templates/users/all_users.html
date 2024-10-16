@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách người dùng</title>
+</head>
+<body>
+    <h1>Danh sách người dùng</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Company</th>
+                <th>Company Abbreviation</th>
+                <th>Company Address</th>
+                <th>Phone Number</th>
+                <th>Verification Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in user_profiles %}
+            <tr>
+                <td>{{ profile.user.username }}</td>
+                <td>{{ profile.company }}</td>
+                <td>{{ profile.company_abbreviation }}</td>
+                <td>{{ profile.company_address }}</td>
+                <td>{{ profile.phone_number }}</td>
+                <td>{{ profile.verification_code }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

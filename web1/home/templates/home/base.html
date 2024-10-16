@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <script src="https://kit.fontawesome.com/f4980961c3.js" crossorigin="anonymous"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href='{% static "home/favicon.ico" %}'>
+  <link rel="stylesheet" href='{% static "home/style.css" %}' />
+  <link rel="stylesheet" href='{% static "home/style2.css" %}' />
+  <title>BOOK SHOP</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-logo">LOGO</div>
+
+    <div class="header-menu">
+      <div class="header-menu-item">
+        <a id="actived" href="/">Home</a>
+      </div>
+      <div class="header-menu-item">
+        <a href="/books">Books</a>
+      </div>
+      <div class="header-menu-item">
+        <a href="/#about-part">About</a>
+      </div>
+      <div class="header-menu-item">
+        <a href="/#contact-part">Contact</a>
+      </div>
+    </div>
+    <div class="header-icon">
+      <div style="padding-top: 5px;padding-right: 5px;">
+        {% if user.is_authenticated %}
+        Hello, {{user.username}}
+        {% endif %}
+      </div>
+      <div class="header-icon-user">
+        <button onCLick="displayLogin()">
+          <i class="fa-solid fa-user"></i>
+        </button>
+
+        <div id="header-icon-user-display">
+          {% if user.is_authenticated %}
+          <div class="header-btn-logout">
+            <a href="{% url 'users:logout'%}"> Logout</a>
+          </div>
+          <div class="header-btn-register">
+            <a href="/users/profile/">Profile </a>
+          </div>
+          {% if request.user.is_superuser %}
+          <div class="header-btn-register">
+            <a href="/users/all_users/">AllUsers </a>
+          </div>
+          {% endif %}
+
+          {% else %}
+          <div class="header-btn-login">
+            <a href="/users/login"> Login</a>
+          </div>
+          <div class="header-btn-register">
+            <a href="/users/register">Register </a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="main">
+    <div class="main-new">
+      <div class="main-new-content">
+        <div>
+          <h3>Top Selling</h3>
+        </div>
+        <div class="main-new-title">This Dark Road To Mercy</div>
+        <div class="main-new-script">
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+          fugit, sed quia consequuntur magni dolores eos qui ratione
+          voluptatem sequi nesciunt.
+        </div>
+        <div>
+          <button>ADD TO CART</button>
+        </div>
+      </div>
+      <div class="main-new-image">
+        <img
+          src="https://websitedemos.net/kathryn-ebook-author-02/wp-content/uploads/sites/1020/2022/02/hero-image01.png" />
+      </div>
+    </div>
+  </div>
+  <div id="about-part">
+    <div class='about-title'>
+      <h2>About Us</h2>
+    </div>
+    <div class='about-details'>
+      <div class="about-left">
+        <h2>Established in 1995</h2>
+      </div>
+      <div class='about-right'>
+        <div class="about-main-title">
+          Tell people about what you, your expertise and experience. Think about what you would want to see on this page
+          if you were looking at an about page. This is your chance to tell about how you are qualified to serve them.
+
+        </div>
+        <div class="about-main-script">
+          Tell people about what you, your expertise and experience. Think about what you would want to see on this page
+          if you were looking at an about page. This is your chance to tell about how you are qualified to serve them.
+
+        </div>
+        <div class="about-main-script">
+          We look forward to your stay.
+        </div>
+
+        <div class="about-sign">
+          PTIT
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id='contact-part'>
+    <div class='contact-title'>
+      <h2>Contact Us</h2>
+    </div>
+    <div class='contact-details'>
+      <div class='contact-map'>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3125.3677270382605!2d105.78758394895978!3d20.98033226085798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdd8a1ad71%3A0xa2f9b16036648187!2zSOG7jWMgdmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IGNow61uaCB2aeG7hW4gdGjDtG5n!5e0!3m2!1svi!2s!4v1680530214365!5m2!1svi!2s"
+          width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class='contact-right'>
+
+        <div>
+          <div class='contact-right-title'>
+            <h2>Send Us a Message</h2>
+          </div>
+          <div class='contact-form'>
+
+            <input type='text' placeholder='Name' />
+          </div>
+          <div class='contact-form'>
+
+            <input type='text' placeholder='Phone Number' />
+          </div>
+          <div class='contact-form'>
+
+            <input type='text' placeholder='Email' />
+          </div>
+          <div class='contact-form'>
+            <textarea placeholder='Message' name="" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div class='contact-form'>
+            <button class='handle-book-btn' type='submit'> Submit</button>
+          </div>
+        </div>
+
+
+        {% comment %} <div>
+          <div class='contact-social-media'>
+            <div>
+              <i class="fa-brands fa-square-facebook contact-social-media-item"></i>
+            </div>
+            <div>
+              <i class="fa-brands fa-square-youtube contact-social-media-item"></i>
+            </div>
+            <div>
+              <i class="fa-brands fa-square-twitter contact-social-media-item"></i>
+            </div>
+          </div>
+        </div> {% endcomment %}
+      </div>
+    </div>
+
+  </div>
+
+  {% comment %} footer {% endcomment %}
+
+  <div class="footer">Copyright © 2023 PTIT | Powered by PTIT</div>
+
+  <div>{% block content %} {% endblock %}</div>
+
+  <script>
+    function displayLogin() {
+      console.log("displayLogin");
+      let displayUser = document.getElementById("header-icon-user-display");
+      if (displayUser.style.display === "none") {
+        displayUser.style.display = "block";
+      } else {
+        displayUser.style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>

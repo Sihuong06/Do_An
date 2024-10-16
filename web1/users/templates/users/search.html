@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm kiếm người dùng</title>
+</head>
+<body>
+    <h1>Tìm kiếm người dùng theo mã xác nhận</h1>
+    <form method="get" action="{% url 'users:search_by_verification_code' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Tìm kiếm</button>
+    </form>
+
+    {% if user_profile %}
+        <h2>Thông tin người dùng</h2>
+        <p>Username: {{ user_profile.user.username }}</p>
+        <p>Company: {{ user_profile.company }}</p>
+        <p>Phone Number: {{ user_profile.phone_number }}</p>
+        <p>Company Address: {{ user_profile.company_address }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cập nhật hồ sơ</title>
+</head>
+<body>
+    <h1>Cập nhật hồ sơ của bạn</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Cập nhật</button>
+    </form>
+    <a href="{% url 'users:profile' %}">Quay lại hồ sơ</a>
+</body>
+</html>
