@@ -1,0 +1,7 @@
+<h2>File: {{ file.file_path.name }}</h2>
+<p>{{ content }}</p>
+
+<!-- Nút tải file về -->
+<a href="{% url 'download_file' file.id %}">
+    <button type="button">Download File</button>
+</a>
