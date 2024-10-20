@@ -27,23 +27,18 @@ def generate_keypair(request, verification_code):
     )
     public_key = private_key.public_key()
 
-    # Serialize the public key
+    # Serialize the public key to PEM format
     public_key_bytes = public_key.public_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PublicFormat.SubjectPublicKeyInfo
     )
 
-    # Encrypt the private key using Fernet
-    fernet_key = Fernet.generate_key()  # Generate a key for Fernet
-    fernet = Fernet(fernet_key)
-
-    # Serialize the private key with encryption
+    # Serialize the private key to PEM format (unencrypted)
     private_key_bytes = private_key.private_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PrivateFormat.TraditionalOpenSSL,
-        encryption_algorithm=serialization.NoEncryption()  # No encryption for the private key
+        encryption_algorithm=serialization.NoEncryption()  # No encryption
     )
-    encrypted_private_key = fernet.encrypt(private_key_bytes)
 
     # Set created_at to the current time and expire to one year later
     created_at = timezone.now()
@@ -52,14 +47,15 @@ def generate_keypair(request, verification_code):
     # Save the key pair to the database
     keypair = KeyPair.objects.create(
         user=user_profile.user,  # user is a User instance
-        public_key=public_key_bytes.decode('utf-8'),
-        private_key=encrypted_private_key.decode('utf-8'),  # Store the encrypted private key
+        public_key=public_key_bytes.decode('utf-8'),  # Store public key as PEM
+        private_key=private_key_bytes.decode('utf-8'),  # Store the private key as PEM
         status='Active',  # Set initial status
         created_at=created_at,
         expire=expire,
     )
 
     return JsonResponse({'message': 'Key pair generated successfully!', 'keypair_id': keypair.id})
+
 
 @login_required(login_url='users:login')
 @user_passes_test(lambda user: user.is_superuser)  # Ensure only superusers can access this view

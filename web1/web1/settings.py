@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'users',
     'keypair',
     'picture',
+    'file.apps.FileConfig',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -73,6 +75,24 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'web1.wsgi.application'
+
+# settings.py
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG',  # You can set 'INFO', 'WARNING', 'ERROR', etc. depending on what you want to see
+#         },
+#     },
+# }
 
 
 # Database
@@ -131,3 +151,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
