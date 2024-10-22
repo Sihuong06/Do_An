@@ -1,0 +1,6 @@
+<h2>Files with status: {{ status }}</h2>
+<ul>
+    {% for file in files %}
+    <li>{{ file.file_path.name }} - {{ file.status }}</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,28 @@
+<!-- templates/pictures/picture_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Pictures</title>
+</head>
+<body>
+    <h1>All Pictures</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    
+    <ul>
+        {% for picture in pictures %}
+            <li>
+                <img src="{{ picture.img_path.url }}" alt="Picture {{ picture.id }}" width="100">
+                <a href="{% url 'picture:delete_picture' picture.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'picture:create_picture' %}">Upload New Picture</a>
+    
+</body>
+</html>

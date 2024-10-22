@@ -1,0 +1,32 @@
+<!-- templates/verify_signature.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify File Signature</title>
+</head>
+<body>
+    <h1>Verify File Signature</h1>
+    
+    <form action="{% url 'file:upload_verify' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="verification_code">Enter Verification Code:</label>
+        <input type="text" name="verification_code" id="verification_code" required>
+        
+        <label for="file">Upload the File:</label>
+        <input type="file" name="file" id="file" accept=".pdf" required>
+        
+        <button type="submit">Verify Signature</button>
+    </form>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    
+    {% if verification_status %}
+        <p>{{ verification_status }}</p>
+    {% endif %}
+</body>
+</html>
