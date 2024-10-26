@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cập nhật hồ sơ</title>
-</head>
-<body>
-    <h1>Cập nhật hồ sơ của bạn</h1>
-    <form method="post">
+{% extends 'users/baseUser.html' %}
+
+{% block content %}
+
+<div class='category-create'>
+  <div class="warning-box">
+    <div class="create-book-header">
+
+      <h1 class="touppercase"> <h2>Profile</h2></h1>
+
+    </div>
+    <div style="width: 70%;" class="order-info">
+      <form id='create-form' method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Cập nhật</button>
-    </form>
-    <a href="{% url 'users:profile' %}">Quay lại hồ sơ</a>
-</body>
-</html>
+        <button class="handle-book-btn create-book-btn" type="submit">Update</button>
+      </form>
+    </div>
+    
+  </div>
+</div>
+
+{% endblock %}

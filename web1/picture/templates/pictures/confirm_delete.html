@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirm Delete</title>
-</head>
-<body>
+{% extends 'users/baseUser.html' %}
+{% block content %}
     <h1>Confirm Delete</h1>
 
     <p>Are you sure you want to delete the picture uploaded by {{ picture.user.username }}?</p>
@@ -19,5 +13,4 @@
     </form>
 
     <a href="{% url 'picture:get_all_pictures' %}">No, go back</a>
-</body>
-</html>
+{% endblock %}

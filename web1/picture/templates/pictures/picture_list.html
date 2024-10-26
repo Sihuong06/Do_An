@@ -1,12 +1,5 @@
-<!-- templates/pictures/picture_list.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Pictures</title>
-</head>
-<body>
+{% extends 'users/baseUser.html' %}
+{% block content %}
     <h1>All Pictures</h1>
 
     {% if error %}
@@ -23,6 +16,4 @@
     </ul>
     
     <a href="{% url 'picture:create_picture' %}">Upload New Picture</a>
-    
-</body>
-</html>
+{% endblock %}

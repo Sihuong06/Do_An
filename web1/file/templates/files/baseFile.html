@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <script src="https://kit.fontawesome.com/f4980961c3.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href='{% static "home/favicon.ico" %}' />
+    <link rel="stylesheet" href='{% static "home/style.css" %}' />
+    <link rel="stylesheet" href='{% static "books/style.css" %}' />
+    <title>Phần Mềm Chữ Kí Số</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-logo">LOGO</div>
+
+        <div class="header-menu">
+            <div class="header-menu-item">
+              <a id="actived" href="/">TRANG CHỦ</a>
+            </div>
+            <div class="header-menu-item">
+              <a href="/files/status/all/">Kí Văn Bản</a>
+            </div>
+            <div class="header-menu-item">
+              <a href="/files/upload-verify/">XÁC THỰC VĂN BẢN</a>
+            </div>
+            <div class="header-menu-item">
+              <a href="/#contact-part">LIÊN HỆ</a>
+            </div>
+          </div>
+        <div class="header-icon">
+            <div style="padding-top: 5px;padding-right: 5px;">
+                {% if user.is_authenticated %}
+                Hello, {{user.username}}
+            {% endif %}
+            </div>
+            <div class="header-icon-user">
+                <button onCLick="displayLogin()">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+
+                <div id="header-icon-user-display">
+                    {% if user.is_authenticated %}
+                    <div class="header-btn-logout">
+                        <a href="{% url 'users:logout'%}"> Logout</a>
+                    </div>
+                    <div class="header-btn-register">
+                        <a href="/users/profile/">Profile </a>
+                    </div>
+                    {% if request.user.is_superuser %}
+                    <div class="header-btn-register">
+                        <a href="/users/all_users/">AllUsers </a>
+                    </div>
+                    {% endif %}
+
+                    {% else %}
+                    <div class="header-btn-login">
+                        <a href="/users/login"> Login</a>
+                    </div>
+                    <div class="header-btn-register">
+                        <a href="/users/register">Register </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="header-icon-cart">
+                <a href="/carts/view"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="main-books">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <div class="footer">Copyright © 2023 PTIT | Powered by PTIT</div>
+
+
+    </div>
+    <script>
+        function displayLogin() {
+            console.log("displayLogin");
+            let displayUser = document.getElementById("header-icon-user-display");
+            if (displayUser.style.display === "none") {
+                displayUser.style.display = "block";
+            } else {
+                displayUser.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

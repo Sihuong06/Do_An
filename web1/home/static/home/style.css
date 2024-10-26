@@ -380,3 +380,60 @@ body {
 .padding-20px{
     padding: 20px;
   }
+
+  /* Layout Enhancements */
+.content-container {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-field {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.error-message, .status-message {
+    color: red;
+    font-size: 0.9rem;
+}
+
+.pdf-viewer {
+    width: 100%;
+    margin-top: 20px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#pdfViewer canvas {
+    width: 100%;
+}

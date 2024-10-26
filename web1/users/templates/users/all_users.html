@@ -1,35 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Danh sách người dùng</title>
-</head>
-<body>
-    <h1>Danh sách người dùng</h1>
-    
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Username</th>
-                <th>Company</th>
-                <th>Company Abbreviation</th>
-                <th>Company Address</th>
-                <th>Phone Number</th>
-                <th>Verification Code</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for profile in user_profiles %}
-            <tr>
-                <td>{{ profile.user.username }}</td>
-                <td>{{ profile.company }}</td>
-                <td>{{ profile.company_abbreviation }}</td>
-                <td>{{ profile.company_address }}</td>
-                <td>{{ profile.phone_number }}</td>
-                <td>{{ profile.verification_code }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+{% extends 'users/baseUser.html' %}
+{% block content %}
+
+<div class='category-create'>
+    <div class="cart-box">
+      <div class="create-book-header">
+  
+        <h1 class="touppercase"><h1>All Users</h1></h1>
+  
+      </div>
+      <div class="order-info">
+        
+        <table id="cart-table" >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.user.id }}</td>
+                    <td>{{ user.user.username }}</td>
+                    <td>{{ user.user.email }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>{{ user.phone_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+       
+      </div>
+      
+    </div>
+  </div>
+
+
+{% endblock %}

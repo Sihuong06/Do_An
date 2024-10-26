@@ -1,6 +1,70 @@
-<h2>Files with status: {{ status }}</h2>
-<ul>
-    {% for file in files %}
-    <li>{{ file.file_path.name }} - {{ file.status }}</li>
-    {% endfor %}
-</ul>
+{% extends 'users/baseUser.html' %}
+{% block content %}
+    <h1>File List - {{ status|title }}</h1>
+
+    <!-- Filter Section -->
+    <div>
+        <form method="get" action="{% url 'file:list_files_by_status' status %}">
+            <label for="status">Filter by Status:</label>
+            <select id="status" name="status" onchange="this.form.submit()">
+                <option value="all" {% if status == 'all' %}selected{% endif %}>All</option>
+                <option value="Unsigned" {% if status == 'unsigned' %}selected{% endif %}>Unsigned</option>
+                <option value="Signed" {% if status == 'signed' %}selected{% endif %}>Signed</option>
+            </select>
+
+            <label for="order_by">Order by:</label>
+            <select id="order_by" name="order_by" onchange="this.form.submit()">
+                <option value="date_signed" {% if request.GET.order_by == 'date_signed' %}selected{% endif %}>Date</option>
+                <option value="file_name" {% if request.GET.order_by == 'file_name' %}selected{% endif %}>File Name</option>
+                <option value="status" {% if request.GET.order_by == 'status' %}selected{% endif %}>Status</option>
+            </select>
+
+            <label for="order">Order:</label>
+            <select id="order" name="order" onchange="this.form.submit()">
+                <option value="asc" {% if request.GET.order == 'asc' %}selected{% endif %}>Ascending</option>
+                <option value="desc" {% if request.GET.order == 'desc' %}selected{% endif %}>Descending</option>
+            </select>
+        </form>
+    </div>
+
+    <!-- Table Section -->
+    <table>
+        <thead>
+            <tr>
+                <th>File Name</th>
+                <th>Status</th>
+                <th>Date Signed</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in files %}
+            <tr>
+                <td><a href="{% url 'file:view_file' file.id %}">{{ file.file_name }}</a></td>
+                <td>{{ file.status }}</td>
+                <td>{{ file.date_signed|date:"Y-m-d H:i" }}</td>
+                <td>
+                    <a href="{% url 'file:download_file' file.id %}">Download</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No files found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Upload Section -->
+    <div>
+        <h2>Upload New File</h2>
+        <a href="{% url 'file:upload_file' %}">Upload New File</a>
+    </div>
+
+    <script>
+        function toggleUserMenu() {
+            var displayMenu = document.getElementById('header-icon-user-display');
+            displayMenu.style.display = displayMenu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+{% endblock %}

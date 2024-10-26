@@ -51,6 +51,7 @@ def upload_file(request):
         form = FileUploadForm()
     return render(request, 'files/upload_file.html', {'form': form})
 
+
 @login_required(login_url='users:login')
 def view_file(request, file_id):
     file_obj = get_object_or_404(File, id=file_id)
@@ -154,7 +155,9 @@ def gen_sig(keypair,file):
     # Create a hash of the PDF content
     content_bytes = content.encode('utf-8')
     hash_value = hashlib.sha256(content_bytes).digest()
+    logger = logging.getLogger('applog')
 
+    logger.info(f'Hash value: {hash_value.hex()}')
     # Generate the signature
     signature = private_key.sign(
         hash_value,
@@ -187,38 +190,21 @@ def download_file(request, file_id):
     for page in pdf_reader.pages:
         pdf_writer.add_page(page)
 
-    # Create a BytesIO buffer for the signature page
-    signature_buffer = io.BytesIO()
-    c = canvas.Canvas(signature_buffer, pagesize=letter)
-
-    # Prepare the signature text
-    text = f"{signature.hex()}"
-
-    # Split the signature into multiple lines if it's too long
-    line_length = 64  # Maximum length of each line
-    lines = [text[i:i + line_length] for i in range(0, len(text), line_length)]
-
-    # Write the lines into the PDF
-    for i, line in enumerate(lines):
-        c.drawString(100, 750 - (i * 15), line)  # Adjust vertical position for each line
-
-    c.showPage()
-    c.save()
-    signature_buffer.seek(0)  # Rewind the buffer to the beginning
-
-    # Create a PdfReader for the signature page
-    signature_pdf_reader = PdfReader(signature_buffer)
-    signature_page = signature_pdf_reader.pages[0]
-    pdf_writer.add_page(signature_page)
+    # Add the signature to the PDF metadata
+    pdf_writer.add_metadata({
+        '/Signature': signature.hex(),  # Store the signature in hexadecimal format
+    })
 
     # Create a BytesIO buffer for the final signed PDF
     signed_pdf_buffer = io.BytesIO()
     pdf_writer.write(signed_pdf_buffer)
     signed_pdf_buffer.seek(0)  # Rewind the buffer to the beginning
-
+    file.status = 'signed'
+    file.save()
     # Serve the new PDF as a download response
     response = FileResponse(signed_pdf_buffer, as_attachment=True, filename=f'signed_{file.file_path.name}')
     return response
+
 
 
 @login_required(login_url='users:login')
@@ -235,21 +221,31 @@ def upload_and_verify(request):
         try:
             user_profile = UserProfile.objects.get(verification_code=verification_code)
         except UserProfile.DoesNotExist:
-            return render(request, 'files/verify_signature.html', {'error': 'No user found for this verification code.'})
+            return render(request, 'files/verify_signature.html', {'error': 'Fial'})
 
         # Get the active public key
         key_pair = KeyPair.objects.filter(user=user_profile.user, status='Active').first()
         if not key_pair:
             logger.info('No active key pair found')
-            return render(request, 'files/verify_signature.html', {'error': 'No active key pair found.'})
+            return render(request, 'files/verify_signature.html', {'error': 'Signature verification failed'})
 
         try:
             # Read the uploaded PDF file
             reader = PdfReader(uploaded_file)
-            content = ''
 
-            # Extract the content of all pages except the last one (assuming signature is on the last page)
-            for page_num in range(len(reader.pages) - 1):
+            # Extract the signature from the PDF metadata
+            signature_hex = reader.metadata.get('/Signature', None)
+            if signature_hex is None:
+                return render(request, 'files/verify_signature.html', {'error': 'Signature verification failed'})
+
+            # logger.info(f'Extracted signature text from metadata: {signature_hex}')
+
+            # Convert the signature from hex back to bytes
+            signature_bytes = bytes.fromhex(signature_hex)
+
+            # Extract content for hash calculation
+            content = ''
+            for page_num in range(len(reader.pages)):  # Exclude last page where the signature is stored
                 page = reader.pages[page_num]
                 content += page.extract_text() if page.extract_text() else ''
 
@@ -259,17 +255,6 @@ def upload_and_verify(request):
 
             # Log the hash value
             logger.info(f'Hash value (hex): {hash_value.hex()}')
-
-            # Extract the signature from the last page of the PDF
-            signature_text = reader.pages[-1].extract_text()
-            logger.info(f'Extracted signature text: {signature_text}')
-
-            # Clean up the extracted signature (removing newlines and extra spaces)
-            signature_hex = signature_text.replace('\n', '').strip()
-            logger.info(f'Cleaned signature (hex): {signature_hex}')
-
-            # Convert the signature from hex back to bytes
-            signature_bytes = bytes.fromhex(signature_hex)
 
             # Load the public key
             public_key = serialization.load_pem_public_key(
@@ -292,7 +277,7 @@ def upload_and_verify(request):
             verification_status = "Signature verification succeeded!"
 
         except Exception as e:
-            # logger.error(f'Signature verification failed: {e}')
+            logger.error(f'Signature verification failed: {e}')
             verification_status = f"Signature verification failed"
 
         return render(request, 'files/verify_signature.html', {

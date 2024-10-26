@@ -1,33 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký người dùng</title>
+{% extends 'users/baseUser.html' %}
 
-</head>
-<body>
-    <div class="container">
-        <h1>Đăng ký tài khoản</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <label for="confirm_password">Nhập lại mật khẩu:</label>
-            <input type="password" name="confirm_password" required>
-            <button type="submit">Đăng ký</button>
-        </form>
-        
-        <!-- Hiển thị thông báo lỗi nếu có -->
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-                {% if message.tags == "error" %}
-                    <li style="color: red;">{{ message }}</li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    {% endif %}
-        
+{% block content %}
+<div class='category-create'>
+  <div class="warning-box">
+    <div class="create-book-header">
+
+      <h1 class="touppercase"> <h2>Sign up</h2></h1>
+
     </div>
-</body>
-</html>
+    <div style="width: 70%;" class="order-info">
+      <form id='create-form' method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="handle-book-btn create-book-btn" type="submit">Sign up</button>
+      </form>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}

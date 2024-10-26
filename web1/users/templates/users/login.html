@@ -1,27 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
-</head>
-<body>
-    <h1>Đăng nhập</h1>
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                {% if message.tags == "error" %}
-                    <li style="color: red;">{{ message }}</li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    {% endif %}
+{% extends 'users/baseUser.html' %}
 
-    <form method="post">
+{% block content %}
+
+<div class='category-create'>
+  <div class="warning-box">
+    <div class="create-book-header">
+
+      <h1 class="touppercase"> <h2>Login</h2></h1>
+
+    </div>
+    <div style="width: 70%;" class="order-info">
+      <form id='create-form' method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Đăng nhập</button>
-    </form>
-    <p>Chưa có tài khoản? <a href="{% url 'users:register' %}">Đăng ký ngay</a></p>
-</body>
-</html>
+        <button class="handle-book-btn create-book-btn" type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

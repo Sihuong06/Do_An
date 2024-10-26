@@ -1,25 +1,40 @@
-<!-- templates/verify_signature.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify File Signature</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <style>
+        #pdfViewer {
+            width: 80%;
+            height: 600px;
+            overflow: auto;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        #pdfViewer canvas {
+            width: 80%;  /* Responsive canvas */
+        }
+    </style>
 </head>
 <body>
     <h1>Verify File Signature</h1>
     
-    <form action="{% url 'file:upload_verify' %}" method="POST" enctype="multipart/form-data">
+    <form action="{% url 'file:upload_verify' %}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
         {% csrf_token %}
         
         <label for="verification_code">Enter Verification Code:</label>
         <input type="text" name="verification_code" id="verification_code" required>
         
         <label for="file">Upload the File:</label>
-        <input type="file" name="file" id="file" accept=".pdf" required>
+        <input type="file" name="file" id="file" accept=".pdf" required onchange="renderPDF()">
         
         <button type="submit">Verify Signature</button>
     </form>
+
+    <div id="pdfViewer"></div>
 
     {% if error %}
         <p style="color:red;">{{ error }}</p>
@@ -28,5 +43,41 @@
     {% if verification_status %}
         <p>{{ verification_status }}</p>
     {% endif %}
+    
+    <script>
+        async function renderPDF() {
+            const fileInput = document.getElementById('file');
+            const pdfViewer = document.getElementById('pdfViewer');
+            pdfViewer.innerHTML = ''; // Clear previous content
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const fileURL = URL.createObjectURL(file);
+                
+                const loadingTask = pdfjsLib.getDocument(fileURL);
+                loadingTask.promise.then(pdf => {
+                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                        pdf.getPage(pageNum).then(page => {
+                            const viewport = page.getViewport({ scale: 1.5 });
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
+                            canvas.height = viewport.height;
+                            canvas.width = viewport.width;
+                            pdfViewer.appendChild(canvas);
+
+                            const renderContext = {
+                                canvasContext: context,
+                                viewport: viewport
+                            };
+                            page.render(renderContext);
+                        });
+                    }
+                }).catch(error => {
+                    console.error('Error loading PDF: ', error);
+                    pdfViewer.innerHTML = '<p style="color:red;">Error loading PDF.</p>';
+                });
+            }
+        }
+    </script>
 </body>
 </html>
