@@ -27,39 +27,143 @@
         </form>
     </div>
 
-    <!-- Table Section -->
-    <table>
-        <thead>
-            <tr>
-                <th>File Name</th>
-                <th>Status</th>
-                <th>Date Signed</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for file in files %}
-            <tr>
-                <td><a href="{% url 'file:view_file' file.id %}">{{ file.file_name }}</a></td>
-                <td>{{ file.status }}</td>
-                <td>{{ file.date_signed|date:"Y-m-d H:i" }}</td>
-                <td>
-                    <a href="{% url 'file:download_file' file.id %}">Download</a>
-                </td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="4">No files found.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<!-- Table Section -->
+<table>
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Status</th>
+            <th>Date Signed</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for file in files %}
+        <tr>
+            <td><a href="{% url 'file:view_file' file.id %}">{{ file.file_name }}</a></td>
+            <td>{{ file.status }}</td>
+            <td>{{ file.date_signed|date:"Y-m-d H:i" }}</td>
+            <td>
+                <a href="{% url 'file:download_file' file.id %}" class="action-link">Download</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No files found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
-    <!-- Upload Section -->
-    <div>
-        <h2>Upload New File</h2>
-        <a href="{% url 'file:upload_file' %}">Upload New File</a>
-    </div>
+<style>
+    /* Basic table styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1em;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header styles */
+    thead {
+        background-color: #007bff; /* Màu nền cho header */
+        color: white; /* Màu chữ cho header */
+    }
+
+    th {
+        padding: 10px;
+        text-align: center; /* Căn giữa tiêu đề */
+        border-bottom: 2px solid #ddd; /* Đường viền dưới */
+    }
+
+    /* Body styles */
+    tbody tr {
+        background-color: #f9f9f9; /* Màu nền cho hàng */
+        transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+    }
+
+    tbody tr:hover {
+        background-color: #f1f1f1; /* Màu nền khi hover */
+    }
+
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd; /* Đường viền dưới */
+    }
+
+    /* Link styles */
+    a {
+        color: #007bff; /* Màu link */
+        text-decoration: none; /* Bỏ gạch chân */
+    }
+
+    a:hover {
+        text-decoration: underline; /* Gạch chân khi hover */
+    }
+
+    /* Action link styles */
+    .action-link {
+        background-color: #28a745; /* Màu nền cho link download */
+        color: white; /* Màu chữ */
+        padding: 5px 10px;
+        border-radius: 5px; /* Bo góc */
+        transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+    }
+
+    .action-link:hover {
+        background-color: #218838; /* Màu nền khi hover */
+    }
+
+    /* No files message */
+    tbody tr td {
+        text-align: center; /* Căn giữa */
+    }
+</style>
+
+
+   <!-- Upload Section -->
+<div class="upload-section">
+    <h2>Upload New File</h2>
+    <a href="{% url 'file:upload_file' %}" class="upload-button">Upload New File</a>
+</div>
+
+<style>
+    .upload-section {
+        text-align: center; /* Căn giữa nội dung */
+        margin: 40px 0; /* Khoảng cách trên và dưới */
+        padding: 20px; /* Khoảng cách bên trong */
+        background-color: #f8f9fa; /* Màu nền nhẹ */
+        border-radius: 8px; /* Bo góc */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+    }
+
+    .upload-section h2 {
+        margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+        color: #333; /* Màu chữ tiêu đề */
+    }
+
+    .upload-button {
+        display: inline-block; /* Để nút có chiều rộng */
+        padding: 10px 20px; /* Khoảng cách bên trong */
+        background-color: #007bff; /* Màu nền cho nút */
+        color: white; /* Màu chữ */
+        text-decoration: none; /* Bỏ gạch chân */
+        border-radius: 5px; /* Bo góc */
+        font-size: 16px; /* Kích thước chữ */
+        transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển màu và phóng to */
+    }
+
+    .upload-button:hover {
+        background-color: #0056b3; /* Màu nền khi hover */
+        transform: translateY(-2px); /* Đẩy nút lên một chút khi hover */
+    }
+
+    .upload-button:active {
+        transform: translateY(0); /* Đưa nút trở lại khi nhấn */
+    }
+</style>
 
     <script>
         function toggleUserMenu() {

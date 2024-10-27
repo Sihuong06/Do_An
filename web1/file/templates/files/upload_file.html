@@ -1,8 +1,46 @@
 {% extends 'users/baseUser.html' %}
 {% block content %}
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
+    <div class="upload-form-container">
+        <form method="post" enctype="multipart/form-data" class="upload-form">
+            {% csrf_token %}
+            <h2>Upload Your File</h2>
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="upload-button">Upload</button>
+        </form>
+    </div>
 {% endblock %}
+<!-- <style>.upload-form-container {
+    max-width: 600px; /* Adjusts the width of the form */
+    margin: 20px auto; /* Centers the form on the page */
+    padding: 20px; /* Adds padding around the form */
+    border: 1px solid #ddd; /* Adds a light border around the form */
+    border-radius: 8px; /* Rounds the corners of the form */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column; /* Stacks the elements vertically */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form elements */
+}
+
+.upload-button {
+    background-color: #007bff; /* Primary color */
+    color: white; /* Text color */
+    border: none; /* Removes default border */
+    padding: 10px 15px; /* Adds padding to the button */
+    border-radius: 5px; /* Rounds the button corners */
+    cursor: pointer; /* Changes cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.upload-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+</style> -->

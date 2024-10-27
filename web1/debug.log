@@ -427,3 +427,86 @@ django.template.exceptions.TemplateDoesNotExist: files/baseUser.html
 2024-10-26 08:22:27,238 INFO Signature generated (hex): 5b9c2cc664b6d3c60d5dba41966f5e4bef2c2a2b4bfd3c0ede18a2aec14feaa75f6ba7dde7b947f8c7db743833cd86632327d0470b998f580ec78ad50b5bd0fe02795dcd3929d9aca1faba70adfe3452fab71dc71c0b3c5aa481fc7d2d25502b52b971cdd38670eb0fd0e1066fe927d43389837d1974aa23ccacf53af2e165b4a856aed670f17338ccd1c26de83c64921dc6f1304bf8c4b0a38554aae0538b75772a93f49fb9c1ba51072cc1f152af5d3fbc16a005c77b6740f3c1f7150e6e5e5a0a436efadb20de21ddabccf90783d43e9ab403d0bed2e256788a64fd6260cf856785497002488ba4be53d1bab1d6f3b2a08bbc9c23af3cce09991c3a5c688b
 2024-10-26 22:54:47,409 WARNING Not Found: /favicon.ico
 2024-10-26 22:56:29,695 INFO Key pair found
+2024-10-27 15:05:05,025 WARNING Not Found: /favicon.ico
+2024-10-27 15:10:42,647 WARNING Not Found: /image1.jpg
+2024-10-27 15:10:42,650 WARNING Not Found: /image2.jpg
+2024-10-27 15:10:42,688 WARNING Not Found: /image3.jpg
+2024-10-27 15:10:42,695 WARNING Not Found: /script.js
+2024-10-27 15:12:44,159 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:12:44,167 WARNING Not Found: /image2.jpg
+2024-10-27 15:12:44,208 WARNING Not Found: /image3.jpg
+2024-10-27 15:12:44,213 WARNING Not Found: /script.js
+2024-10-27 15:12:45,508 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:12:45,512 WARNING Not Found: /image2.jpg
+2024-10-27 15:12:45,553 WARNING Not Found: /image3.jpg
+2024-10-27 15:12:45,559 WARNING Not Found: /script.js
+2024-10-27 15:13:06,860 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:13:06,864 WARNING Not Found: /image2.jpg
+2024-10-27 15:13:06,906 WARNING Not Found: /image3.jpg
+2024-10-27 15:13:06,911 WARNING Not Found: /script.js
+2024-10-27 15:13:08,111 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:13:08,116 WARNING Not Found: /image2.jpg
+2024-10-27 15:13:08,159 WARNING Not Found: /image3.jpg
+2024-10-27 15:13:08,163 WARNING Not Found: /script.js
+2024-10-27 15:13:58,030 INFO F:\Do_An\web1\home\urls.py changed, reloading.
+2024-10-27 15:16:29,711 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:16:29,765 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:18:33,031 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:18:33,370 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:18:34,459 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:18:34,506 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:18:41,877 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:18:41,929 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:19:03,232 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:19:03,280 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:19:05,551 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:19:05,611 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:19:13,923 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:19:13,981 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:19:15,131 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:19:15,188 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:20:08,068 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:20:08,401 WARNING Not Found: /img/image1.jpg
+2024-10-27 15:22:03,449 WARNING Not Found: /favicon.ico
+2024-10-27 15:28:39,873 WARNING Not Found: /image1.jpg
+2024-10-27 15:28:39,881 WARNING Not Found: /image2.jpg
+2024-10-27 15:28:40,006 WARNING Not Found: /image3.jpg
+2024-10-27 15:29:01,614 WARNING Not Found: /image2.jpg
+2024-10-27 15:29:01,621 WARNING Not Found: /image3.jpg
+2024-10-27 15:29:17,083 WARNING Not Found: /image2.jpg
+2024-10-27 15:29:17,097 WARNING Not Found: /image3.jpg
+2024-10-27 15:36:22,955 WARNING Not Found: /image1.jpg
+2024-10-27 15:36:22,963 WARNING Not Found: /image2.jpg
+2024-10-27 15:36:23,098 WARNING Not Found: /image3.jpg
+2024-10-27 15:37:03,726 WARNING Not Found: /image2.jpg
+2024-10-27 15:37:03,731 WARNING Not Found: /image3.jpg
+2024-10-27 16:00:02,661 WARNING Not Found: /img_snowtops.jpg
+2024-10-27 16:00:02,685 WARNING Not Found: /img_lights.jpg
+2024-10-27 16:00:02,852 WARNING Not Found: /img_mountains.jpg
+2024-10-27 16:00:02,858 WARNING Not Found: /img_forest.jpg
+2024-10-27 16:00:20,072 WARNING Not Found: /img_lights.jpg
+2024-10-27 16:00:20,249 WARNING Not Found: /img_mountains.jpg
+2024-10-27 16:00:20,258 WARNING Not Found: /img_forest.jpg
+2024-10-27 16:03:23,595 WARNING Not Found: /img_nature_wide.jpg
+2024-10-27 16:03:23,603 WARNING Not Found: /img_snow_wide.jpg
+2024-10-27 16:03:24,817 WARNING Not Found: /img_mountains_wide.jpg
+2024-10-27 16:14:25,992 ERROR Internal Server Error: /files/download/15/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 182, in download_file
+    signature = gen_sig(key_pair, file)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 143, in gen_sig
+    keypair.private_key.encode('utf-8'),
+    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'private_key'
+2024-10-27 21:28:22,074 WARNING Not Found: /favicon.ico
+2024-10-27 21:29:36,689 INFO Key pair found

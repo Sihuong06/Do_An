@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,43 +6,164 @@
     <title>Verify File Signature</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <style>
-        #pdfViewer {
-            width: 80%;
-            height: 600px;
-            overflow: auto;
-            border: 1px solid #ccc;
-            margin-top: 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        #pdfViewer canvas {
-            width: 80%;  /* Responsive canvas */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            overflow: hidden; /* Prevents scrollbars */
+        }
+
+        .container {
+            display: flex;
+            width: 100vw; /* Full screen width */
+            height: 100vh; /* Full screen height */
+            background-color: #ffffff;
+        }
+
+        .left-panel {
+            flex-basis: 30%; /* 30% width */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+        }
+
+        .left-panel h1 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+        }
+
+        .left-panel label {
+            margin: 10px 0 5px;
+        }
+
+        .left-panel input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .left-panel input[type="text"]:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        .left-panel button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .left-panel button:hover {
+            background-color: #357ab8;
+        }
+
+        .right-panel {
+            flex-basis: 70%; /* 70% width */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .right-panel label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #pdfViewer {
+            width: 100%;
+            height: 80vh; /* Takes up most of the viewport height */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: auto;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+        }
+
+        .right-panel input[type="file"] {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+            width: 100%; /* Full width */
+            max-width: 500px; /* Maximum width */
+        }
+
+        .right-panel input[type="file"]:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+        
+        .error, .status {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .status {
+            color: green;
         }
     </style>
 </head>
 <body>
-    <h1>Verify File Signature</h1>
-    
-    <form action="{% url 'file:upload_verify' %}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
-        {% csrf_token %}
-        
-        <label for="verification_code">Enter Verification Code:</label>
-        <input type="text" name="verification_code" id="verification_code" required>
-        
-        <label for="file">Upload the File:</label>
-        <input type="file" name="file" id="file" accept=".pdf" required onchange="renderPDF()">
-        
-        <button type="submit">Verify Signature</button>
-    </form>
+    <div class="container">
+        <!-- Left Panel: Verification Code and Submit -->
+        <div class="left-panel">
+            <h1>Verify File Signature</h1>
+            <form action="{% url 'file:upload_verify' %}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+                {% csrf_token %}
+                <label for="verification_code">Enter Verification Code:</label>
+                <input type="text" name="verification_code" id="verification_code" required>
+                <button type="submit">Verify Signature</button>
+            </form>
 
-    <div id="pdfViewer"></div>
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+            
+            {% if verification_status %}
+                <p class="status">{{ verification_status }}</p>
+            {% endif %}
+        </div>
 
-    {% if error %}
-        <p style="color:red;">{{ error }}</p>
-    {% endif %}
-    
-    {% if verification_status %}
-        <p>{{ verification_status }}</p>
-    {% endif %}
-    
+        <!-- Right Panel: File Upload and PDF Viewer -->
+        <div class="right-panel">
+            <label for="file">Upload the File:</label>
+            <input type="file" name="file" id="file" accept=".pdf" required onchange="renderPDF()">
+            <div id="pdfViewer"></div>
+        </div>
+    </div>
+
     <script>
         async function renderPDF() {
             const fileInput = document.getElementById('file');
