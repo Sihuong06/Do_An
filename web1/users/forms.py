@@ -37,7 +37,7 @@ class UserRegisterForm(UserCreationForm):
                 verification_code=self.cleaned_data['verification_code']
             )
         return user
-from django import forms
+
 
 class UserLoginForm(forms.Form):
     username = forms.CharField(max_length=150, required=True, label='Tên đăng nhập')

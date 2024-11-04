@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    color: black;
+}
+
+:root{
+    --hover-button: #92B9E5;
+    --active-text: #FEC4A3;
+    --color-border: #C588EA;
+}
+
+body{
+    position: relative;
+}
+
+.color-active{
+    color: var(--active-text);
+}
+
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+
+.color-header {
+    background: linear-gradient(90deg, #FCA2D1, #6C7DE2);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.border-big{
+    border-radius: 20px;
+}

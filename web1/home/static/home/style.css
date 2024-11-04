@@ -1,86 +1,17 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.header{
-    display: flex;
-    height: 12vh;
-    padding: 0px 20px;
-    background-color: white;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.header-logo{
-    font-size: 24px;
-    font-weight: 600;
-}
-.header-menu{
-    display: flex;
-    flex-direction: row;
-    width: 40%;
-    justify-content: space-around;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-.header-menu a{
-    text-decoration: none;
-    color: black;
-    
-}
-.header-menu a:hover{
-    color: #ea5c32;
-}
-#actived {
-    color: #ea5c32;
-}
-.header-icon {
-    display:flex;
-    flex-direction: row;
-}
-.header-icon svg{
-    font-size: 24px;
-    cursor: pointer;
-    color:black
-}
-.header-icon:last-child svg{
-    padding-left: 10px;
-}
-.header-icon-user button{
-    background-color: white;
-    border:none;
-    outline: none;
-}
-#header-icon-user-display{
-    display: none;
-    height: auto;
-    width: 100px;
-    background-color: white;
-    position: absolute;
-    transform: translate(-30px,10px);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 20px;
-}
-#header-icon-user-display a{
-    text-decoration: none;
-    color: black;
-}
-
-
-/* Main */
 
 /* Home */
 .main {
-    margin: auto ;
+    margin: 80px auto 0;
     width: 100%;
-    background-color: #fceae6;
+    min-height: calc(100vh - 140px);
+    background-color: #92B9E5;
 }
+
+.main h2{
+    color: #FEC4A3;
+    font-size: 30px;
+}
+
 .main-new{
     width: 80%;
     margin: auto;
@@ -222,7 +153,7 @@ body {
 
 .handle-book-btn{
     padding: 5px 10px;
-    background-color:#946659;
+    background-color:#FEC4A3;
     color :white;
     border: none;
     outline: none;
@@ -319,12 +250,13 @@ body {
     padding: 80px 0;
     gap: 40px;
     width: 100%;
-    background-color: #fceae6;
+    background-color: #92B9E5;
 }
 
 .contact-title h2{
     font-size: 42px;
     margin-bottom: 30px;
+    color: #FEC4A3;
 }
 .contact-details{
     display: flex;

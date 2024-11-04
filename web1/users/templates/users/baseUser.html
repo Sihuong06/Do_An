@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
@@ -11,93 +7,73 @@
     <script src="https://kit.fontawesome.com/f4980961c3.js" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href='{% static "home/favicon.ico" %}' />
+    <!-- <link rel="icon" type="image/x-icon" href='{% static "home/favicon.ico" %}' /> -->
     <link rel="stylesheet" href='{% static "home/style.css" %}' />
-    <link rel="stylesheet" href='{% static "books/style.css" %}' />
-    <title>BOOK SHOP</title>
-</head>
-<style>
-    #customers {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  #customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #customers tr:hover {background-color: #ddd;}
-  
-  #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #04AA6D;
-    color: white;
-  }
-</style>
-<body>
-    <div class="header">
-        <div class="header-logo">LOGO</div>
+    <link rel="stylesheet" href='{% static "books/style2.css" %}' />
+    <link rel="stylesheet" href='{% static "home/header.css" %}' />
+    <link rel="stylesheet" href='{% static "home/footer.css" %}' />
+    <link rel="stylesheet" href='{% static "home/base.css" %}' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
-        <div class="header-menu">
-            <div class="header-menu-item">
-              <a id="actived" href="/">TRANG CHỦ</a>
+    <title>Phần Mềm Chữ Kí Số</title>
+</head>
+<body>
+    <header id="header">
+        <div class="container header">
+          <div class="header-logo">
+            <a class="actived" href="/">
+              <img src="{% static 'home/image/logo.png' %}" alt="logo-image" class="logo">
+            </a>
+          </div>
+          <nav>
+            <ul class="nav-menu">
+              <li>
+                <a classs="actived" href="/">Home</a>
+              </li>
+              <li>
+                <a href="/files/">Sign a document</a>
+              </li>
+              <li>
+                <a href="/files/upload-verify/">Verify a document</a>
+              </li>
+              <li>
+                <a href="/#contact-part">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header-icon">
+            <div class="button-popup">
+              <p>
+                {% if user.is_authenticated %}
+                Hello, <span class="color-active name-user">{{user.username}}</span>
+                {% endif %}
+              </p>
+              <img src="{% static 'home/image/icon-user.png' %}" alt="icon-user" class="icon-user"/>
             </div>
-            <div class="header-menu-item">
-              <a href="/files/status/all/">Kí Văn Bản</a>
-            </div>
-            <div class="header-menu-item">
-              <a href="/files/upload-verify/">XÁC THỰC VĂN BẢN</a>
-            </div>
-            <div class="header-menu-item">
-              <a href="/#contact-part">LIÊN HỆ</a>
+            <div class="popup-user">
+              <ul class="list-popup">
+                <li>
+                  <a href="{% url 'users:logout'%}">Logout</a>
+                </li>
+                <li>
+                  <a href="/users/profile/">Profile</a>
+                </li>
+                <li>
+                  <a href="/users/all_users/">AllUsers </a>
+                </li>
+                <li>
+                  <a href="/users/login">Login</a>
+                </li>
+                <li>
+                  <a href="/users/register">Register</a>
+                </li>
+              </ul>
             </div>
           </div>
-        <div class="header-icon">
-            <div style="padding-top: 5px;padding-right: 5px;">
-                {% if user.is_authenticated %}
-                Hello, {{user.username}}
-            {% endif %}
-            </div>
-            <div class="header-icon-user">
-                <button onCLick="displayLogin()">
-                    <i class="fa-solid fa-user"></i>
-                </button>
-
-                <div id="header-icon-user-display">
-                    {% if user.is_authenticated %}
-                    <div class="header-btn-logout">
-                        <a href="{% url 'users:logout'%}"> Logout</a>
-                    </div>
-                    <div class="header-btn-register">
-                        <a href="/users/profile/">Profile </a>
-                    </div>
-                    {% if request.user.is_superuser %}
-                    <div class="header-btn-register">
-                        <a href="/users/all_users/">AllUsers </a>
-                    </div>
-                    {% endif %}
-
-                    {% else %}
-                    <div class="header-btn-login">
-                        <a href="/users/login"> Login</a>
-                    </div>
-                    <div class="header-btn-register">
-                        <a href="/users/register">Register </a>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="header-icon-cart">
-                <a href="/carts/view"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
         </div>
-    </div>
+      </header>
 
     <div class="main">
         <div class="main-books">
@@ -105,7 +81,7 @@
             {% endblock %}
         </div>
     </div>
-    <div class="footer">Copyright © 2023 PTIT | Powered by PTIT</div>
+    <footer id="footer">Copyright © 2023 PTIT | Powered by PTIT</footer>
 
 
     </div>

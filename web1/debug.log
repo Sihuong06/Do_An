@@ -510,3 +510,1116 @@ Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'private_key'
 2024-10-27 21:28:22,074 WARNING Not Found: /favicon.ico
 2024-10-27 21:29:36,689 INFO Key pair found
+2024-10-27 22:11:48,731 INFO Hash value: e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-10-27 22:11:48,735 INFO Signature generated (hex): 1e462537c703a2ee051cf87f299d44ad2006d629b2607805b65e61789b4ff4548637e137c995956afeaaf4621bb232def4228bde57956c3bc1b5a415ceba78a6f369de7db547bd43c4658eff43e3e7270401058ea848644030abe171869719511b981c7df52cbd11ad74bd34827034552066ca6c3a1238aa57f9a5ff2cb860161048bd5c9bc56914bb559d466c9f6057f26dc2a10f624cc07d991f66003cebbf57e5910bc46b620c8fe299b7f729cf8eb606fad2d98fedf3062003578a631ce4a9884cf84c57c82fbb9edf81c5fba8aec29d290824fb4fb8715a617c571c4bd6876842fa576f9f336ae921daa96e831273d1162a6f5f1e53f669c79b33fe6f47
+2024-10-27 22:17:29,411 ERROR Internal Server Error: /files/status/all/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "request.GET.get('order')"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 71, in list_files_by_status
+    return render(request, 'files/file_list.html', {'files': files, 'status': status})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '('order')' from 'request.GET.get('order')'
+2024-10-28 06:48:48,334 WARNING Not Found: /favicon.ico
+2024-10-28 06:48:53,170 WARNING Not Found: /files/status/all/
+2024-10-28 06:49:10,340 INFO F:\Do_An\web1\file\urls.py changed, reloading.
+2024-10-28 06:49:32,072 WARNING Not Found: /files/status/all/
+2024-10-28 06:52:01,842 WARNING Not Found: /files/status/all/
+2024-10-28 07:50:13,355 INFO Key pair found
+2024-10-28 07:52:00,061 INFO Key pair found
+2024-10-28 07:54:08,760 WARNING Not Found: /files/status/all/
+2024-10-28 07:54:23,924 WARNING Not Found: /files/status/all/
+2024-10-28 07:54:24,694 WARNING Not Found: /files/status/all/
+2024-10-28 08:12:15,867 INFO Key pair found
+2024-10-28 08:28:02,911 INFO Key pair found
+2024-10-28 08:28:28,920 INFO Key pair found
+2024-10-28 08:28:31,814 INFO Key pair found
+2024-10-28 08:29:07,455 INFO Key pair found
+2024-10-28 08:30:25,250 INFO Key pair found
+2024-10-28 08:30:48,509 INFO Key pair found
+2024-10-28 08:30:57,607 INFO Key pair found
+2024-10-28 08:33:02,234 INFO Key pair found
+2024-10-28 08:33:31,630 INFO Key pair found
+2024-10-28 08:34:23,639 INFO Key pair found
+2024-10-28 08:35:59,660 INFO Key pair found
+2024-10-28 08:38:47,118 INFO Key pair found
+2024-10-28 08:39:06,845 INFO Key pair found
+2024-10-28 08:40:43,006 INFO Key pair found
+2024-10-28 08:42:14,247 INFO Key pair found
+2024-10-28 09:19:45,467 WARNING Not Found: /favicon.ico
+2024-10-28 09:21:07,062 INFO Key pair found
+2024-10-28 09:21:29,629 INFO Key pair found
+2024-10-28 09:21:46,477 INFO Key pair found
+2024-10-28 09:22:38,350 INFO Key pair found
+2024-10-28 09:22:44,722 INFO Key pair found
+2024-10-28 09:23:00,702 INFO Key pair found
+2024-10-28 09:23:48,806 INFO Key pair found
+2024-10-28 09:42:55,592 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-10-28 09:42:55,672 INFO Signature verification succeeded.
+2024-10-28 09:46:39,982 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-10-28 09:46:39,982 INFO Signature verification succeeded.
+2024-10-28 09:46:46,439 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-10-28 09:46:46,440 INFO Signature verification succeeded.
+2024-10-28 09:46:56,590 INFO Hash value (hex): 60dd93b31652386ee57161d2b9b9f3b4f418a74191a0b4152974276540ed4ee8
+2024-10-28 09:46:56,591 INFO Signature verification succeeded.
+2024-10-28 10:31:51,271 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-10-29 05:18:54,471 WARNING Not Found: /favicon.ico
+2024-10-29 05:18:55,838 INFO Key pair found
+2024-10-29 05:18:55,931 ERROR Internal Server Error: /files/15/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 63, in view_file
+    return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+2024-10-29 05:19:15,756 INFO Key pair found
+2024-10-29 05:20:33,589 INFO F:\Do_An\web1\picture\views.py changed, reloading.
+2024-10-29 05:20:48,705 INFO Key pair found
+2024-10-29 05:20:51,908 ERROR Internal Server Error: /pictures/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\picture\views.py", line 10, in get_all_pictures
+    return render(request, 'files/file_detail.html', {'pictures': pictures})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'download_file' with arguments '('',)' not found. 1 pattern(s) tried: ['files/download/(?P<file_id>[0-9]+)/\\Z']
+2024-10-29 05:21:21,068 INFO F:\Do_An\web1\picture\views.py changed, reloading.
+2024-10-29 05:22:05,797 INFO F:\Do_An\web1\picture\models.py changed, reloading.
+2024-10-29 05:23:23,201 INFO F:\Do_An\web1\picture\forms.py changed, reloading.
+2024-10-29 05:23:38,597 INFO F:\Do_An\web1\picture\forms.py changed, reloading.
+2024-10-29 05:25:31,026 DEBUG STREAM b'IHDR' 16 13
+2024-10-29 05:25:31,026 DEBUG STREAM b'pHYs' 41 9
+2024-10-29 05:25:31,026 DEBUG STREAM b'tEXt' 62 25
+2024-10-29 05:25:31,026 DEBUG STREAM b'IDAT' 99 8192
+2024-10-29 05:25:31,026 DEBUG Importing BlpImagePlugin
+2024-10-29 05:25:31,029 DEBUG Importing BmpImagePlugin
+2024-10-29 05:25:31,030 DEBUG Importing BufrStubImagePlugin
+2024-10-29 05:25:31,031 DEBUG Importing CurImagePlugin
+2024-10-29 05:25:31,033 DEBUG Importing DcxImagePlugin
+2024-10-29 05:25:31,035 DEBUG Importing DdsImagePlugin
+2024-10-29 05:25:31,038 DEBUG Importing EpsImagePlugin
+2024-10-29 05:25:31,040 DEBUG Importing FitsImagePlugin
+2024-10-29 05:25:31,041 DEBUG Importing FliImagePlugin
+2024-10-29 05:25:31,042 DEBUG Importing FpxImagePlugin
+2024-10-29 05:25:31,043 DEBUG Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-10-29 05:25:31,043 DEBUG Importing FtexImagePlugin
+2024-10-29 05:25:31,044 DEBUG Importing GbrImagePlugin
+2024-10-29 05:25:31,045 DEBUG Importing GifImagePlugin
+2024-10-29 05:25:31,046 DEBUG Importing GribStubImagePlugin
+2024-10-29 05:25:31,047 DEBUG Importing Hdf5StubImagePlugin
+2024-10-29 05:25:31,049 DEBUG Importing IcnsImagePlugin
+2024-10-29 05:25:31,053 DEBUG Importing IcoImagePlugin
+2024-10-29 05:25:31,054 DEBUG Importing ImImagePlugin
+2024-10-29 05:25:31,056 DEBUG Importing ImtImagePlugin
+2024-10-29 05:25:31,057 DEBUG Importing IptcImagePlugin
+2024-10-29 05:25:31,059 DEBUG Importing JpegImagePlugin
+2024-10-29 05:25:31,059 DEBUG Importing Jpeg2KImagePlugin
+2024-10-29 05:25:31,059 DEBUG Importing McIdasImagePlugin
+2024-10-29 05:25:31,060 DEBUG Importing MicImagePlugin
+2024-10-29 05:25:31,061 DEBUG Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-10-29 05:25:31,062 DEBUG Importing MpegImagePlugin
+2024-10-29 05:25:31,063 DEBUG Importing MpoImagePlugin
+2024-10-29 05:25:31,069 DEBUG Importing MspImagePlugin
+2024-10-29 05:25:31,071 DEBUG Importing PalmImagePlugin
+2024-10-29 05:25:31,075 DEBUG Importing PcdImagePlugin
+2024-10-29 05:25:31,076 DEBUG Importing PcxImagePlugin
+2024-10-29 05:25:31,077 DEBUG Importing PdfImagePlugin
+2024-10-29 05:25:31,084 DEBUG Importing PixarImagePlugin
+2024-10-29 05:25:31,086 DEBUG Importing PngImagePlugin
+2024-10-29 05:25:31,086 DEBUG Importing PpmImagePlugin
+2024-10-29 05:25:31,086 DEBUG Importing PsdImagePlugin
+2024-10-29 05:25:31,087 DEBUG Importing QoiImagePlugin
+2024-10-29 05:25:31,089 DEBUG Importing SgiImagePlugin
+2024-10-29 05:25:31,090 DEBUG Importing SpiderImagePlugin
+2024-10-29 05:25:31,092 DEBUG Importing SunImagePlugin
+2024-10-29 05:25:31,093 DEBUG Importing TgaImagePlugin
+2024-10-29 05:25:31,094 DEBUG Importing TiffImagePlugin
+2024-10-29 05:25:31,094 DEBUG Importing WebPImagePlugin
+2024-10-29 05:25:31,102 DEBUG Importing WmfImagePlugin
+2024-10-29 05:25:31,104 DEBUG Importing XbmImagePlugin
+2024-10-29 05:25:31,105 DEBUG Importing XpmImagePlugin
+2024-10-29 05:25:31,106 DEBUG Importing XVThumbImagePlugin
+2024-10-29 05:32:42,979 DEBUG STREAM b'IHDR' 16 13
+2024-10-29 05:32:42,979 DEBUG STREAM b'sRGB' 41 1
+2024-10-29 05:32:42,980 DEBUG STREAM b'gAMA' 54 4
+2024-10-29 05:32:42,980 DEBUG STREAM b'pHYs' 70 9
+2024-10-29 05:32:42,980 DEBUG STREAM b'IDAT' 91 42131
+2024-10-29 05:46:09,805 INFO Key pair found
+2024-10-29 06:02:22,400 INFO Key pair found
+2024-10-29 06:02:53,207 INFO Key pair found
+2024-10-29 06:02:53,240 ERROR Internal Server Error: /files/15/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 63, in view_file
+    return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+2024-10-29 06:03:00,516 INFO Key pair found
+2024-10-29 06:03:00,545 ERROR Internal Server Error: /files/15/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 63, in view_file
+    return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+2024-10-29 06:03:10,311 INFO Key pair found
+2024-10-29 06:03:10,339 ERROR Internal Server Error: /files/15/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 63, in view_file
+    return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+2024-10-29 06:03:10,950 INFO Key pair found
+2024-10-29 06:03:10,978 ERROR Internal Server Error: /files/15/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 63, in view_file
+    return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+2024-10-29 06:03:28,165 INFO Key pair found
+2024-10-29 06:06:02,362 INFO Key pair found
+2024-10-29 06:06:13,608 INFO Key pair found
+2024-10-29 06:06:25,732 INFO Key pair found
+2024-10-29 06:06:55,567 INFO Key pair found
+2024-10-29 06:07:05,621 INFO Key pair found
+2024-10-29 06:08:57,185 INFO Key pair found
+2024-10-29 06:09:24,166 INFO Key pair found
+2024-10-29 06:10:48,762 INFO Key pair found
+2024-10-29 06:11:13,899 INFO Key pair found
+2024-10-29 06:14:39,447 INFO Key pair found
+2024-10-29 06:21:05,218 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-10-29 06:21:45,640 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-10-29 06:22:00,052 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-10-29 06:22:04,809 INFO Key pair found
+2024-10-29 06:22:32,057 INFO Key pair found
+2024-10-29 06:22:50,455 INFO Key pair found
+2024-10-29 06:23:09,545 INFO Key pair found
+2024-10-29 06:25:29,055 INFO Key pair found
+2024-10-29 06:29:23,843 INFO Key pair found
+2024-10-29 07:11:34,538 WARNING Not Found: /favicon.ico
+2024-10-29 07:14:08,675 ERROR No active key pair found
+2024-10-30 19:32:44,797 WARNING Not Found: /favicon.ico
+2024-10-30 19:33:36,168 INFO Key pair found
+2024-10-30 19:34:12,585 INFO Key pair found
+2024-10-30 19:39:37,126 INFO Key pair found
+2024-10-30 19:58:07,151 WARNING Not Found: /home/static/home/logo.png
+2024-10-30 19:58:22,193 WARNING Not Found: /home/static/home/logo.png
+2024-10-31 14:30:40,684 WARNING Not Found: /favicon.ico
+2024-10-31 20:12:09,648 WARNING Not Found: /favicon.ico
+2024-10-31 22:04:10,060 WARNING Not Found: /accounts/login/
+2024-11-01 10:48:54,259 WARNING Not Found: /favicon.ico
+2024-11-01 10:49:06,439 ERROR No active key pair found
+2024-11-01 10:52:48,490 ERROR No active key pair found
+2024-11-01 11:01:00,383 INFO Key pair found
+2024-11-01 11:01:26,543 INFO Key pair found
+2024-11-01 11:02:03,937 INFO Key pair found
+2024-11-03 11:32:08,934 WARNING Not Found: /favicon.ico
+2024-11-03 11:32:24,526 INFO Key pair found
+2024-11-03 11:32:37,631 INFO Hash value: e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 11:32:37,646 INFO Signature generated (hex): 49591c53bc96567187a1df22a1f3dd8d684812904277a6bdb9b9281c17b1f1941cb9c85aecaa43392029ba7b73267262d14027a0e28c64b739f3cada46e43656fbd12eb34b323fd389662a6314450ce818f8f3ec446f68cdf59c59d2378ef1ed4544918c19ec2b8eba9938c7a0340a298ac047e6f596cca1e9e511d79333a6f30260cc96f0ad0bc2531891f249ab03a86a490762f02f41a2ee458a4b0f583713cf1f57b3d8f0184b8b1eb18ef5a353687e5e2eafd76e592bde628e297c27bd06944466832549c7e9ff523f0f7845720d12e8022d6b4d76d8a7af69716c0cdaacb60ed6dd5edd0224b709c04011dab0cf48e6498a9023a993fe7e9cb749969436
+2024-11-03 11:34:12,453 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 11:34:12,461 INFO Signature verification succeeded.
+2024-11-03 11:48:11,003 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-03 11:51:29,917 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 11:51:29,958 INFO Signature verification succeeded.
+2024-11-03 11:52:08,163 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 11:52:08,164 INFO Signature verification succeeded.
+2024-11-03 11:55:05,574 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 11:55:05,576 INFO Signature verification succeeded.
+2024-11-03 12:00:56,464 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:00:56,466 INFO Signature verification succeeded.
+2024-11-03 12:21:07,110 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-03 12:22:32,340 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-03 12:25:44,111 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-03 12:26:31,739 INFO Signature verification succeeded.
+2024-11-03 12:26:32,857 WARNING Not Found: /media/4b127ebf38f947f490cddf4b40b2d76e_44daki.pdf
+2024-11-03 12:26:43,010 INFO Signature verification succeeded.
+2024-11-03 12:26:43,507 WARNING Not Found: /media/c2230cc89c7d483a91bf2891319746e7_44daki.pdf
+2024-11-03 12:26:46,399 WARNING Not Found: /media/4b127ebf38f947f490cddf4b40b2d76e_44daki.pdf
+2024-11-03 12:26:57,706 INFO Signature verification succeeded.
+2024-11-03 12:27:06,099 INFO Signature verification succeeded.
+2024-11-03 12:27:17,670 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-03 12:31:21,156 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:31:21,173 INFO Signature verification succeeded.
+2024-11-03 12:33:35,919 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:33:35,920 INFO Signature verification succeeded.
+2024-11-03 12:34:03,092 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:34:03,092 INFO Signature verification succeeded.
+2024-11-03 12:34:44,467 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:34:44,468 INFO Signature verification succeeded.
+2024-11-03 12:36:19,473 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:36:19,475 INFO Signature verification succeeded.
+2024-11-03 12:37:37,818 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:37:37,819 INFO Signature verification succeeded.
+2024-11-03 12:39:20,728 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:39:20,730 INFO Signature verification succeeded.
+2024-11-03 12:39:52,886 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:39:52,887 INFO Signature verification succeeded.
+2024-11-03 12:39:53,293 ERROR Internal Server Error: /files/upload-verify/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 237, in upload_and_verify
+    return render(request, 'files/verify_signature.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' + user_profile.user.first_name' from 'user_profile.user.last_name + user_profile.user.first_name'
+2024-11-03 12:40:28,111 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:40:28,112 INFO Signature verification succeeded.
+2024-11-03 12:41:06,776 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:41:06,776 INFO Signature verification succeeded.
+2024-11-03 12:41:19,559 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 12:41:19,560 INFO Signature verification succeeded.
+2024-11-03 15:10:59,451 INFO Key pair found
+2024-11-03 15:12:34,688 INFO Key pair found
+2024-11-03 15:12:34,760 ERROR Internal Server Error: /files/15/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: baseFire.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 68, in view_file
+    return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj,'picture':picture})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: baseFire.html
+2024-11-03 15:12:52,481 INFO Key pair found
+2024-11-03 15:12:52,549 ERROR Internal Server Error: /files/15/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: files/baseFire.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 68, in view_file
+    return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj,'picture':picture})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: files/baseFire.html
+2024-11-03 15:13:04,692 INFO Key pair found
+2024-11-03 15:13:08,964 INFO Key pair found
+2024-11-03 15:14:02,968 INFO Key pair found
+2024-11-03 15:14:36,318 INFO Key pair found
+2024-11-03 15:14:57,223 INFO Key pair found
+2024-11-03 15:15:21,837 INFO Key pair found
+2024-11-03 15:16:25,171 INFO Key pair found
+2024-11-03 15:18:55,340 INFO Key pair found
+2024-11-03 15:19:23,454 INFO Key pair found
+2024-11-03 15:21:36,724 INFO Key pair found
+2024-11-03 15:22:48,031 INFO Key pair found
+2024-11-03 15:23:33,441 INFO Key pair found
+2024-11-03 15:24:44,815 INFO Key pair found
+2024-11-03 15:27:54,977 INFO Key pair found
+2024-11-03 15:29:37,200 INFO Key pair found
+2024-11-03 15:30:01,245 INFO Key pair found
+2024-11-03 15:30:49,374 INFO Key pair found
+2024-11-03 19:51:33,793 WARNING Not Found: /favicon.ico
+2024-11-03 19:51:45,426 INFO Key pair found
+2024-11-03 19:56:43,113 INFO F:\Do_An\web1\users\forms.py changed, reloading.
+2024-11-03 19:58:08,461 INFO Hash value (hex): e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 19:58:08,491 INFO Signature verification succeeded.
+2024-11-03 20:00:53,823 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-03 20:01:53,170 INFO Key pair found
+2024-11-03 20:04:26,646 INFO Key pair found
+2024-11-03 20:06:59,501 INFO Key pair found
+2024-11-03 20:12:44,741 INFO Key pair found
+2024-11-03 20:12:52,289 INFO Key pair found
+2024-11-03 20:13:59,358 INFO Key pair found
+2024-11-03 20:14:16,742 INFO Key pair found
+2024-11-03 20:14:40,344 INFO Key pair found
+2024-11-03 20:17:13,291 INFO Key pair found
+2024-11-03 20:18:16,331 INFO Key pair found
+2024-11-03 20:19:24,092 INFO Key pair found
+2024-11-03 20:20:54,322 INFO Key pair found
+2024-11-03 20:20:54,706 ERROR Internal Server Error: /files/19/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 68, in view_file
+    return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj,'picture':picture})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '[0].img_path.url' from 'pic[0].img_path.url'
+2024-11-03 20:21:16,417 INFO Key pair found
+2024-11-03 20:21:16,515 ERROR Internal Server Error: /files/19/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 68, in view_file
+    return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj,'picture':picture})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '[0].img_path.url' from 'picture[0].img_path.url'
+2024-11-03 20:21:52,674 INFO Key pair found
+2024-11-03 20:23:55,410 INFO Key pair found
+2024-11-03 20:24:27,544 INFO Key pair found
+2024-11-03 20:30:01,030 INFO Key pair found
+2024-11-03 20:33:41,326 INFO Key pair found
+2024-11-03 20:38:15,994 INFO Key pair found
+2024-11-03 20:38:45,164 INFO Key pair found
+2024-11-03 20:41:11,915 INFO Key pair found
+2024-11-03 20:41:48,203 INFO Key pair found
+2024-11-03 20:42:26,468 INFO Key pair found
+2024-11-03 20:42:46,793 INFO Key pair found
+2024-11-03 20:42:52,384 INFO Key pair found
+2024-11-03 20:43:03,755 INFO Key pair found
+2024-11-03 20:46:32,444 INFO Key pair found
+2024-11-03 20:46:47,114 INFO Key pair found
+2024-11-03 20:46:58,639 INFO Key pair found
+2024-11-03 20:47:09,824 INFO Key pair found
+2024-11-03 20:50:43,457 INFO Key pair found
+2024-11-03 20:51:42,009 INFO Key pair found
+2024-11-03 20:52:10,925 INFO Key pair found
+2024-11-03 20:52:29,479 INFO Key pair found
+2024-11-03 20:53:04,559 INFO Key pair found
+2024-11-03 20:53:27,303 INFO Key pair found
+2024-11-03 20:53:41,195 INFO Key pair found
+2024-11-03 20:55:46,250 INFO Key pair found
+2024-11-03 21:17:47,921 INFO Key pair found
+2024-11-03 21:18:06,483 INFO Key pair found
+2024-11-03 21:19:59,312 INFO Key pair found
+2024-11-03 21:20:21,318 INFO Key pair found
+2024-11-03 21:25:25,082 INFO Key pair found
+2024-11-03 21:26:02,289 INFO Key pair found
+2024-11-03 21:27:38,534 INFO Key pair found
+2024-11-03 21:31:35,869 INFO Key pair found
+2024-11-03 21:31:54,967 INFO Key pair found
+2024-11-03 21:32:45,988 INFO Key pair found
+2024-11-03 21:32:57,833 INFO Key pair found
+2024-11-03 21:36:12,700 INFO Key pair found
+2024-11-03 21:36:52,768 INFO Hash value: e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
+2024-11-03 21:36:52,772 INFO Signature generated (hex): 4bbb3200e795823b1cb76d500f131487c4bf5d2ee805816eca3a7e88436d2e191fd76ecec7eafef929417b836fcc645c4b8c22de6411452ef7df33e24db06e5c7e348c09c44eeab5b75c6790e43030e87213a97a9fca2b58b9f103061c3062cf396bdbe119d484bc6aca582dfd367fc98e7aff7c2dfe41e59e170d15c5e6f6dc2f5431af75c4616ec8ed559ddb257d01a7f7e681440ee5fa3a4395df5331b5caa1d7679536f1e7e866e55664b8fe10b47a4d5e14a38f6369a3b10f04571a02994fcd2902a0828b3c002a4c19c255f085aa8a25b3a810ce3388bdc2ad7d3deb287600fc858553b6454c550265989fcc4310c23cdcdbac6169e3654bb6189927e6
+2024-11-03 21:37:20,344 INFO Key pair found

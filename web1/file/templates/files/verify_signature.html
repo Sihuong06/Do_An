@@ -1,203 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify File Signature</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+{% extends 'users/baseUser.html' %}
+{% block content %}
+<div class="verify-container">
+    <h1>Verify File Signature</h1>
+    {% if error %}
+    <p class="error-message">{{ error }}</p>
+    {% endif %}
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
-            overflow: hidden; /* Prevents scrollbars */
-        }
+    {% if verification_status %}
+    <p class="status-message">{{ verification_status }}</p>
+    {% endif %}
 
-        .container {
-            display: flex;
-            width: 100vw; /* Full screen width */
-            height: 100vh; /* Full screen height */
-            background-color: #ffffff;
-        }
-
-        .left-panel {
-            flex-basis: 30%; /* 30% width */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-right: 1px solid #ddd;
-            overflow-y: auto;
-        }
-
-        .left-panel h1 {
-            color: #4a90e2;
-            margin-bottom: 15px;
-        }
-
-        .left-panel label {
-            margin: 10px 0 5px;
-        }
-
-        .left-panel input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            transition: border-color 0.3s;
-        }
-
-        .left-panel input[type="text"]:focus {
-            border-color: #4a90e2;
-            outline: none;
-        }
-
-        .left-panel button {
-            background-color: #4a90e2;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 10px;
-        }
-
-        .left-panel button:hover {
-            background-color: #357ab8;
-        }
-
-        .right-panel {
-            flex-basis: 70%; /* 70% width */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .right-panel label {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        #pdfViewer {
-            width: 100%;
-            height: 80vh; /* Takes up most of the viewport height */
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            overflow: auto;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 15px;
-        }
-
-        .right-panel input[type="file"] {
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: border-color 0.3s;
-            width: 100%; /* Full width */
-            max-width: 500px; /* Maximum width */
-        }
-
-        .right-panel input[type="file"]:focus {
-            border-color: #4a90e2;
-            outline: none;
-        }
-        
-        .error, .status {
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .error {
-            color: red;
-        }
-
-        .status {
-            color: green;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <!-- Left Panel: Verification Code and Submit -->
-        <div class="left-panel">
-            <h1>Verify File Signature</h1>
-            <form action="{% url 'file:upload_verify' %}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
-                {% csrf_token %}
-                <label for="verification_code">Enter Verification Code:</label>
-                <input type="text" name="verification_code" id="verification_code" required>
-                <button type="submit">Verify Signature</button>
-            </form>
-
-            {% if error %}
-                <p class="error">{{ error }}</p>
-            {% endif %}
+    <div class="verify-content">
+        <form action="{% url 'file:upload_verify' %}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+            {% csrf_token %}
             
-            {% if verification_status %}
-                <p class="status">{{ verification_status }}</p>
-            {% endif %}
-        </div>
-
-        <!-- Right Panel: File Upload and PDF Viewer -->
-        <div class="right-panel">
+            <label for="verification_code">Enter Verification Code:</label>
+            <input type="text" name="verification_code" id="verification_code" required>
+            
             <label for="file">Upload the File:</label>
             <input type="file" name="file" id="file" accept=".pdf" required onchange="renderPDF()">
-            <div id="pdfViewer"></div>
-        </div>
+            
+            <button type="submit" class="verify-button">Verify Signature</button>
+            {% if user_profile %}
+                <div class="user-profile">
+                    <h3>Xác thực thông tin người dùng</h3>
+                    <p><strong>Username:</strong> {{ user_profile.user.last_name }} {{ user_profile.user.first_name }}</p>
+                    <p><strong>Company:</strong> {{ user_profile.company }}</p>
+                    <p><strong>Company Abbreviation:</strong> {{ user_profile.company_abbreviation }}</p>
+                    <p><strong>Address:</strong> {{ user_profile.company_address }}</p>
+                    <p><strong>Phone Number:</strong> {{ user_profile.phone_number }}</p>
+                    <p><strong>Verification Code:</strong> {{ user_profile.verification_code }}</p>
+                </div>
+            {% endif %}
+        </form>
+
+        <div id="pdfViewer"></div>
     </div>
 
-    <script>
-        async function renderPDF() {
-            const fileInput = document.getElementById('file');
-            const pdfViewer = document.getElementById('pdfViewer');
-            pdfViewer.innerHTML = ''; // Clear previous content
+</div>
 
-            if (fileInput.files.length > 0) {
-                const file = fileInput.files[0];
-                const fileURL = URL.createObjectURL(file);
-                
-                const loadingTask = pdfjsLib.getDocument(fileURL);
-                loadingTask.promise.then(pdf => {
-                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                        pdf.getPage(pageNum).then(page => {
-                            const viewport = page.getViewport({ scale: 1.5 });
-                            const canvas = document.createElement('canvas');
-                            const context = canvas.getContext('2d');
-                            canvas.height = viewport.height;
-                            canvas.width = viewport.width;
-                            pdfViewer.appendChild(canvas);
+<style>
+    .verify-container {
+        padding: 20px;
+        max-width: 100%;
+        margin: auto;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-                            const renderContext = {
-                                canvasContext: context,
-                                viewport: viewport
-                            };
-                            page.render(renderContext);
-                        });
-                    }
-                }).catch(error => {
-                    console.error('Error loading PDF: ', error);
-                    pdfViewer.innerHTML = '<p style="color:red;">Error loading PDF.</p>';
-                });
-            }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .error-message {
+        color: red;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .status-message {
+        color: green;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .verify-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        flex: 1;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="file"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    .verify-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .verify-button:hover {
+        background-color: #0056b3;
+    }
+
+    #pdfViewer {
+        flex: 2;
+        height: 600px;
+        overflow: auto;
+        border: 1px solid #ccc;
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    #pdfViewer canvas {
+        width: 100%;  /* Responsive canvas */
+    }
+</style>
+
+<!-- Include pdfjsLib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+
+<script>
+    async function renderPDF() {
+        const fileInput = document.getElementById('file');
+        const pdfViewer = document.getElementById('pdfViewer');
+        pdfViewer.innerHTML = ''; // Clear previous content
+        event.preventDefault();
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const fileURL = URL.createObjectURL(file);
+            
+            const loadingTask = pdfjsLib.getDocument(fileURL);
+            loadingTask.promise.then(pdf => {
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    pdf.getPage(pageNum).then(page => {
+                        const viewport = page.getViewport({ scale: 1.5 });
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+                        pdfViewer.appendChild(canvas);
+
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport
+                        };
+                        page.render(renderContext);
+                    });
+                }
+            }).catch(error => {
+                console.error('Error loading PDF: ', error);
+                pdfViewer.innerHTML = '<p style="color:red;">Error loading PDF.</p>';
+            });
         }
-    </script>
-</body>
-</html>
+    }
+</script>
+{% endblock %}

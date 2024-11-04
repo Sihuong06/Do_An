@@ -1,0 +1,89 @@
+header {
+    position: fixed;
+    top: 0;
+    min-width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+header .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+
+header .header-logo img{
+    cursor: pointer;
+    width: 50px;
+    object-fit: cover;
+}
+
+header .nav-menu{
+    display: inline-flex;
+}
+
+header .nav-menu li{
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer !important;
+}
+
+header .nav-menu li:hover{
+    background-color: var(--hover-button);
+}
+
+header .nav-menu li:hover a{
+    color: var(--active-text);
+}
+
+header .header-icon{
+    position: relative;
+    height: 100%;
+}
+
+header .button-popup{
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header .header-icon:hover .popup-user{
+    display: block;
+}
+
+header .header-icon img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+header .popup-user{
+    display: none;
+    position: absolute;
+    top: 30px;
+    width: 150px;
+    padding: 10px;
+    border: solid 1px var(--color-border);
+    border-radius: 10px;
+    right: 0;
+    background-color: white;
+}
+
+header .list-popup li{
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer !important;
+}
+
+header .list-popup li:hover{
+    background-color: var(--hover-button);
+}
+
+header .list-popup li:hover a{
+    color: var(--active-text);
+}

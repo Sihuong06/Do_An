@@ -1,19 +1,99 @@
 {% extends 'users/baseUser.html' %}
-{% block content %}
-    <h1>All Pictures</h1>
 
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% endif %}
-    
-    <ul>
-        {% for picture in pictures %}
-            <li>
-                <img src="{{ picture.img_path.url }}" alt="Picture {{ picture.id }}" width="100">
-                <a href="{% url 'picture:delete_picture' picture.pk %}">Delete</a>
-            </li>
-        {% endfor %}
-    </ul>
-    
-    <a href="{% url 'picture:create_picture' %}">Upload New Picture</a>
+{% block content %}
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 0;
+            list-style: none;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 150px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .delete-link {
+            display: block;
+            padding: 5px;
+            text-align: center;
+            background-color: #f44336;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 0 0 10px 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-link:hover {
+            background-color: #d32f2f;
+        }
+
+        .upload-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-link:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <div class="container">
+        <h1>All Pictures</h1>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <ul class="gallery">
+            {% for picture in pictures %}
+                <li class="gallery-item">
+                    <img src="{{ picture.img_path.url }}" alt="Picture {{ picture.id }}" style="width: 150px; height: 100px;">
+                    <a href="{% url 'picture:delete_picture' picture.pk %}" class="delete-link">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'picture:create_picture' %}" class="upload-link">Upload New Picture</a>
+    </div>
 {% endblock %}

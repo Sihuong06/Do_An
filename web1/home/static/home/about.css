@@ -1,0 +1,45 @@
+#about-us{
+    position: relative;
+    padding: 100px 0;
+}
+
+#about-us h2{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #C588EA;
+}
+
+#about-us p,
+#about-us h2{
+    text-align: left;
+}
+
+#about-us .content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+#about-us span{
+    max-width: 80%;
+    font-size: 18px;
+    display: inline-block;
+    text-align: right;
+    color: gray;
+}
+
+#about-us .img-about-1{
+    position: absolute;
+    top: -120px;
+    right: -50px;
+    width: 300px;
+}
+
+#about-us .img-about-2{
+    position: absolute;
+    bottom: -50px;
+    left: -20px;
+    width: 300px;
+}

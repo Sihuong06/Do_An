@@ -1,24 +1,235 @@
+{% extends 'files/baseFile.html' %}
+{% block content %}
+<div class="file-detail-container">
+    <div class="left-section">
+        <a href="javascript:void(0);" onclick="toggleGallery()">Show Pictures</a>  Toggles gallery visibility
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Detail</title>
-</head>
-<body>
-    <h2>File: {{ file_obj.file_path.name }}</h2>
+        <div class="file-header">
+            <h2>File: {{ file_obj.file_name }}</h2>
+            <p>Status: {{ file_obj.status }}</p>
+            <div class="download-button-container">
+                <a href="{% url 'file:download_file' file_obj.id %}">
+                    <button type="button" class="download-button">Download File</button>
+                </a>
+            </div>
+        </div>
 
-    <!-- Tùy chỉnh thêm thông tin file hoặc nội dung khác -->
-    <p>Uploaded by: {{ file_obj.user.username }}</p>
-    <p>Status: {{ file_obj.status }}</p>
+        <div id="pdf-container">
+            <ul class="gallery">
+                {% for pic in picture %}
+                    <li class="gallery-item">
+                        <img class="draggable-img" src="{{ pic.img_path.url }}" alt="Picture {{ pic.id }}" width="100">
+                    </li>
+                {% empty %}
+                    <p>No pictures available.</p>
+                {% endfor %}
+            </ul>
+        </div>
 
-    <!-- Nhúng file PDF vào trang -->
-    <embed src="{{ file_url }}" type="application/pdf" width="100%" height="600px" />
+        <!-- <div class="file-content">
+            <embed src="{{ file_url }}" type="application/pdf" width="100%" height="600px" />
+        </div> -->
+    </div>
 
-    <!-- Nút tải file về -->
-    <a href="{% url 'file:download_file' file_obj.id %}">
-        <button type="button">Download File</button>
-    </a>
-</body>
-</html>
+    <!-- Picture Gallery Section (Hidden by default) -->
+    <!-- <div class="right-section" id="picture-gallery" style="display: none;">
+        <h3>All Pictures</h3>
+        <ul class="gallery">
+            {% for pic in picture %}
+                <li class="gallery-item">
+                    <img src="{{ pic.img_path.url }}" alt="Picture {{ pic.id }}" width="100">
+                </li>
+            {% empty %}
+                <p>No pictures available.</p>
+            {% endfor %}
+        </ul>
+    </div> -->
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.min.js"></script>
+<script>
+    function toggleGallery() {
+        const gallery = document.getElementById('picture-gallery');
+        if (gallery.style.display === 'none' || gallery.style.display === '') {
+            gallery.style.display = 'block';
+        } else {
+            gallery.style.display = 'none';
+        }
+    }
+</script>
+
+<script>
+    const urlParts = window.location.pathname.split('/');
+    const fileId = urlParts[urlParts.length - 2];
+    const url = "{{ file_url }}";
+    const pdfContainer = document.getElementById('pdf-container');
+    const images = document.querySelectorAll('.draggable-img');
+    let isDragging = false;
+    let offsetX, offsetY;
+    let currentImg = null;
+
+    pdfjsLib.getDocument(url).promise.then(pdfDoc => {
+        for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
+            pdfDoc.getPage(pageNum).then(page => {
+                const viewport = page.getViewport({ scale: 1 });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.className = 'pdf-page';
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                pdfContainer.appendChild(canvas);
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                page.render(renderContext);
+            });
+        }
+    });
+
+    images.forEach(img => {
+        img.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            currentImg = img;
+            offsetX = e.clientX - img.offsetLeft;
+            offsetY = e.clientY - img.offsetTop;
+            e.preventDefault();
+        });
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        if (isDragging && currentImg) {
+            const x = e.clientX - offsetX;
+            const y = e.clientY - offsetY;
+            currentImg.style.left = `${x}px`;
+            currentImg.style.top = `${y}px`;
+        }
+    });
+
+    document.addEventListener('mouseup', function() {
+        if (isDragging) {
+            isDragging = false;
+            if (currentImg) {
+                localStorage.setItem(`imgPosition_${currentImg.src}_${fileId}`, JSON.stringify({ left: currentImg.style.left, top: currentImg.style.top }));
+                currentImg = null;
+            }
+        }
+    });
+
+    window.addEventListener('load', function() {
+        images.forEach(img => {
+            const savedPosition = JSON.parse(localStorage.getItem(`imgPosition_${img.src}_${fileId}`));
+            if (savedPosition) {
+                img.style.left = savedPosition.left;
+                img.style.top = savedPosition.top;
+            }
+        });
+    });
+</script>
+
+<style>
+    #pdf-container {
+        width: 100%;
+        overflow: auto;
+        position: relative;
+    }
+    .pdf-page {
+        display: block;
+        margin: 20px auto;
+        position: relative;
+    }
+    .draggable-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100px !important;
+        cursor: move;
+        z-index: 10;
+    }
+</style>
+
+<style>
+    .file-detail-container {
+        display: flex;
+        /* max-width: 1000px; */
+        margin: auto;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .left-section {
+        flex: 3; /* Takes more space */
+    }
+
+    .right-section {
+        flex: 1; /* Takes less space */
+        width: 300px; /* Set a specific width */
+    }
+
+    .left-section {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .file-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .file-content {
+        margin-top: 20px;
+    }
+
+    .download-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .download-button:hover {
+        background-color: #0056b3;
+    }
+
+    .right-section {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        max-height: 600px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        list-style: none;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .gallery-item {
+        width: 100px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+{% endblock %}
