@@ -1,7 +1,7 @@
 {% extends 'users/baseUser.html' %}
 {% block content %}
 <div class="verify-container">
-    <h1>Verify File Signature</h1>
+    <h1>XÁC THỰC VĂN BẢN</h1>
     {% if error %}
     <p class="error-message">{{ error }}</p>
     {% endif %}
@@ -14,22 +14,21 @@
         <form action="{% url 'file:upload_verify' %}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
             {% csrf_token %}
             
-            <label for="verification_code">Enter Verification Code:</label>
+            <label for="verification_code">Nhập mã code:</label>
             <input type="text" name="verification_code" id="verification_code" required>
             
-            <label for="file">Upload the File:</label>
+            <label for="file">Tải File lên:</label>
             <input type="file" name="file" id="file" accept=".pdf" required onchange="renderPDF()">
             
-            <button type="submit" class="verify-button">Verify Signature</button>
+            <button type="submit" class="verify-button">Xác thực chữ kí</button>
             {% if user_profile %}
                 <div class="user-profile">
                     <h3>Xác thực thông tin người dùng</h3>
-                    <p><strong>Username:</strong> {{ user_profile.user.last_name }} {{ user_profile.user.first_name }}</p>
-                    <p><strong>Company:</strong> {{ user_profile.company }}</p>
-                    <p><strong>Company Abbreviation:</strong> {{ user_profile.company_abbreviation }}</p>
-                    <p><strong>Address:</strong> {{ user_profile.company_address }}</p>
-                    <p><strong>Phone Number:</strong> {{ user_profile.phone_number }}</p>
-                    <p><strong>Verification Code:</strong> {{ user_profile.verification_code }}</p>
+                    <p><strong>Họ và tên:</strong> {{ user_profile.user.last_name }} {{ user_profile.user.first_name }}</p>
+                    <p><strong>Công Ty:</strong> {{ user_profile.company }}</p>
+                    <p><strong>Tên Viết Tắt:</strong>:</strong> {{ user_profile.company_abbreviation }}</p>
+                    <p><strong>Địa Chỉ:</strong> {{ user_profile.company_address }}</p>
+                    <p><strong>SĐT:</strong> {{ user_profile.phone_number }}</p>
                 </div>
             {% endif %}
         </form>

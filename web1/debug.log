@@ -1623,3 +1623,107 @@ django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '
 2024-11-03 21:36:52,768 INFO Hash value: e6e9465395afe2369fe8596fe498011ec4753a64492fb18ab5ed3fbc492c0127
 2024-11-03 21:36:52,772 INFO Signature generated (hex): 4bbb3200e795823b1cb76d500f131487c4bf5d2ee805816eca3a7e88436d2e191fd76ecec7eafef929417b836fcc645c4b8c22de6411452ef7df33e24db06e5c7e348c09c44eeab5b75c6790e43030e87213a97a9fca2b58b9f103061c3062cf396bdbe119d484bc6aca582dfd367fc98e7aff7c2dfe41e59e170d15c5e6f6dc2f5431af75c4616ec8ed559ddb257d01a7f7e681440ee5fa3a4395df5331b5caa1d7679536f1e7e866e55664b8fe10b47a4d5e14a38f6369a3b10f04571a02994fcd2902a0828b3c002a4c19c255f085aa8a25b3a810ce3388bdc2ad7d3deb287600fc858553b6454c550265989fcc4310c23cdcdbac6169e3654bb6189927e6
 2024-11-03 21:37:20,344 INFO Key pair found
+2024-11-05 11:56:42,585 INFO Key pair found
+2024-11-05 11:56:44,410 ERROR Internal Server Error: /files/download/39/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 134, in download_file
+    signature = gen_sig(key_pair, file)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 101, in gen_sig
+    reader = PdfReader(file.file_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_reader.py", line 319, in __init__
+    self.read(stream)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_reader.py", line 1414, in read
+    self._basic_validation(stream)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_reader.py", line 1453, in _basic_validation
+    stream.seek(0, os.SEEK_END)
+    ^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\files\utils.py", line 45, in <lambda>
+    seek = property(lambda self: self.file.seek)
+                                 ^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\fields\files.py", line 51, in _get_file
+    self._file = self.storage.open(self.name, "rb")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\files\storage\base.py", line 22, in open
+    return self._open(name, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\files\storage\filesystem.py", line 81, in _open
+    return File(open(self.path(name), mode))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'F:\\Do_An\\web1\\media\\uploads\\file1.pdf'
+2024-11-05 11:57:07,901 INFO Key pair found
+2024-11-05 11:57:13,333 INFO Hash value: 5c1f2b99a52da80e9554d100a69148495f4fe48741d3e044155aa41b689c9612
+2024-11-05 11:57:13,334 INFO Signature generated (hex): 7221c7392015838f2f000398b1e6d7a2dbc85d1e7d0426c5245bf381ba35408bfc0d7a61ba8c4529d1a4518f5284f973b868a779653d4bb1ee562529397967fa90a3703cc93082bcbaac43c1a844020ecf82316c5db4136ef4c504761ab43ae11cdbd12104a0933b5dcd9107f4be1883d7c5052353762b9564985f25f47f5d158acdee21503ef93dd41363abb56c53b7add025cbca97b3edc835488d4a7f3a52c8b909969c63c9a6f90cf7defdda6806d8cd772af2751db916ff631f07826cccdf1b15757b7dfad625301671a989d20202762bff584bca47d9443d9ecfa734be69cca566cfac4944211c1100a2aafde3e6d2869baa0317cd1ba6601396d176d9
+2024-11-05 11:57:41,613 INFO Hash value (hex): 5c1f2b99a52da80e9554d100a69148495f4fe48741d3e044155aa41b689c9612
+2024-11-05 11:57:41,614 INFO Signature verification succeeded.
+2024-11-05 13:06:26,188 INFO Hash value: 043ced84df5acce2195f76fc56c1c321edf5317b629008ec9b765baaf29725fa
+2024-11-05 13:06:26,189 INFO Signature generated (hex): 811a07ed6979b9154f66e99851d57c66d5265e655e1c72e0ba726a1860cf1a72f720f5339d564c00a5d72082a25835129432d7027624d55f33ebd56ac2b6e82d06402339c3a6c0a75b630dbf714dee97cd944e3869850f209379d87f101b1ee6c3e58b0418169a2e4556417b1cf7142875b97e9624071745287559390acb799a1ecf091e09a9335ca2f5bbfcf9d87672cecb183a29ff3a288ce8984f8a6d3f62f5e0e1c4b324e26d4aeca3e19777a5661a094b457ec2e0f4602b216b2c645f66ed45eca6e54dd668041320d5a04381641c8bd6ecbb24bfef7223e6527a186981ee595e345dc5e42e8a03fd453201063fd655863d50fcdf73a51752b3bcee18b5
+2024-11-05 13:06:43,044 INFO Hash value (hex): 043ced84df5acce2195f76fc56c1c321edf5317b629008ec9b765baaf29725fa
+2024-11-05 13:06:43,045 INFO Signature verification succeeded.
+2024-11-05 13:15:32,727 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 15:01:51,028 WARNING Not Found: /favicon.ico
+2024-11-06 21:44:02,727 WARNING Not Found: /favicon.ico
+2024-11-06 21:50:23,598 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 21:50:48,554 INFO Hash value (hex): 043ced84df5acce2195f76fc56c1c321edf5317b629008ec9b765baaf29725fa
+2024-11-06 21:50:48,571 ERROR Signature verification failed: 
+2024-11-06 22:18:06,728 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:18:13,959 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:19:29,566 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:19:59,179 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:20:02,868 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:20:18,935 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:20:36,055 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:25:29,339 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:26:00,445 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:26:28,252 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:26:39,478 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:27:29,457 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:28:55,081 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:29:05,055 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:29:14,030 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:30:49,082 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:31:06,638 ERROR Internal Server Error: /files/download/41/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 166, in download_file
+    signature = gen_sig(key_pair, file)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 98, in gen_sig
+    keypair.private_key.encode('utf-8'),
+    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'private_key'
+2024-11-06 22:32:37,125 INFO Hash value: aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-06 22:32:37,133 INFO Signature generated (hex): 093b160aaf15b95d5e47d01248454ba227e497dc5f8b2890696dfc7ff9581416f498f70c81fc722bf232947155fcd711b9a2fe4ee40896324102b96220f2c53db955cdcdb28a698a2d0abe1cb3eb65701874b071902dfd8a7b9c8e1a9e753b3a50cd465f72d86517b601d5cecb5f54ff74b93a59b8a8268791ddd7a2e0065c2db776dbb9d512eb1025fc563a102ebf5201630040906d26a6e4ce4254e357571ac5efe476aa9d47ac987b8dda658c6ae1acc52b55d72d3fe9529dc3f9ee6075ce69fea0558abc0085e44eebc2b8179f5175e65cf80d5ac8eedd3a7034cb0868ce8fdc6aa2734557ca218b0579ad85ec1c3ef30dc696c82a441aa666243b780379
+2024-11-06 22:32:37,182 DEBUG STREAM b'IHDR' 16 13
+2024-11-06 22:32:37,183 DEBUG STREAM b'IDAT' 41 6472
+2024-11-06 22:32:54,151 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-06 22:32:54,152 INFO Signature verification succeeded.
+2024-11-06 22:36:06,981 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-06 22:37:28,932 INFO Key pair found
+2024-11-06 22:40:36,298 INFO Key pair found
+2024-11-06 22:44:56,873 INFO Key pair found
+2024-11-06 22:45:41,568 INFO Key pair found
+2024-11-06 22:46:42,819 INFO Key pair found
+2024-11-06 22:47:40,455 INFO Key pair found
+2024-11-06 22:52:49,482 INFO Key pair found
+2024-11-07 16:48:09,275 WARNING Not Found: /favicon.ico
+2024-11-07 16:48:34,007 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-07 16:48:34,472 INFO Signature verification succeeded.

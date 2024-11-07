@@ -3,16 +3,16 @@
 <div class="upload-form-container">
     <form method="post" enctype="multipart/form-data" class="upload-form">
         {% csrf_token %}
-        <h2>Upload Your File</h2>
+        <h2>Tải file mới</h2>
         <div class="form-group">
             {{ form.as_p }}
         </div>
-        <button type="submit" class="upload-button">Upload</button>
+        <button type="submit" class="upload-button">Tải lên</button>
     </form>
 
     <!-- PDF Preview -->
     <div id="pdfPreview" style="display: none; margin-top: 20px; border: 1px solid #ddd; padding: 10px;">
-        <h3>PDF Preview</h3>
+        <h3>Nội dung File</h3>
         <iframe id="pdfViewer" width="100%" height="500px"></iframe>
     </div>
 </div>

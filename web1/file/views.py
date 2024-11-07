@@ -24,6 +24,8 @@ import io
 import uuid
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
+from PIL import Image, ImageDraw, ImageFont
+import fitz
 
 logging.basicConfig(
     level=logging.DEBUG,  # Adjust the level to DEBUG, INFO, WARNING, etc.
@@ -74,11 +76,11 @@ def list_files(request):
     order_by = request.GET.get('order_by', 'date_signed')
     order = request.GET.get('order', 'asc')
 
-    # Filtering logic
+    # Filtering logic with user filtering
     if status != 'all':
-        files = File.objects.filter(status=status)
+        files = File.objects.filter(user=request.user, status=status)
     else:
-        files = File.objects.all()
+        files = File.objects.filter(user=request.user)
 
     # Sorting logic
     if order == 'desc':
@@ -87,6 +89,7 @@ def list_files(request):
         files = files.order_by(order_by)
 
     return render(request, 'files/file_list.html', {'files': files, 'status': status})
+
 
 
 def gen_sig(keypair,file):
@@ -100,7 +103,7 @@ def gen_sig(keypair,file):
     # Read the PDF file
     reader = PdfReader(file.file_path)
     content = ''
-    for page_num in range(len(reader.pages)):
+    for page_num in range(len(reader.pages)-1):
         page = reader.pages[page_num]
         content += page.extract_text() if page.extract_text() else ''
     
@@ -122,6 +125,35 @@ def gen_sig(keypair,file):
 
     return signature
 
+def get_image_size(image_path):
+    # Open the image file
+    with Image.open(image_path) as img:
+        width, height = img.size  # Get width and height of the image
+    return width, height
+
+def insert_image_in_pdf(original_pdf_path, image_path, page_number):
+    img_width, img_height = get_image_size(image_path)
+    pdf_document = fitz.open(original_pdf_path)
+    page = pdf_document[page_number]
+    
+    page_width = page.rect.width
+    page_height = page.rect.height
+    
+    x = page_width - img_width - 60
+    y = page_height - img_height - 600
+    rect = fitz.Rect(x, y, x + img_width, y + img_height)
+    
+    page.insert_image(rect, filename=image_path)
+
+    # Tạo file PDF trong bộ nhớ
+    pdf_buffer = io.BytesIO()
+    pdf_document.save(pdf_buffer)
+    pdf_document.close()
+    
+    # Đặt con trỏ về đầu file để có thể đọc được từ đầu
+    pdf_buffer.seek(0)
+    
+    return pdf_buffer  # Trả về file PDF trong bộ nhớ
 
 @login_required(login_url='users:login')
 def download_file(request, file_id):
@@ -134,28 +166,34 @@ def download_file(request, file_id):
     signature = gen_sig(key_pair, file)
     logger.info(f'Signature generated (hex): {signature.hex()}')
 
-    # Open the original PDF file
-    pdf_reader = PdfReader(file.file_path.path)
+    image_path = os.path.join(settings.MEDIA_ROOT, 'image.png')
+    pdf_buffer = insert_image_in_pdf(file.file_path.path, image_path, 4)
+
+        # Sử dụng PdfReader để đọc từ pdf_buffer thay vì file gốc
+        # Sử dụng PdfReader để đọc từ pdf_buffer thay vì file gốc
+    pdf_buffer.seek(0)  # Đảm bảo con trỏ ở đầu buffer
+    pdf_reader = PdfReader(pdf_buffer)
     pdf_writer = PdfWriter()
 
-    # Add all the original pages to the writer
+    # Thêm tất cả các trang từ pdf_buffer vào pdf_writer
     for page in pdf_reader.pages:
         pdf_writer.add_page(page)
 
-    # Add the signature to the PDF metadata
+    # Thêm chữ ký vào metadata của PDF
     pdf_writer.add_metadata({
-        '/Signature': signature.hex(),  # Store the signature in hexadecimal format
+        '/Signature': signature.hex(),  # Lưu chữ ký dưới dạng hexadecimal
     })
 
-    # Create a BytesIO buffer for the final signed PDF
+    # Tạo một BytesIO buffer cho file PDF đã ký cuối cùng
     signed_pdf_buffer = io.BytesIO()
     pdf_writer.write(signed_pdf_buffer)
-    signed_pdf_buffer.seek(0)  # Rewind the buffer to the beginning
-    file.status = 'signed'
+    signed_pdf_buffer.seek(0)  # Đưa con trỏ về đầu buffer
+    file.status = 'Signed'
     file.save()
-    # Serve the new PDF as a download response
+    # Trả về file PDF    đã ký dưới dạng phản hồi tải về
     response = FileResponse(signed_pdf_buffer, as_attachment=True, filename=f'signed_{file.file_path.name}')
     return response
+
 
 
 
@@ -200,7 +238,7 @@ def upload_and_verify(request):
 
             # Extract content for hash calculation
             content = ''
-            for page_num in range(len(reader.pages)):  # Exclude last page where the signature is stored
+            for page_num in range(len(reader.pages)-1):  # Exclude last page where the signature is stored
                 page = reader.pages[page_num]
                 content += page.extract_text() if page.extract_text() else ''
 

@@ -2,130 +2,26 @@
 {% block content %}
 <div class="file-detail-container">
     <div class="left-section">
-        <a href="javascript:void(0);" onclick="toggleGallery()">Show Pictures</a>  Toggles gallery visibility
 
         <div class="file-header">
-            <h2>File: {{ file_obj.file_name }}</h2>
-            <p>Status: {{ file_obj.status }}</p>
+            <h2>Tên Văn Bản: {{ file_obj.file_name }}</h2>
+            <p>Trạng Thái: {{ file_obj.status }}</p>
             <div class="download-button-container">
                 <a href="{% url 'file:download_file' file_obj.id %}">
-                    <button type="button" class="download-button">Download File</button>
+                    <button type="button" class="download-button">Kí Văn Bản</button>
                 </a>
             </div>
         </div>
+        {% if file_url %}
+            <iframe src="{{ file_url }}" type="application/pdf" width="100%" height="600px">
+                This browser does not support PDFs. Please download the PDF to view it: <a href="{{ file_url }}">Download PDF</a>.
+            </iframe>
+        {% else %}
+            <p>PDF file not found.</p>
+        {% endif %}
 
-        <div id="pdf-container">
-            <ul class="gallery">
-                {% for pic in picture %}
-                    <li class="gallery-item">
-                        <img class="draggable-img" src="{{ pic.img_path.url }}" alt="Picture {{ pic.id }}" width="100">
-                    </li>
-                {% empty %}
-                    <p>No pictures available.</p>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <!-- <div class="file-content">
-            <embed src="{{ file_url }}" type="application/pdf" width="100%" height="600px" />
-        </div> -->
     </div>
-
-    <!-- Picture Gallery Section (Hidden by default) -->
-    <!-- <div class="right-section" id="picture-gallery" style="display: none;">
-        <h3>All Pictures</h3>
-        <ul class="gallery">
-            {% for pic in picture %}
-                <li class="gallery-item">
-                    <img src="{{ pic.img_path.url }}" alt="Picture {{ pic.id }}" width="100">
-                </li>
-            {% empty %}
-                <p>No pictures available.</p>
-            {% endfor %}
-        </ul>
-    </div> -->
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.min.js"></script>
-<script>
-    function toggleGallery() {
-        const gallery = document.getElementById('picture-gallery');
-        if (gallery.style.display === 'none' || gallery.style.display === '') {
-            gallery.style.display = 'block';
-        } else {
-            gallery.style.display = 'none';
-        }
-    }
-</script>
-
-<script>
-    const urlParts = window.location.pathname.split('/');
-    const fileId = urlParts[urlParts.length - 2];
-    const url = "{{ file_url }}";
-    const pdfContainer = document.getElementById('pdf-container');
-    const images = document.querySelectorAll('.draggable-img');
-    let isDragging = false;
-    let offsetX, offsetY;
-    let currentImg = null;
-
-    pdfjsLib.getDocument(url).promise.then(pdfDoc => {
-        for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
-            pdfDoc.getPage(pageNum).then(page => {
-                const viewport = page.getViewport({ scale: 1 });
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                canvas.className = 'pdf-page';
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
-                pdfContainer.appendChild(canvas);
-                const renderContext = {
-                    canvasContext: context,
-                    viewport: viewport
-                };
-                page.render(renderContext);
-            });
-        }
-    });
-
-    images.forEach(img => {
-        img.addEventListener('mousedown', function(e) {
-            isDragging = true;
-            currentImg = img;
-            offsetX = e.clientX - img.offsetLeft;
-            offsetY = e.clientY - img.offsetTop;
-            e.preventDefault();
-        });
-    });
-
-    document.addEventListener('mousemove', function(e) {
-        if (isDragging && currentImg) {
-            const x = e.clientX - offsetX;
-            const y = e.clientY - offsetY;
-            currentImg.style.left = `${x}px`;
-            currentImg.style.top = `${y}px`;
-        }
-    });
-
-    document.addEventListener('mouseup', function() {
-        if (isDragging) {
-            isDragging = false;
-            if (currentImg) {
-                localStorage.setItem(`imgPosition_${currentImg.src}_${fileId}`, JSON.stringify({ left: currentImg.style.left, top: currentImg.style.top }));
-                currentImg = null;
-            }
-        }
-    });
-
-    window.addEventListener('load', function() {
-        images.forEach(img => {
-            const savedPosition = JSON.parse(localStorage.getItem(`imgPosition_${img.src}_${fileId}`));
-            if (savedPosition) {
-                img.style.left = savedPosition.left;
-                img.style.top = savedPosition.top;
-            }
-        });
-    });
-</script>
-
 <style>
     #pdf-container {
         width: 100%;
