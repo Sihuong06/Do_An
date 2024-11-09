@@ -26,6 +26,7 @@ from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 from PIL import Image, ImageDraw, ImageFont
 import fitz
+from cryptography.hazmat.primitives.serialization import load_pem_public_key
 
 logging.basicConfig(
     level=logging.DEBUG,  # Adjust the level to DEBUG, INFO, WARNING, etc.
@@ -195,8 +196,6 @@ def download_file(request, file_id):
     return response
 
 
-
-
 @login_required(login_url='users:login')
 def upload_and_verify(request):
     if request.method == 'POST':
@@ -205,60 +204,65 @@ def upload_and_verify(request):
         logger = logging.getLogger('applog')
 
         if not uploaded_file:
-            return render(request, 'files/verify_signature.html', {'error': 'Please upload a file.'})
+            return render(request, 'files/verify_signature.html', {
+                'error': 'Please upload a file.',
+                'verification_code': verification_code
+            })
 
-        # Find the user profile by verification code
+        # Attempt to find the user profile by verification code
         try:
             user_profile = UserProfile.objects.get(verification_code=verification_code)
         except UserProfile.DoesNotExist:
-            return render(request, 'files/verify_signature.html', {'error': 'Fial'})
+            return render(request, 'files/verify_signature.html', {
+                'error': 'Invalid verification code',
+                'verification_code': verification_code
+            })
 
-        # Get the active public key
+        # Retrieve the active public key for the user
         key_pair = KeyPair.objects.filter(user=user_profile.user, status='Active').first()
         if not key_pair:
             logger.info('No active key pair found')
-            return render(request, 'files/verify_signature.html', {'error': 'Signature verification failed'})
+            return render(request, 'files/verify_signature.html', {
+                'error': 'Văn Bản Không Hợp Lệ',
+                'verification_code': verification_code,
+                'uploaded_file_name': uploaded_file.name
+            })
+
+        # Save the uploaded file temporarily
         filename = f"{uuid.uuid4().hex}_{uploaded_file.name}"
         fs = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'temp_files'))
         unique_filename = fs.save(filename, uploaded_file)
         file_url = fs.url(unique_filename)
+
         try:
             # Read the uploaded PDF file
             reader = PdfReader(uploaded_file)
-
-            # Extract the signature from the PDF metadata
             signature_hex = reader.metadata.get('/Signature', None)
             if signature_hex is None:
-                return render(request, 'files/verify_signature.html', {'error': 'Signature verification failed'})
-
-            # logger.info(f'Extracted signature text from metadata: {signature_hex}')
+                return render(request, 'files/verify_signature.html', {
+                    'error': 'Văn Bản Không Hợp Lệ',
+                    'verification_code': verification_code,
+                    'uploaded_file_name': uploaded_file.name
+                })
 
             # Convert the signature from hex back to bytes
             signature_bytes = bytes.fromhex(signature_hex)
 
-            # Extract content for hash calculation
+            # Extract and hash the PDF content (excluding the last page where signature is stored)
             content = ''
-            for page_num in range(len(reader.pages)-1):  # Exclude last page where the signature is stored
+            for page_num in range(len(reader.pages) - 1):
                 page = reader.pages[page_num]
                 content += page.extract_text() if page.extract_text() else ''
 
-            # Hash the content of the PDF
             content_bytes = content.encode('utf-8')
             hash_value = hashlib.sha256(content_bytes).digest()
-
-            # Log the hash value
             logger.info(f'Hash value (hex): {hash_value.hex()}')
 
-            # Load the public key
-            public_key = serialization.load_pem_public_key(
-                key_pair.public_key.encode('utf-8'),
-                backend=default_backend()
-            )
-
-            # Verify the signature
+            # Load and use the public key for verification
+            public_key = load_pem_public_key(key_pair.public_key.encode('utf-8'))
             public_key.verify(
-                signature_bytes,  # The signature to be verified
-                hash_value,       # The hashed content of the file
+                signature_bytes,
+                hash_value,
                 padding.PSS(
                     mgf=padding.MGF1(hashes.SHA256()),
                     salt_length=padding.PSS.MAX_LENGTH
@@ -267,15 +271,18 @@ def upload_and_verify(request):
             )
 
             logger.info('Signature verification succeeded.')
-            verification_status = "Signature verification succeeded!"
+            verification_status = "Văn Bản Hợp Lệ"
 
         except Exception as e:
-            logger.error(f'Signature verification failed: {e}')
-            verification_status = f"Signature verification failed"
+            logger.error(f'Văn Bản Không Hợp Lệ: {e}')
+            verification_status = "Văn Bản Không Hợp Lệ"
 
+        # Return the response with verification status and retained values
         return render(request, 'files/verify_signature.html', {
             'verification_status': verification_status,
-            'user_profile': user_profile  # Adding user_profile to context for display
+            'user_profile': user_profile,
+            'verification_code': verification_code,
+            'uploaded_file_name': uploaded_file.name
         })
 
     return render(request, 'files/verify_signature.html')

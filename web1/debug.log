@@ -1727,3 +1727,28 @@ AttributeError: 'NoneType' object has no attribute 'private_key'
 2024-11-07 16:48:09,275 WARNING Not Found: /favicon.ico
 2024-11-07 16:48:34,007 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
 2024-11-07 16:48:34,472 INFO Signature verification succeeded.
+2024-11-07 21:00:56,040 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-07 21:01:33,844 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-07 21:03:27,188 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-07 21:03:37,263 WARNING Not Found: /path/to/your/pdf
+2024-11-07 21:03:52,454 WARNING Not Found: /path/to/your/pdf
+2024-11-07 21:03:57,832 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-07 21:03:57,835 INFO Signature verification succeeded.
+2024-11-07 21:03:58,348 WARNING Not Found: /path/to/your/pdf
+2024-11-07 21:04:24,059 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-07 21:04:30,025 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-07 21:04:30,028 INFO Signature verification succeeded.
+2024-11-07 21:05:02,649 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-07 21:05:02,649 INFO Signature verification succeeded.
+2024-11-07 21:10:05,669 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-07 21:10:41,773 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-07 21:10:46,164 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-07 21:10:46,167 INFO Signature verification succeeded.
+2024-11-07 21:21:19,237 INFO Key pair found
+2024-11-07 21:21:40,488 INFO Hash value: aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-07 21:21:40,499 INFO Signature generated (hex): 54fb2d4e0ce3b4fdc67406cf6cd08f775f731eb32cd67c6118316be2ade724dad73de132e0aa1120c7f9471e7445a03566d17aabe3a0ece2a8945618771f6f4d569fe4393de9ebf3b0ee54bcec68471482cb0410c63bf9e23080282d676c5df86bd1a4f7285c253d884d292b8c67b726082631311223594f29ef1d9115fb8fe6e95505544855fca14842144a73d09123f645b6ac5f2de8a12737f5d1fba06dc6ba070520fc730d6285e725331a57b2ae6dfbe72d74a7e81a616311e4f7269191691f80367518b646f436aeb573708a5d06d8f7b21948f38ac70f851720234510fc7bcbb1a660964891366fa4cbb1b3f6a6938a90208e3246c036a7b401b435be
+2024-11-07 21:21:40,643 DEBUG STREAM b'IHDR' 16 13
+2024-11-07 21:21:40,645 DEBUG STREAM b'IDAT' 41 6472
+2024-11-07 21:22:34,522 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-07 21:22:34,523 INFO Signature verification succeeded.
+2024-11-07 21:24:58,645 WARNING Not Found: /generate-keypair/SI002
