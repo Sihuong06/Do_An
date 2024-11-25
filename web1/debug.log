@@ -1752,3 +1752,979 @@ AttributeError: 'NoneType' object has no attribute 'private_key'
 2024-11-07 21:22:34,522 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
 2024-11-07 21:22:34,523 INFO Signature verification succeeded.
 2024-11-07 21:24:58,645 WARNING Not Found: /generate-keypair/SI002
+2024-11-09 11:09:23,604 WARNING Not Found: /favicon.ico
+2024-11-09 11:09:41,965 WARNING Not Found: /keypair/generate-keypair/
+2024-11-09 11:17:28,804 INFO F:\Do_An\web1\keypair\urls.py changed, reloading.
+2024-11-09 11:18:04,320 INFO F:\Do_An\web1\keypair\urls.py changed, reloading.
+2024-11-09 11:29:18,241 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 11:38:30,986 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 11:38:41,874 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:24:40,012 WARNING Not Found: /favicon.ico
+2024-11-09 14:25:49,603 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:27:34,942 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:27:54,276 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:28:05,712 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 109, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-11-09 14:28:49,571 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 109, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-11-09 14:29:02,290 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 109, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-11-09 14:29:36,590 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:30:40,933 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:30:53,116 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:30:55,078 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:31:48,773 WARNING Not Found: /keypair/expire-keypair/
+2024-11-09 14:33:55,383 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 124, in expire_keypair
+    return render(request, 'keypair_expire_form.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '.tags' from 'messages|last.tags'
+2024-11-09 14:35:04,355 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:35:30,660 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 125, in expire_keypair
+    return render(request, 'keypair_form.html', {'latest_message': latest_message})
+                                                                   ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'latest_message' where it is not associated with a value
+2024-11-09 14:35:36,209 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 125, in expire_keypair
+    return render(request, 'keypair_form.html', {'latest_message': latest_message})
+                                                                   ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'latest_message' where it is not associated with a value
+2024-11-09 14:35:42,637 WARNING Not Found: /keypair/
+2024-11-09 14:35:46,414 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 125, in expire_keypair
+    return render(request, 'keypair_form.html', {'latest_message': latest_message})
+                                                                   ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'latest_message' where it is not associated with a value
+2024-11-09 14:37:04,648 ERROR Internal Server Error: /keypair/generate-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 60, in generate_keypair
+    private_key, public_key = generate_rsa_keypair(bit_size)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 33, in generate_rsa_keypair
+    private_key, public_key = rsa.newkeys(bit_size)
+                              ^^^^^^^^^^^
+AttributeError: module 'cryptography.hazmat.primitives.asymmetric.rsa' has no attribute 'newkeys'
+2024-11-09 14:38:17,838 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:41:32,346 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 128, in expire_keypair
+    return render(request, 'keypair_form.html', {'latest_message': latest_message})
+                                                                   ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'latest_message' where it is not associated with a value
+2024-11-09 14:41:44,312 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 128, in expire_keypair
+    return render(request, 'keypair_form.html', {'latest_message': latest_message})
+                                                                   ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'latest_message' where it is not associated with a value
+2024-11-09 14:41:50,146 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 128, in expire_keypair
+    return render(request, 'keypair_form.html', {'latest_message': latest_message})
+                                                                   ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'latest_message' where it is not associated with a value
+2024-11-09 14:41:56,184 WARNING Not Found: /keypair
+2024-11-09 14:42:01,175 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 128, in expire_keypair
+    return render(request, 'keypair_form.html', {'latest_message': latest_message})
+                                                                   ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'latest_message' where it is not associated with a value
+2024-11-09 14:42:20,801 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 128, in expire_keypair
+    return render(request, 'keypair_form.html', {'latest_message': latest_message})
+                                                                   ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'latest_message' where it is not associated with a value
+2024-11-09 14:42:41,393 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:42:59,940 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:43:13,764 WARNING Not Found: /keypair/expire-keypair/
+2024-11-09 14:44:01,625 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:44:14,240 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 128, in expire_keypair
+    return render(request, 'keypair_expire_form.html', {'latest_message': latest_message})
+                                                                          ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'latest_message' where it is not associated with a value
+2024-11-09 14:44:36,454 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:44:58,840 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:45:08,953 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:45:15,996 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:45:20,555 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:45:25,124 WARNING Not Found: /keypair/expire-keypair/
+2024-11-09 14:47:36,651 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:47:54,056 WARNING Not Found: /keypair/expire-keypair/
+2024-11-09 14:49:21,652 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:49:29,723 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 14:54:49,831 WARNING Not Found: /favicon.ico
+2024-11-09 14:55:10,273 INFO Key pair found
+2024-11-09 14:55:14,843 INFO Hash value: aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 14:55:14,855 INFO Signature generated (hex): 42c8400dc03d4ee396a0be1f42a17e282acc87fe4c067e417fe473fa84a0744aa52215da3ffd746a72d13eeaf3f0ed0f8c8331267ae2eed5350f82024b66ffba6474dff8aa5156e7631f3600930d3c1768f2533cc61cc15cb279c1becd8a5830e05e35f5a893b50d620f03f11f312119b610da6b86bfb256df61479d7d41ba7143a2b8a91febffb60be759a5b5b6c1bb164d4355b86ac797f944be740151885e332c4cb3b6fb5333c85df3407c212360daa128638cc5b039512a447bed0fb47ed101599469930fc57c4cd3c83e0cd20f19b8f3632f4973da53c383238ffbc1f7b8ccce39aab7d5c74f2cbffcf7ea197808ccd818ef6b57c6dd76940f0111230d
+2024-11-09 14:55:14,930 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 14:55:14,930 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 14:55:41,285 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 14:55:41,296 INFO Signature verification succeeded.
+2024-11-09 14:56:39,408 INFO Key pair found
+2024-11-09 15:10:00,981 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:15:23,480 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:17:36,258 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:21:58,434 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:22:02,551 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:22:35,551 INFO Key pair found
+2024-11-09 15:22:37,663 ERROR Internal Server Error: /files/download/42/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 162, in download_file
+    signature = gen_sig(key_pair, contents)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 132, in gen_sig
+    if keypair.algorithm == 'DSA':
+       ^^^^^^^^^^^^^^^^^
+AttributeError: 'KeyPair' object has no attribute 'algorithm'
+2024-11-09 15:23:14,731 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:23:17,417 INFO Signature generated (hex): 81a263344b430e9bbf3e6bed5cd2039c5fc942dc16b86bc8be65a703289812ed3e207eda406e0b8b03c81c56d778a2e6a6075b06c177f8438386026c59c240d55d944d9ba0d3de37712dc90135359e462e42c7abcd502451cfdd1d003ce6937ea178c357a55f39644920c4d6eeea888e514f11459e01bff07ac8f5ddab9468a7dd8b836fc72073d5629c1dc1edfce3cd7be8aef2f42f9733ac2682733c6ef5a4597edd7eaf247d06a77539ccf829397d5a1a2ed7c0c2cff466f2dc122916d1634cef39e890cbfa10f781a2ce50a332b53e432446f6679a5fc6c16f736f94b2528b347618ae857569733a4de86860b9f8333e2f218a8dc977c93ad6a106ba0b96
+2024-11-09 15:23:17,427 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 15:23:17,427 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 15:24:22,735 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:24:35,092 INFO Key pair found
+2024-11-09 15:24:37,763 ERROR Internal Server Error: /files/download/42/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 178, in download_file
+    signature = gen_sig(key_pair, contents)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 105, in gen_sig
+    reader = PdfReader(file.file_path)
+                       ^^^^^^^^^^^^^^
+AttributeError: 'bytes' object has no attribute 'file_path'
+2024-11-09 15:24:54,664 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:25:31,483 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:25:35,066 INFO Hash value: aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 15:25:35,068 INFO Signature generated (hex): 95f13c0ac39f2150fae91096294f3fc796e7b59906d35f4cb5a875b1ff86a9d4675442faf6435920e624db6a1751dc68e1fee2994886a09597a694248d0d93970439f70599a3cc139147eda27e790994d05ce93833d3764b359f2ed634bdcd907ac5c6bacec213b902b0cd92e1c6db47778d7630fbf0b4ac4581b3077aeddd7700506878c1025b9c7ff6af23738b66fb7008d938944b85d1c871db91498eb5e352e05bf4570d11ba13cfffa87e8fcc88833d19a47218280cc5939bc98c0e6f6951b9b0cf1b38457256522a5fdd228e3c8eae4cf8c12c1e2f3de4cf5352fc410c13397c4bb384b50aad11cf5a9eca19e5a9cdaf6541733c9ecab4021561ad7b59
+2024-11-09 15:25:35,079 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 15:25:35,079 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 15:25:43,977 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 15:25:43,978 INFO Signature verification succeeded.
+2024-11-09 15:39:56,909 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:40:31,562 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:42:41,870 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:42:54,085 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:45:52,864 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:47:07,373 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:47:46,127 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:49:22,228 INFO Key pair found
+2024-11-09 15:49:24,785 INFO Signature generated (hex): c7bf8eebc6c93db7bcad4bb8bd49587a198b2c68739f8bb04c605b75e105680f4c43114e407220c6f78f93f04aeb93a9f03962294f02c8989587e3c4df2dccf534a0850d79bd1229db096715eac7147c90a7050aa02d6d9bc267aea2e30f782b4becafc2f58cbc20410e2837578e2f71e47372a6a492229d58b760644af3d5f0146f84f05777b5b2ec7ed44c97d7b31f50a9cb6cd8421715cb430fba3108fb6c877767fa1ebd684e09aa97ed0d44a22202cad87f751638003a497dcb2cbb5c1e5571371342c71dc3f1a85db8cfcaf9366c1688f969f6b0bb1934521ef749d7f42fe482cf7e2551b9f173a9569d9369602a5868fa632b0aaa029353c1417a8149
+2024-11-09 15:49:24,799 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 15:49:24,799 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 15:49:33,989 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 15:49:33,989 INFO Signature verification succeeded.
+2024-11-09 15:50:14,066 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 15:54:08,833 ERROR Internal Server Error: /files/download/43/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 163, in download_file
+    signature = sign_rsa(key_pair, hash_value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\signature_utils.py", line 60, in sign_rsa
+    keypair.private_key.encode('utf-8'),
+    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'private_key'
+2024-11-09 15:54:25,831 INFO Signature generated (hex): 43563975c4012efec31d192ea20661ccc5c0a1a9d807e1d7065155a8f31fa7736581847c1878d62634e0b666ceb0655e2b91105a0de1c373a0811d784bc028472bbb745d502049cf79ecab0a20d6246d0bc09c52665dd9b0646d789e316cc089fed4656657a04d500a622b813959b8a99103cdd4ff1b5cc74c8a695fcd40171fbcc34d40a19bad3c2eadd8cac0da0dffb74063dae7289944afcf8298d28e2efeaf5afc3587c831bece6da7ce1eac754f896e4fa7667ed2532969cfe632265828a5ed3718712809ddc76d31cb4af3dd543680d818ef8d88b6fd5d6008993dc3e695f076204d297603fb98fcc1c8a9e0ceef249580b4051e5740e7c06ff0d170ab
+2024-11-09 15:54:25,845 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 15:54:25,846 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 15:54:48,793 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 15:58:24,003 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:59:04,886 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 15:59:14,053 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 15:59:26,648 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 15:59:26,655 INFO Signature verification succeeded.
+2024-11-09 16:01:34,700 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:02:36,135 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:02:59,570 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:03:17,302 ERROR Internal Server Error: /keypair/generate-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 80, in generate_keypair
+    private_key_pem = private_key.private_bytes(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: format is invalid with this key
+2024-11-09 16:04:38,612 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:05:01,199 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:05:09,520 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:05:11,469 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:05:19,557 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:07:35,242 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:07:41,344 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:07:47,355 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:08:35,268 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:08:40,272 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:09:04,724 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:09:48,589 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:09:55,107 INFO Key pair found
+2024-11-09 16:10:10,858 INFO Signature generated (hex): 304402203b02aeaea35da067e656200b9252910a314be821ea3debfbab4fac070fb875a80220240cabb6125037d936bf8eac83323a28289c0bb3e9b98cb3759169cc83b9c3d6
+2024-11-09 16:10:10,875 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 16:10:10,875 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 16:10:22,334 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 16:10:22,342 INFO Signature verification succeeded.
+2024-11-09 16:10:38,880 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:12:17,663 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:12:32,993 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:12:45,223 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:13:21,942 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:13:29,327 INFO Key pair found
+2024-11-09 16:13:31,816 INFO Signature generated (hex): 3046022100ed9084ed5637b4fec3fea28e7e1e918fa4a06607440375ddef2e83f25f73bf15022100cd07e453477901ec2731bade4364e0985e06bb2815753924b3cb4cfa17390ee4
+2024-11-09 16:13:31,831 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 16:13:31,832 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 16:13:43,736 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 16:13:43,737 INFO Signature verification succeeded.
+2024-11-09 16:14:39,804 ERROR Internal Server Error: /keypair/generate-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 80, in generate_keypair
+    private_key_pem = private_key.private_bytes(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: format is invalid with this key
+2024-11-09 16:16:24,243 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:16:53,117 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:16:56,103 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:17:23,940 ERROR Internal Server Error: /keypair/generate-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 80, in generate_keypair
+    private_key_pem = private_key.private_bytes(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: format is invalid with this key
+2024-11-09 16:23:27,410 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:23:57,791 ERROR Internal Server Error: /keypair/generate-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 81, in generate_keypair
+    private_key_pem = private_key.decode('utf-8')  # EdDSA private key is raw bytes, convert to string if needed
+                      ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'private_key' where it is not associated with a value
+2024-11-09 16:25:10,310 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:25:21,138 ERROR Internal Server Error: /keypair/generate-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 81, in generate_keypair
+    private_key_pem = private_key.decode('utf-8')  # EdDSA private key is raw bytes, convert to string if needed
+                      ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'private_key' where it is not associated with a value
+2024-11-09 16:27:00,234 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:27:14,472 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:27:23,408 ERROR Internal Server Error: /keypair/generate-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 81, in generate_keypair
+    private_key, public_key = generate_eddsa_keypair()  # EdDSA key pair
+                              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 45, in generate_eddsa_keypair
+    private_key_bytes = private_key.private_bytes(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: When using Raw both encoding and format must be Raw and encryption_algorithm must be NoEncryption()
+2024-11-09 16:27:45,605 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:27:50,964 ERROR Internal Server Error: /keypair/generate-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 81, in generate_keypair
+    private_key, public_key = generate_eddsa_keypair()  # EdDSA key pair
+                              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 45, in generate_eddsa_keypair
+    private_key_bytes = private_key.private_bytes(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: When using Raw both encoding and format must be Raw and encryption_algorithm must be NoEncryption()
+2024-11-09 16:36:08,245 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:36:30,654 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:36:38,636 ERROR Internal Server Error: /keypair/generate-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 80, in generate_keypair
+    private_key, public_key = generate_eddsa_keypair()  # EdDSA key pair
+                              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 45, in generate_eddsa_keypair
+    private_key_bytes = private_key.private_bytes(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: When using Raw both encoding and format must be Raw and encryption_algorithm must be NoEncryption()
+2024-11-09 16:44:28,315 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 16:45:58,257 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:47:58,961 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:50:20,363 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 16:51:02,333 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:51:49,078 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:52:06,609 INFO Key pair found
+2024-11-09 16:52:09,005 ERROR Internal Server Error: /files/download/42/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 165, in download_file
+    logger.info(f'Signature generated (hex): {signature.hex()}')
+                                              ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'hex'
+2024-11-09 16:52:41,051 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 16:52:45,513 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 16:52:45,514 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 16:52:51,098 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 16:52:51,099 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 16:53:08,625 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 16:53:08,626 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 20:42:25,689 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 20:42:31,880 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 20:43:10,669 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 20:43:23,582 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 20:43:23,582 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 20:43:23,685 ERROR Internal Server Error: /files/download/42/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 184, in download_file
+    pdf_writer.add_metadata({
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_writer.py", line 1054, in add_metadata
+    args[NameObject(key)] = create_string_object(value)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\generic\_utils.py", line 156, in create_string_object
+    raise TypeError("create_string_object should have str or unicode arg")
+TypeError: create_string_object should have str or unicode arg
+2024-11-09 20:43:39,506 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 20:44:01,980 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 20:44:01,981 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 20:44:15,414 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 20:44:15,428 INFO Signature verification succeeded.
+2024-11-09 20:44:53,803 INFO Key pair found
+2024-11-09 20:44:55,939 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 20:44:55,939 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 20:45:06,236 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 20:45:06,240 INFO Signature verification succeeded.
+2024-11-09 20:45:39,707 INFO Key pair found
+2024-11-09 20:45:41,603 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 20:45:41,604 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 20:45:49,059 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 20:45:49,061 INFO Signature verification succeeded.
+2024-11-09 20:50:52,260 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 20:52:17,077 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 21:01:54,917 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 21:06:47,127 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 21:07:51,337 INFO Key pair found
+2024-11-09 21:07:57,626 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 21:07:57,626 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 21:07:57,676 ERROR Internal Server Error: /files/download/42/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 186, in download_file
+    base64_signature = base64.b64decode(signature).hex()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\base64.py", line 83, in b64decode
+    s = _bytes_from_decode_data(s)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\base64.py", line 45, in _bytes_from_decode_data
+    raise TypeError("argument should be a bytes-like object or ASCII "
+TypeError: argument should be a bytes-like object or ASCII string, not 'NoneType'
+2024-11-09 21:09:20,984 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 21:09:27,374 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 21:09:27,374 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 21:09:27,437 ERROR Internal Server Error: /files/download/42/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 187, in download_file
+    decoded_signature = base64.b64decode(signature)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\base64.py", line 83, in b64decode
+    s = _bytes_from_decode_data(s)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\base64.py", line 45, in _bytes_from_decode_data
+    raise TypeError("argument should be a bytes-like object or ASCII "
+TypeError: argument should be a bytes-like object or ASCII string, not 'NoneType'
+2024-11-09 21:11:02,957 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 21:11:17,267 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 21:11:22,317 INFO signature type: <class 'NoneType'>
+2024-11-09 21:11:22,329 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 21:11:22,329 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 21:12:51,745 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 21:12:57,650 INFO signature type: <class 'NoneType'>
+2024-11-09 21:12:57,663 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 21:12:57,663 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 21:13:25,731 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 21:13:32,762 INFO signature type: <class 'NoneType'>
+2024-11-09 21:13:32,772 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 21:13:32,773 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 21:18:20,032 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 21:30:54,690 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 21:31:31,360 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 21:31:56,893 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 21:32:03,018 INFO signature type: <class 'bytes'>
+2024-11-09 21:32:03,048 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 21:32:03,048 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 21:34:17,507 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 21:34:38,202 INFO signature type: <class 'bytes'>
+2024-11-09 21:34:38,214 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 21:34:38,215 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 21:35:44,146 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 21:36:29,289 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 21:36:34,920 INFO Key pair found
+2024-11-09 21:36:36,886 INFO signature type: <class 'bytes'>
+2024-11-09 21:36:36,899 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 21:36:36,900 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 21:36:44,426 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-09 21:36:44,427 INFO Signature verification succeeded.
+2024-11-09 21:40:46,149 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 21:48:51,286 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 21:49:02,943 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 21:49:18,685 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 21:49:48,270 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-11-09 21:49:55,434 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 22:00:13,627 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 22:00:54,777 INFO Key pair found
+2024-11-09 22:00:59,040 INFO signature type: <class 'NoneType'>
+2024-11-09 22:00:59,067 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:00:59,067 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:00:59,243 ERROR Internal Server Error: /files/download/42/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 185, in download_file
+    pdf_writer.add_metadata({
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_writer.py", line 1054, in add_metadata
+    args[NameObject(key)] = create_string_object(value)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\generic\_utils.py", line 156, in create_string_object
+    raise TypeError("create_string_object should have str or unicode arg")
+TypeError: create_string_object should have str or unicode arg
+2024-11-09 22:03:36,252 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 22:03:45,454 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 22:03:49,167 INFO signature type: <class 'NoneType'>
+2024-11-09 22:03:49,179 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:03:49,180 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:04:51,086 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 22:04:55,475 INFO signature type: <class 'NoneType'>
+2024-11-09 22:04:55,489 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:04:55,489 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:05:33,704 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 22:05:37,072 INFO signature type: <class 'NoneType'>
+2024-11-09 22:05:37,073 INFO signature: None
+2024-11-09 22:05:37,085 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:05:37,085 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:06:04,014 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 22:06:45,491 INFO signature type: <class 'NoneType'>
+2024-11-09 22:06:45,492 INFO signature: None
+2024-11-09 22:06:45,508 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:06:45,509 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:06:58,216 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 22:10:41,736 INFO signature type: <class 'bytes'>
+2024-11-09 22:10:41,737 INFO signature: b'\x98\x17D\xe8l\xddB=\xa4P+\xa4\x01\x80\xe2\xe1\x1b(d\xad\xb5\xfd\x9b\xe9\xbd\xe9\xe8\xc2\x14~)\xff\xa5\x1d\xec\xac\xc0\x9f\x87w,\xafBi\xa6g=\xaf\xe3Wj-+\xd1\x12:\x03\x9b\x05\t\xa6\'\xb0\xa0\x07\xf9\xed6GHTB\x94\xf8\xd9\x9d\t^\xf6\xae\xf2\x16\xe7\x9b\xd0\xe7\xeb\x1ajb5\x84\x9f_\xdea-m*\xb2\xd3\xa3R=\x8f\x11\xf7W\x03\xa0;D\xfd\x82\x97\xe4X\xdd5\x90\x1dG\'Jz\'\x08\xab\\.\x15j\xc9\x00M\xd5\r\x9c\x8a\xe8\xa0\xf2\xe6\xf5\xf46\xf3(\xbb\x90H`\xff\x85\xecwL:\xc5tz\xd7\x0c\x07;\xcc-\xc1\x9f\xe5\x9a\xf1^\x1fn\x80\xef\xeb\x07\xe1\x0c\xb4\x99\xf8\xc2:"\xc4s\xca\x9e\x16\x8cx\x1c\xba\xad\xad\xbdw~1\xeb\x94\xa9\x9b\xebVGE\xb64W\x9e,*\xbb\xde1*\x0e32\x94\x92\xbc\xd0\x96K\xe3Y\xb7\xcc\x9anJ\xfe\xb1.(\xa0K&y\xc6\x1c\x0bh\xca\x00D\x17\xf2\x18\xe4O'
+2024-11-09 22:10:41,757 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:10:41,757 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:11:16,046 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 22:11:23,265 INFO signature type: <class 'bytes'>
+2024-11-09 22:11:23,266 INFO signature: b'\n\xb6\xb5\xff\x16\x8a\xe6\xbep\xcb\x9e\xa86p\x17O\xaf\x8206\x88f*\xe7\xd6\x0e\xf8!\x9d\x92\xae^Mb>\xc8\xa8\x18\x114\x0b\x00_\'U\xd7h\xc2\x81\xe9t\xa9\xec\x98\x8d\xd5\x92\xb7\xdeR\xe6 S\xccYB\xce\xdd\x9f\xfe~\x07Y\xca\xbe\xa2\x8b\xda\xe8\x8bRY\xec\xf7D\xc3\x0f\xd4\x81\x1d\x8c.\x03\xa0y\xf0*\xef\xa5\xaa\x89\x97q\xf8H\x04\n}M\xc6k\x94\xc9\xb5j\x0c7\xd2\xae=\x8b\x83\xf7\x83W\xd0(\x17\x13\xa4\x1dn./\xcd\xec\xfd\xf6\x8a\xd2\xc0\xe4\x14\x93\x94\x0f\x8f\x80K\xa5\x9bT1\x139\x9c\xe0\xce\x1c$\xafr\x93\xec\x7f,\xc6tS\xc5R\x8e\xb4\x96\x85\x1c\x1a\xe2\x98\xd7s\x8e\xd7e\xfa\xf3\x8d\xe1\xd6p\xef\xc3i\x9e\xee\xa4\xde"\x10)\xdcK\xb93U\xe1\xa2\xdfP\xd0[\xf0\x84\xdc\xa1\x12g\xfd\xeb.\xdf\xb5Z\xed\xc5f\xf5/\xdc)\xc1<~m\x12\xc0\xd0\xb4\xaa\x05+\xbfr\x02%`0\xadB\xcb<\xd3\xbd\x85\xcf#'
+2024-11-09 22:11:23,278 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:11:23,279 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:13:49,686 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 22:22:20,002 INFO type keypair private key: <class 'str'>
+2024-11-09 22:22:20,049 INFO signature type: <class 'bytes'>
+2024-11-09 22:22:20,049 INFO signature: b"\x02Vr_i\xc6\x03\xf1\x1c\xbeA}aB\xcd\x8f5\x19V\xdauu\x8a\x8c\xd1.4\xfaV|\xdbn\x7fO\x0c\x1b$4\xaf3v^-gL\x01DT\x0f\xa6n\xc9\x10\x8b\x8axZE\xffi\xd1*\nL_\x1eQ\xa6iK\xb9\xd0\x12\xb1\x1eyl\xa42k2\x030\xab\xf1\xf8H\x01\x011\x042j\xb8C.\xe9f\xa2\x0ep2\x94\x15\xac\x15\x82j[\x1e\xeb\x17\xc5\xca!Px\xa0\xa4\x97D\x84\xb0A4\x08O\x9cq\x89\xb4A\xc5M|8%\xa4\x86.\xc7\xb2\x91X\xf7-\x1e\x8d\x005\x85\x7f\xb2\x98\xad\xc4'\x03\x16bN\x82\xe5Of@\xd9\xd3\x1a\x96\x93\xe1\xe8\x03\xf2\x13\x12\xd6~V\xdd0\x86\xb7\xedH\xdd\xb3\x0e\xf7\xde.\xaf\xe2\x17\xb2\x91k@\xb5\x15%I\x8aw\xa8\xb9\xf1]\xc7\xd6\xd9b\x0b\xc8\x19#+\x10W\x11\x1e8\xb1\xc8\xd9\x1fm|$\tA\xef\x9a\xa5`\xd7\xfb\xd3\xfcX\x8dH4\xbc5\xcf8\x8e\xa3\x84\x05\xcf\x99\x93Y"
+2024-11-09 22:22:20,074 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:22:20,074 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:23:06,004 INFO type keypair private key: <class 'str'>
+2024-11-09 22:23:06,005 INFO signature type: <class 'NoneType'>
+2024-11-09 22:23:06,005 INFO signature: None
+2024-11-09 22:23:06,005 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:23:06,006 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:27:49,114 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 22:28:08,568 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 22:28:19,851 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 22:28:33,061 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-09 22:28:39,291 INFO type keypair private key: <class 'str'>
+2024-11-09 22:28:39,305 INFO signature type: <class 'NoneType'>
+2024-11-09 22:28:39,305 INFO signature: None
+2024-11-09 22:28:39,334 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:28:39,336 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:32:45,321 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-09 22:32:53,744 INFO type keypair private key: <class 'str'>
+2024-11-09 22:32:53,744 INFO signature type: <class 'NoneType'>
+2024-11-09 22:32:53,745 INFO signature: None
+2024-11-09 22:32:53,760 DEBUG STREAM b'IHDR' 16 13
+2024-11-09 22:32:53,761 DEBUG STREAM b'IDAT' 41 6472
+2024-11-09 22:33:03,516 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-10 09:45:07,871 WARNING Not Found: /favicon.ico
+2024-11-10 09:45:11,619 INFO Key pair found
+2024-11-10 09:45:15,871 INFO type hash_value: <class 'bytes'>
+2024-11-10 09:45:15,872 INFO type keypair private key: <class 'str'>
+2024-11-10 09:45:15,873 INFO signature type: <class 'NoneType'>
+2024-11-10 09:45:15,873 INFO signature: None
+2024-11-10 09:45:15,987 DEBUG STREAM b'IHDR' 16 13
+2024-11-10 09:45:15,989 DEBUG STREAM b'IDAT' 41 6472
+2024-11-10 09:46:20,070 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-10 09:46:23,646 INFO F:\Do_An\web1\file\signature_utils.py changed, reloading.
+2024-11-10 09:46:28,715 INFO type hash_value: <class 'bytes'>
+2024-11-10 09:46:28,716 INFO type keypair private key: <class 'str'>
+2024-11-10 09:46:28,717 INFO signature type: <class 'NoneType'>
+2024-11-10 09:46:28,717 INFO signature: None
+2024-11-10 09:46:28,747 DEBUG STREAM b'IHDR' 16 13
+2024-11-10 09:46:28,748 DEBUG STREAM b'IDAT' 41 6472
+2024-11-10 09:47:12,045 WARNING Not Found: /favicon.ico
+2024-11-10 09:57:11,139 INFO type hash_value: <class 'bytes'>
+2024-11-10 09:57:11,349 ERROR Internal Server Error: /files/download/42/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 167, in download_file
+    logger.info(f"type keypair private key: {type(key_pair.private_key)}")
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'private_key'
+2024-11-10 09:57:39,351 INFO type hash_value: <class 'bytes'>
+2024-11-10 09:57:39,352 INFO type keypair private key: <class 'str'>
+2024-11-10 09:57:39,498 INFO signature type: <class 'bytes'>
+2024-11-10 09:57:39,499 INFO signature: b'3\xed\x85c*=+\xc0B\xaa\xd9E\x97Z\xf2.\xc2U\\\xdeHB\x0c\x15\x84"s\x0c\xa9\xea\xc8\xdew\xab\x1d\xe5S(\x9b\xc1\xcb\xe1\x1d\x16c\x9e\x17b\xfb\xe3Q\xab[F\x91\xe7\xdbR(\xd5J\xbe%\x81\x08\x9a\x1b\x91]MQ\xfd\x96W\xc5s\xb6O\x8d[\xb6?\xcbA\xac\x82\x00=\xec\x0e\xf8X\xb4\xe0{\xcdd\x84S\xe4\x8b\xc2\xe8\x1ax\nV\xb9>\xf2\xe5\xf4\xd9\xae\'\x9f\xbf\x8b\xe4\x16=\x8c\xb6`\xf2kt.R\xdc\x85=\x99"\x8f\x1c\xffC\xe3\'\x1cX\xab&\xf7\x8f\xfeJ\x19]\xb0by\xdf\xfc\x8e\xffA{,`\x8cU\x05\xc0/j\xb1w\x1cxQf\xb2$\xa4\xf3"aE\x8f\xef\xe1\x1f\x1b\xd5\xbd\x05\xb3\xb4y\x1f\xdb\x10\xb6\x15n\x93\xdaZJ\xc4z\xad\xd1O\x85,\x18\xe8\x82\x8c?\xab!.m\xed\x95\x1fZ\x8a3H\xfd%\x7f\x92\x01:\xc7p\x8dj\x97m\xac\xe9\x12\xea\xa8\x03\xdd\xad\xed\x9b\x11\xeaj\xd10NUD\xbf\xc9'
+2024-11-10 09:57:39,502 DEBUG STREAM b'IHDR' 16 13
+2024-11-10 09:57:39,503 DEBUG STREAM b'IDAT' 41 6472
+2024-11-10 09:59:33,834 INFO type hash_value: <class 'bytes'>
+2024-11-10 09:59:33,836 INFO type keypair private key: <class 'str'>
+2024-11-10 09:59:33,836 INFO signature type: <class 'NoneType'>
+2024-11-10 09:59:33,837 INFO signature: None
+2024-11-10 09:59:33,838 DEBUG STREAM b'IHDR' 16 13
+2024-11-10 09:59:33,839 DEBUG STREAM b'IDAT' 41 6472
+2024-11-13 15:23:57,838 WARNING Not Found: /favicon.ico
+2024-11-13 15:24:42,948 WARNING Not Found: /favicon.ico
+2024-11-13 15:25:33,362 INFO Key pair found
+2024-11-13 15:25:35,809 INFO type hash_value: <class 'bytes'>
+2024-11-13 15:25:35,810 INFO type keypair private key: <class 'str'>
+2024-11-13 15:25:35,890 INFO signature type: <class 'bytes'>
+2024-11-13 15:25:35,890 INFO signature: b'F\xc6\xcb\x91\xecw\xfb\xf19\xba\x11Q\x84\xd2~=\xf0\xd4\x17\xbb\xe5\xacj\xdc\\\xee\x96\xf6\x8d\xf7\xfaR# \xaf\xf0\xab\xcfv\x90\x9en\x95\xfa\xd0\x81\xa8\xd0Np efjrT\xbdKZ,\x90P>p\xe4\x1e\xec\xcc@W\xa5N\x95\x9cx\xadZ\x98-\xbe]\x9f\x14\xb6\x0bV_\xf0\x00\x97\xe2\xbaZG\x81\xb5\x11\xfe\x94pRM\x7f\xfd\xb7\xf3t\xb6\xe1z:\x19\xe8(\xbd\xc1\x84n\x82(\x9d\xb4\xe2\xd5\x9f\xd8\xd1o\xf1\x08\x16\x8f\x96\x99\xe5\x1ct\xd0\x02\n\xa0\x88\xd1&\xc5\xa3a\xb4\xe6=\x92+\xfc\xd79Q6\x17\x0e\x8eE\xa2\x91\xfe\xc3\xc4\xef\xf6Pa\xf8\x15\x1d\xb7\xae\xfe\x91\xb4{\x149\xbe\x9a\xd1\xe2Dp1\xa6\x02-\xd1\xd4cW\x02yE\x88\x90%X\xa2u\x88i\xdeU\xceg\x8d8!\xdf\xc0\xa4v tSo\xca\x93Q\x97K\xe0\\\x15q\xdf\xa7/?\xc1\xfcwS\xed\xa4\xaepe\xda\xdf\xb8\xbb\xf0\x05\x01\x1d\x94\x07b\xf7\x1f'
+2024-11-13 15:25:35,965 DEBUG STREAM b'IHDR' 16 13
+2024-11-13 15:25:35,965 DEBUG STREAM b'IDAT' 41 6472
+2024-11-13 15:26:20,346 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-13 15:26:26,237 INFO Key pair found
+2024-11-13 15:26:28,160 INFO type hash_value: <class 'bytes'>
+2024-11-13 15:26:28,160 INFO type keypair private key: <class 'str'>
+2024-11-13 15:26:28,202 INFO signature type: <class 'bytes'>
+2024-11-13 15:26:28,203 INFO signature: b'\x15L\xbe7(\x01w\x8dx\xc0\xcf\x88pW\xe9\xc1{\x8c\xd0R\x19\xdc\xc6\xb2\x07\xa43\x9f\x1e\xc9\xb8`t\xfd\xe3\xc1\x15,\xf5\xf4\x02\x08\x92>\x1c%\xceoj\xdb\xb5u\xa4\t\xf2\xa2\xdd6\xa1\xd0\xcb\x88\x12\xb1\xfd\xe2\x1d\xd3\x04\x1b\x1d\x1d\xe56\xf5T\x1c\xa7\xb5\x8aa\t\xd8\xa3O\x08\x10\x16u\xd4d6\xf9s\xe8\xb3\xde\xa3r\xc7\x1f\x05\x00\x15\xac99_\xad\xee\xf9 so\x95\xa6\xf6\xa1\xdf\xf5\xc8}!\x95\x0b\xcd\xbf\x02\x0b\x18\x0el\xf6\xf3\x9dL\x91\x8e\xcf\x01\xb2i\x8d\x95\xfc\xde\xf3\x06\x9f\x9b\x08O\r\xb6\xbf\xe5\xfc`\\\xf5F\xfcH}\x8a\xe1t9E\x9b<K\x1e\x08\xa5z\xceNa#Y\x05tM~\xe1I`\x1d\x9a\x9ek\xe8\xab\x1e\xb3{|k\x84\xbe\xd83\xd5)\xf2\x9f\x8c\x94\x0bSy\x82+\'\t\xf1\xf2\x9c\x81M\xa3\xefY\xb4f\x14\xbf+\xe0X\x16\xc5\xe4"\xc4\x7fx\xd1\xccv\xc8\xab|t\x90\x1eW\xdfr\x1d\xe4\x07\xd9\x83U'
+2024-11-13 15:26:28,217 DEBUG STREAM b'IHDR' 16 13
+2024-11-13 15:26:28,217 DEBUG STREAM b'IDAT' 41 6472
+2024-11-13 15:26:38,570 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-13 15:26:38,586 INFO Signature verification succeeded.
+2024-11-13 15:30:17,517 INFO type hash_value: <class 'bytes'>
+2024-11-13 15:30:17,518 INFO type keypair private key: <class 'str'>
+2024-11-13 15:30:17,555 INFO signature type: <class 'bytes'>
+2024-11-13 15:30:17,556 INFO signature: b'S\x825\x93&\'\xc5\xd3m\xf0\xe5\x9d8\xe3\xb4\x85Mu\xe4\xd9\x8a]\xcb\x02\xf0m\x93\xc0\x14\x14jruo\xdd\x1d\xdaZ\xda[ \xd4\xaa7\xa0\x0c\x9bN\\\xffN\xf9\xd4\xf5^[\xb1\x9f\x11 \xfe\xfb(h\xdb|`~\xc6\x80\xcf\xe0\xc0\x86Z\xaa\xaf\xfc\x8c:ef\x90pv\xf0\xe7\xad\xe2\xecK\xb3rD\x88e$\tJ\x82\xeb\xea\xfc\xd3-\xe3AYM9\x18\xfcW\x10n\x81H*\x03\xb4\xe8\xbb#\xdcV\x13\xa1\xa2&\xbc\x05\x80oZH\xae\x1d\x11\x85\xc0\xb6\\\x01\x83\x8dr\x04\x1b\xa2d\xc1?+\x1em\xa2\x88\xdc\x0cpd\x04\xf4t"}\nq\xeb\x7fet\xfeE\x8cw\x07\x80\xa2\x83\x06\xda\x0ew\xe6\xad\xeb\xde\x8c\xe6a)j\xbe[\xa0\xe2\xaf5\xac\x03\xa9x0\xc7\xbb|\x86%%4\'\x8f\x9cn\x96%\xe6\x81@\x81\x7f\xbf%\xee\xd4\xe1,\xce\xfa\xaa\xfb\x04\xf3\xce\xe3\xa0<\xa8\xfb\x06l-v\'\xf0\xc3\xbbj\x034\x13\xda\xa7h`'
+2024-11-13 15:30:17,559 DEBUG STREAM b'IHDR' 16 13
+2024-11-13 15:30:17,560 DEBUG STREAM b'IDAT' 41 6472
+2024-11-13 15:30:55,941 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-13 15:30:55,942 INFO Signature verification succeeded.

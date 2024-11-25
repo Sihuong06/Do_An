@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate and Expire Key Pair</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to update the bit size options based on selected algorithm
+        function updateBitSizeOptions() {
+            var algorithm = document.getElementById("algorithm").value;
+            var bitSizeSelect = document.getElementById("bit_size");
+
+            // Clear existing options
+            bitSizeSelect.innerHTML = "";
+
+            // Add options based on algorithm
+            if (algorithm === "RSA" || algorithm === "DSA") {
+                var rsaDsaOptions = [
+                    { value: "1024", label: "1024 bits" },
+                    { value: "2048", label: "2048 bits" },
+                    { value: "3072", label: "3072 bits" },
+                    { value: "4096", label: "4096 bits" }
+                ];
+                rsaDsaOptions.forEach(function(option) {
+                    var opt = document.createElement("option");
+                    opt.value = option.value;
+                    opt.innerHTML = option.label;
+                    bitSizeSelect.appendChild(opt);
+                });
+            } else if (algorithm === "ECDSA") {
+                var ecdsaOptions = [
+                    { value: "256", label: "256 bits (secp256r1)" },
+                    { value: "384", label: "384 bits (secp384r1)" },
+                    { value: "521", label: "521 bits (secp521r1)" }
+                ];
+                ecdsaOptions.forEach(function(option) {
+                    var opt = document.createElement("option");
+                    opt.value = option.value;
+                    opt.innerHTML = option.label;
+                    bitSizeSelect.appendChild(opt);
+                });
+            } else if (algorithm === "EdDSA") {
+                var eddsaOptions = [
+                    { value: "255", label: "255 bits (Ed25519)" }
+                ];
+                eddsaOptions.forEach(function(option) {
+                    var opt = document.createElement("option");
+                    opt.value = option.value;
+                    opt.innerHTML = option.label;
+                    bitSizeSelect.appendChild(opt);
+                });
+            }
+        }
+
+        // Update bit size options on page load and when algorithm is changed
+        window.onload = updateBitSizeOptions;
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Create Key Pair</h2>       
+        {% for message in messages %}
+            {% if forloop.last %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    
+
+        <form method="post" action="{% url 'keypair:generate_keypair' %}">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="verification_code">Verification Code</label>
+                <input type="text" id="verification_code" name="verification_code" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="algorithm">Select Algorithm</label>
+                <select class="form-control" id="algorithm" name="algorithm" required onchange="updateBitSizeOptions()">
+                    <option value="RSA">RSA</option>
+                    <option value="DSA">DSA</option>
+                    <option value="ECDSA">ECDSA</option>
+                    <option value="EdDSA">EdDSA</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="bit_size">Select Bit Size</label>
+                <select class="form-control" id="bit_size" name="bit_size" required>
+                    <!-- Bit sizes will be updated dynamically based on selected algorithm -->
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate Key Pair</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 class KeyPair(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='keypairs')
+    type = models.CharField(max_length=10, choices=[ ('DSA', 'DSA'), ('RSA', 'RSA'), ('ECDSA', 'ECDSA'), ('EdDSA', 'EdDSA')])
     public_key = models.TextField()
     private_key = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

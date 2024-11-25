@@ -21,13 +21,14 @@ import os
 from django.http import FileResponse
 from reportlab.pdfgen import canvas
 import io
+import base64
 import uuid
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 from PIL import Image, ImageDraw, ImageFont
 import fitz
-from cryptography.hazmat.primitives.serialization import load_pem_public_key
-
+from cryptography.hazmat.primitives.serialization import load_pem_public_key, load_pem_private_key
+from .signature_utils import sign_rsa, verify_rsa, sign_dsa, verify_dsa, sign_ecdsa, verify_ecdsa, sign_eddsa, verify_eddsa 
 logging.basicConfig(
     level=logging.DEBUG,  # Adjust the level to DEBUG, INFO, WARNING, etc.
     format='%(asctime)s %(levelname)s %(message)s',
@@ -36,6 +37,7 @@ logging.basicConfig(
         logging.FileHandler('debug.log'),  # Logs to a file
     ]
 )
+
 
 
 @login_required(login_url='users:login')
@@ -92,40 +94,6 @@ def list_files(request):
     return render(request, 'files/file_list.html', {'files': files, 'status': status})
 
 
-
-def gen_sig(keypair,file):
-    # Load the private key from the PEM-encoded string
-    private_key = serialization.load_pem_private_key(
-        keypair.private_key.encode('utf-8'),
-        password=None,
-        backend=default_backend()
-    )
-
-    # Read the PDF file
-    reader = PdfReader(file.file_path)
-    content = ''
-    for page_num in range(len(reader.pages)-1):
-        page = reader.pages[page_num]
-        content += page.extract_text() if page.extract_text() else ''
-    
-    # Create a hash of the PDF content
-    content_bytes = content.encode('utf-8')
-    hash_value = hashlib.sha256(content_bytes).digest()
-    logger = logging.getLogger('applog')
-
-    logger.info(f'Hash value: {hash_value.hex()}')
-    # Generate the signature
-    signature = private_key.sign(
-        hash_value,
-        padding.PSS(
-            mgf=padding.MGF1(hashes.SHA256()),
-            salt_length=padding.PSS.MAX_LENGTH
-        ),
-        hashes.SHA256()
-    )
-
-    return signature
-
 def get_image_size(image_path):
     # Open the image file
     with Image.open(image_path) as img:
@@ -156,17 +124,50 @@ def insert_image_in_pdf(original_pdf_path, image_path, page_number):
     
     return pdf_buffer  # Trả về file PDF trong bộ nhớ
 
+def get_content_file(file):
+    reader = PdfReader(file.file_path)
+    content = ''
+    for page_num in range(len(reader.pages)-1):
+        page = reader.pages[page_num]
+        content += page.extract_text() if page.extract_text() else ''
+    content_bytes = content.encode('utf-8')
+    hash_value = hashlib.sha256(content_bytes).digest()
+    return hash_value
+
+
+def gen_sig(keypair,hash_value):
+    if keypair.type=='RSA':
+        return sign_rsa(keypair,hash_value)
+    elif keypair.type=='DSA':
+        return sign_dsa(keypair,hash_value)
+    elif keypair.type=='ECDSA':
+        return sign_ecdsa(keypair,hash_value)
+    elif keypair.type=='Ed25519':
+        return sign_eddsa(keypair,hash_value)
+    # Load the private key from the PEM-encoded string
+def verify(keypair, hash_value, signature):
+    if keypair.type == 'RSA':
+        return verify_rsa(keypair, hash_value, signature)
+    elif keypair.type == 'DSA':
+        return verify_dsa(keypair, hash_value, signature)
+    elif keypair.type == 'ECDSA':   
+        return verify_ecdsa(keypair, hash_value, signature)
+    elif keypair.type == 'Ed25519':
+        return verify_eddsa(keypair, hash_value, signature)
+
 @login_required(login_url='users:login')
 def download_file(request, file_id):
     # Get the file object from the database
     file = get_object_or_404(File, id=file_id)
     key_pair = KeyPair.objects.filter(user=request.user, status='Active').first()
     logger = logging.getLogger('applog')
-
+    hash_value = get_content_file(file)
+    logger.info(f'type hash_value: {type(hash_value)}')
     # Generate the signature
-    signature = gen_sig(key_pair, file)
-    logger.info(f'Signature generated (hex): {signature.hex()}')
-
+    logger.info(f"type keypair private key: {type(key_pair.private_key)}")
+    signature = gen_sig(key_pair, hash_value)
+    logger.info(f'signature type: {type(signature)}')
+    logger.info(f'signature: {signature}')
     image_path = os.path.join(settings.MEDIA_ROOT, 'image.png')
     pdf_buffer = insert_image_in_pdf(file.file_path.path, image_path, 4)
 
@@ -179,11 +180,14 @@ def download_file(request, file_id):
     # Thêm tất cả các trang từ pdf_buffer vào pdf_writer
     for page in pdf_reader.pages:
         pdf_writer.add_page(page)
-
-    # Thêm chữ ký vào metadata của PDF
+    # if key_pair.type != 'EdDSA':
     pdf_writer.add_metadata({
-        '/Signature': signature.hex(),  # Lưu chữ ký dưới dạng hexadecimal
+        '/Signature': signature.hex()  # Store signature as hexadecimal
     })
+    # else:
+    #     pdf_writer.add_metadata({
+    #         '/Signature': signature  # Store signature as base64
+    #     })
 
     # Tạo một BytesIO buffer cho file PDF đã ký cuối cùng
     signed_pdf_buffer = io.BytesIO()
@@ -246,8 +250,9 @@ def upload_and_verify(request):
                 })
 
             # Convert the signature from hex back to bytes
-            signature_bytes = bytes.fromhex(signature_hex)
-
+            if key_pair.type != 'EdDSA':
+                signature_hex = bytes.fromhex(signature_hex)
+                
             # Extract and hash the PDF content (excluding the last page where signature is stored)
             content = ''
             for page_num in range(len(reader.pages) - 1):
@@ -259,19 +264,12 @@ def upload_and_verify(request):
             logger.info(f'Hash value (hex): {hash_value.hex()}')
 
             # Load and use the public key for verification
-            public_key = load_pem_public_key(key_pair.public_key.encode('utf-8'))
-            public_key.verify(
-                signature_bytes,
-                hash_value,
-                padding.PSS(
-                    mgf=padding.MGF1(hashes.SHA256()),
-                    salt_length=padding.PSS.MAX_LENGTH
-                ),
-                hashes.SHA256()
-            )
-
-            logger.info('Signature verification succeeded.')
-            verification_status = "Văn Bản Hợp Lệ"
+            if (verify(key_pair, hash_value, signature_hex)):
+                logger.info('Signature verification succeeded.')
+                verification_status = "Văn Bản Hợp Lệ"
+            else:
+                logger.error('Signature verification failed.')
+                verification_status = "Văn Bản Không Hợp Lệ"
 
         except Exception as e:
             logger.error(f'Văn Bản Không Hợp Lệ: {e}')
