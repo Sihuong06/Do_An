@@ -41,7 +41,13 @@
             {% for file in files %}
             <tr>
                 <td><a href="{% url 'file:view_file' file.id %}">{{ file.file_name }}</a></td>
-                <td>{{ file.status }}</td>
+                <td>
+                    {% if file.status == "Unsigned" %}
+                        Chưa kí
+                    {% else %}
+                        Đã kí
+                    {% endif %}
+                </td>
                 <td>{{ file.date_signed|date:"Y-m-d H:i" }}</td>
             </tr>
             {% empty %}

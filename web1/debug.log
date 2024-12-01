@@ -2728,3 +2728,171 @@ AttributeError: 'NoneType' object has no attribute 'private_key'
 2024-11-13 15:30:17,560 DEBUG STREAM b'IDAT' 41 6472
 2024-11-13 15:30:55,941 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
 2024-11-13 15:30:55,942 INFO Signature verification succeeded.
+2024-11-27 08:02:16,382 WARNING Not Found: /favicon.ico
+2024-11-29 07:26:06,948 WARNING Not Found: /favicon.ico
+2024-11-29 07:27:03,533 WARNING Not Found: /keypair
+2024-11-29 07:27:18,875 WARNING Not Found: /keypair/generate
+2024-11-29 07:29:01,459 INFO Key pair found
+2024-11-29 07:29:05,658 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:29:05,659 INFO type keypair private key: <class 'str'>
+2024-11-29 07:29:05,723 INFO signature type: <class 'bytes'>
+2024-11-29 07:29:05,724 INFO signature: b"\xbc\xf9[\x88P\xbfHf*\xc9\x994\xdf\x84a\xcd\x90f\xe3z\xf6\xe5\xefl\xf8i\xb3\xa2G\x0c\x80\x0c\x16_+\x97\xd9\x91qE\xd2H\xb5\xd2\x9f\xeb\xb1\xb7}\xcd\xf5\xca\xe5\xdf*\xf9]_\xf2_t\x7f\xa2\xdf\xe6\xd6h\xe8\xca\xfcUvi\xa4\xd2\xf4q\x95\x92H~\xd3_|'\xf7~\xf5\x85/-\xf1p\xc4\x8a\xed\xb5\x0cD]?\xda\xb1\xcdv\xbf\xdd\xe6'\x19\x91j\xe3Nj\xb5&\x90)\xf5\xf0Ph\xd1I1Vm"
+2024-11-29 07:29:05,890 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:29:05,891 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:30:17,824 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:30:17,835 INFO Signature verification succeeded.
+2024-11-29 07:30:52,144 INFO Key pair found
+2024-11-29 07:30:56,602 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:30:56,604 INFO type keypair private key: <class 'str'>
+2024-11-29 07:30:56,724 INFO signature type: <class 'bytes'>
+2024-11-29 07:30:56,726 INFO signature: b"S\x81/\xa5\x81\xf7^ N\x1f\xd48t\xd4\x82\x00Z\x8c~\xa7\xce\\\x88Z}\xc0\xad\xf3\xbc/\xe3-'\xc9c6\x03\xca\xde\xe5EL\x80\xc3H\xcc,\x14\x87[bT\xec\xc4\x95\xe30\x8fx\xcb\xaa\x9b\xebKO\xfdm\xf4\xd0\x8a\xfe\x1bn\x9e\xf1\x8c\xcd\xefb\xed\xfc\rm\xb3I\xc2\x89\x10d\xc6\xe9\x11Z\xd9\xf4[E\x04\xb1+\xc1\xb9\x93\x17#\xc3\xad\x9dwBJ\xe7G\xff\xd5\xbb\x1d\xebpO%\xcc;\x87]e\x05\x81\x1e\x1b\xd3\xa7L\x99CB\x7fg\xbb\x18\xc8\x17\x0b\xf06\xd5\xc2\xab\xc6\xeb\x04&\xb7K\xe0\xb0\xab2\xd3K5\x85\xf9\x89A\x1a\xbaT\x13\x85K\x88\xef\xd2P,\xbf!M\xd4\xf2\x19\xaa3\x1c\xb78\x8a\x90\xb5\x9fT\xe9\xc9\xbb\x14\x13\x7f\xbb\x95\x88\x84\xed\xfe\x88\x1d\xce9\xda1\x9cd\x8b~\x8f\xb6\x01A\xe77y\xdb\xd7\x87T\xde1\xb0\xea\xfb\x03`\xb0\xf637\x1e\x07J\x9e\x16Ct\x9eb\xf4:\xe4\xe2\xf2qaB\x98\xf1M"
+2024-11-29 07:30:56,728 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:30:56,729 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:31:15,096 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:31:15,097 INFO Signature verification succeeded.
+2024-11-29 07:31:38,978 INFO Key pair found
+2024-11-29 07:31:42,293 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:31:42,294 INFO type keypair private key: <class 'str'>
+2024-11-29 07:31:42,624 INFO signature type: <class 'bytes'>
+2024-11-29 07:31:42,625 INFO signature: b'\x83\xe7\x8dSe\xef\xd7L}\xf2\xf4-\xf8\xf0\xb0\xbf\xa18>c\xb5\x99:J\xd5\xb4y(\xdb~\xb5\xa5\xa2F\x018\xd0\xf8\x02\xca\xa0g4\x03\xe7\xef\xc7\xc3/X\xc2H\xc4l\x8c\xcf\xac\xa1\xda\xaa\'\'\x1d#/\xe88\xa2f\x86\xbc8\x8d]\x15\x16\xb2\xfe\xc1\xc0L>\xef\x80\x92@\x9b\x99\xea\x9bG\xb8z\xf9\xe1$K\xd2Y9v\x9dHC\x0f\xc7P\xc0\x08\x01is\xfc\xce+\xa6,\x0b\x82\xfc\xa17\xbb\x94\xfd\x9d\x88\xb7#i\x92\'\x00\x87\x889\x95\x12*\x1a\xdd\xea\x86^"b\xdb\xac\xe8\xed\xce5\x92v\x9c\x9d!\x83@\x01\xc5\x1f\x83B\xe5{\x8f"\xb2\xfa;\xa9\xca\x83\xdd\x1b\xbc\xe8\x12\x96\xa0\xaan\xde\x8c\x9f\x9dmKM\x13\xca\xb1:wnz\xb1\xd0D\xf3\xd7\xffX\xf9\xae\x1c]\x94H:k\xa7\xd4(#q\xab\xe3\x17H(\xe7J\xf7\xc1{;\xed<T\xb0)\x95\xb7s>\xd4\x95\xa3u\xd1\xbe~k\x12\xb0\xab\x9f\x82&\xc4\xf3\xa7\xcc\xa8\xcf\x84\xd98\xff,\xec:\x04\x1eA\x07\xf2,\xd92\xe7\xd6sx[\xcf\x95\xe8\x87owTh\xb8q\x0e\xd2\xe6\x85\nHb\xb6?K\x861\x9e`F\xaf\xa3\xc1/^\x8b\x8a\xe4y\x9b\xd8|@\x18,5\xe6\xaa\xa7\x93\xe9\n\xb8\xb7\r\x8f\xb4~\xc8$UlzZ\xce%\xf0"#\xb5\x16\xa1\x13\xdc\x83Q\xe3\xf3\xd9b\xa1\xc5\x9e=\x93;E\xf5\xfa\xaa_Q\xe8\xe6\xce\xdc\xa5\x9fg\xd6eI\x9c\xaf\x7f\xf65\',\xc6\tR'
+2024-11-29 07:31:42,626 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:31:42,628 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:31:58,329 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:31:58,330 INFO Signature verification succeeded.
+2024-11-29 07:32:33,034 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:32:33,039 ERROR Signature verification failed.
+2024-11-29 07:32:40,207 INFO Key pair found
+2024-11-29 07:32:44,121 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:32:44,122 INFO type keypair private key: <class 'str'>
+2024-11-29 07:32:44,858 INFO signature type: <class 'bytes'>
+2024-11-29 07:32:44,859 INFO signature: b'\xa3jn\x99\xfeuC\x0f\x1e\xb5w\xb3B88M<\xb6\xadg\xdfU\rw\xef\x86\xa0\x87\xce\x84\xf7\xbf\x89yaD38l \x9c4\xa6)"$\xd5\xcb3\xef\xc2\tY\x9ek-\xab$xc\xbcf\xde8\x1fx\x85\xb5\xee\xcdg\x15w<\xb7N\xc0\xf3s3\x07y\x8e-\x85\xe4\xca\x84\xa1\xcaa\xc0\xde\x11\xf8\x13\x88\xdc1u0H~\xa8w\x93\x05=\xac\xfa\xee\x8c\x95K\xe6\xcb4ENX\xa6\xed\xb2vP,%\x7f\x0c\xc9(\xfa\x9d\xfap\xdc\xcd\xacc\xdeS:\xf0\xf7\x00#\xf7\x84\xa2\xa9\xb0g\x1c\xe4\xc9\xef\xcb\xf4\x08\x1c\x02\xd3\xfb\xa3\xea\x02\x7f\x00\\)\xf4}\xd1\xf9\x85$\x07?\xdb\xf2\xc1\xb4\xebH\xe8or\xa4 \x8a\xa1Q4\xb5\x8d\t\x84\x9alF)\xe6!?6\xec\x1a\xb8)\xee\x04_J\xd9\x1c\xd0\x0f\tn\x98\x151\xd5\xfa8\xc6\x8a\xa2\xdb6\x87E\xfes\x80\xf0\xef\x93R$Kx\x94\xf9|\xec]\x01\x16\x11i-u\xe1U\xc9\x11\xaf\x13\x1dmE7\x94"\t\x96\xa9\xcb\x0b\xceF]\xa4cO \xd8\x05G\xadC\xef\x8a\xb1_\xcbj\x1dl\xfc\xb8\xdc\xab?\xe5\xabj\nr\n\xfc\xc0\x0b\x8c^\xbe\x8e\xd9\xe1q\xbe0\x1e\xf4QT\xbcQ}\x0eu\xe5G\xa9\xd3\x18:2R\xa9I\x06\xb1\xfd\x9a\xc2w;CZB[,%$\xe2\xc5\x97HL\xe3\x1f_K\xaf\xb8\xe6\xed\xcaCwTk\xe0\xd5q\xddP\xbd\xbb\x1a\xf4Dl\x8f.\xcb\n\x06u\x8aM\xe8\xf5\xb5\xfaFn\xf9\x1cT\xae\'\x0b.\xe3[\x18\xf0u&\xcb\xfbC\r\xec\xe29<\xa0\xbb\xb5\x9a\xa1\xd4\x1e\x8e\xc5\x17@\x18\xc8\x05\xd9K\x1e\xb3E\xd6\xb2\xe6\xc3n\xb4\x91\x1b\xae<"\xbe\x19\xceE \xef\xfa\x8b\r<\x8f@\xd1\x98d\xf5+\xe6Y\xef\x14\xde\x9b\xd2Z\xd4&\xb9\xe58\x85\x8b\x17\xf8\t\xf30\xef\x1c\xaeo\x1e.|q\xcdK\xd4\xa6!\x84t\x1e\x9f\x81?s\xaa\xf3\x92c\x89f\x00d~{D\xeec4\xf8'
+2024-11-29 07:32:44,862 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:32:44,863 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:32:57,403 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:32:57,405 ERROR Signature verification failed.
+2024-11-29 07:33:20,516 INFO Key pair found
+2024-11-29 07:33:23,544 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:33:23,550 INFO type keypair private key: <class 'str'>
+2024-11-29 07:33:23,555 INFO signature type: <class 'bytes'>
+2024-11-29 07:33:23,556 INFO signature: b'0-\x02\x15\x00\xac\xec\xa3}\x97\x13\x11\xc6|`R4T\x87\xad\x90m\x191e\x02\x14\x1e5@q\xc9\x16\xb9|\xc3@C\xfd\xbe\x1a\xf0\xaa`!\x91\xe0'
+2024-11-29 07:33:23,559 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:33:23,560 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:33:45,750 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:33:45,752 INFO Signature verification succeeded.
+2024-11-29 07:34:13,532 INFO Key pair found
+2024-11-29 07:34:16,687 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:34:16,688 INFO type keypair private key: <class 'str'>
+2024-11-29 07:34:16,690 INFO signature type: <class 'bytes'>
+2024-11-29 07:34:16,691 INFO signature: b'0D\x02 7m\xfa\x9a@\x0f\xcc\x15|uD\xbc!F\x894P\xfc\x0ea\xf6\xf9\x8c5\x9d\xa6+\x00\xcc\xf1\x14\t\x02 B\xed\xb8\xb7Y\x91\xcc\r1\xe8\x85l\x99\xab\xe2\x1f?D/\xe5<}Q\x9f\x12}\xce\xef\xcc\xa0}9'
+2024-11-29 07:34:16,693 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:34:16,694 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:34:30,228 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:34:30,230 INFO Signature verification succeeded.
+2024-11-29 07:34:51,717 INFO Key pair found
+2024-11-29 07:34:54,933 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:34:54,934 INFO type keypair private key: <class 'str'>
+2024-11-29 07:34:54,938 INFO signature type: <class 'bytes'>
+2024-11-29 07:34:54,939 INFO signature: b'0D\x02 4\xe1n:O\xf8\xdaWFY\x0b\xcd92i\x9fHEi\\[\x00/\x18\xb5\xf2\xb6\xb8\xf0\xf3\x90\xbc\x02 \x1b\xdes\x8c\xaa\x8a\x83\x88)\xfen\xa4\xf9\xac&E}\xc8;\x84\xb8$#\x9cq\x03\xa2K\x97z\xfe\x07'
+2024-11-29 07:34:54,941 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:34:54,943 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:35:07,582 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:35:07,586 INFO Signature verification succeeded.
+2024-11-29 07:35:31,916 INFO Key pair found
+2024-11-29 07:35:35,146 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:35:35,147 INFO type keypair private key: <class 'str'>
+2024-11-29 07:35:35,153 INFO signature type: <class 'bytes'>
+2024-11-29 07:35:35,154 INFO signature: b'0D\x02 \r\x82D&g\x9dZH=@\xcf)\xa5;\x1d9\xa2$Ej\x1e\xd3Z\xf5FJo\n\x81N\x1a\xbd\x02 O<\xd4\xbd\xfd1\x8e\xf5\x07\xffH\xac\x8b\x813\x1d\xa5r\x198\xc7\xeeK\xcb\x90\x94\xd1\x07ZV\x81q'
+2024-11-29 07:35:35,155 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:35:35,155 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:35:50,489 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:35:50,493 INFO Signature verification succeeded.
+2024-11-29 07:36:24,832 INFO Key pair found
+2024-11-29 07:36:28,430 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:36:28,431 INFO type keypair private key: <class 'str'>
+2024-11-29 07:36:28,433 INFO signature type: <class 'bytes'>
+2024-11-29 07:36:28,433 INFO signature: b'0E\x02!\x00\xff\x97\xb0\x02\xcd\x19\x02[*h\x97\x0e\x8f\x95+%\x81\xbd\x9ePI\x01`r\xd5\x81s\xae\x12|\x02\x10\x02 O{\x87O\x1fB\xdb\xb8\xc7\xe3~\xe9\xa1\xf3\xd6\xfe]\xf5\xf7\x02\xb7\x1d\xb0\x03\xe4\xa1\xc2\\\xf6\xafQ\xfa'
+2024-11-29 07:36:28,435 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:36:28,436 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:36:40,081 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:36:40,082 INFO Signature verification succeeded.
+2024-11-29 07:37:00,685 INFO Key pair found
+2024-11-29 07:37:03,972 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:37:03,972 INFO type keypair private key: <class 'str'>
+2024-11-29 07:37:03,976 INFO signature type: <class 'bytes'>
+2024-11-29 07:37:03,977 INFO signature: b"0d\x020PM>\xdd\x87\xc2^b1\xd0\xa7rD\xdb\x06\xf7\r\x8d\x89\xe7\x95\x1d\x12][M\xa3$\x01\xb6\xf4\xaf\x1c&t\x9a\xbfo\xff{\x1d\xa6A\xff\\\x81C\x10\x020\x19R\xa3\x189\xf9>\xe2\x10\x1a\xac\x7f\xac\x19\x88\x8f\xc2\xf9c&YH\xa1.\xff/[|\x17\xd1'\xe6ro\x1f\xcb\xda\xb7z\xdbf\xa9\xd8\xc2=b\xb4\xc8"
+2024-11-29 07:37:03,980 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:37:03,981 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:37:15,872 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:37:15,877 INFO Signature verification succeeded.
+2024-11-29 07:37:29,608 INFO Key pair found
+2024-11-29 07:37:32,765 INFO type hash_value: <class 'bytes'>
+2024-11-29 07:37:32,767 INFO type keypair private key: <class 'str'>
+2024-11-29 07:37:32,776 INFO signature type: <class 'bytes'>
+2024-11-29 07:37:32,776 INFO signature: b'0\x81\x87\x02A~\x97\tV`\x95\x85\xb0\x0f\xb5\x8fc\xac\xbc\xf0\xc3\xa4\xb6\xf5\xff\x0e\xdf\xa5b;\xdc\x8b\x92\xaf\xaf\t \x86W\x05\t\x0c{e3_Q\x8f\xa7\x11\xa9\xf9\xd0\xbc\x19\xe0\x1aZ!W\xf2\x01\xecP\x13:\xb0\xda\x1d\x91\x02B\x01\xb0\x04\xba-VW\x83\x86\xaf\xe6\x96\x94\xf1\xba\xb9\x9a*\x1e\xa0\xe1Z\x0bv\xa4\xba ]|\xaf\xff\x89\xd6\xac\xc7X\xf0x\x1b\xc8\xba\x86s\x92\x1e\xfe\xd8\xdc\xb9u\x90\xbc\x9f\xb1\xb3-\xc2\xba\x16?l\xd3\xfb\x94Hu'
+2024-11-29 07:37:32,778 DEBUG STREAM b'IHDR' 16 13
+2024-11-29 07:37:32,778 DEBUG STREAM b'IDAT' 41 6472
+2024-11-29 07:37:43,417 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-11-29 07:37:43,425 INFO Signature verification succeeded.
+2024-11-29 07:51:24,490 INFO F:\Do_An\web1\file\forms.py changed, reloading.
+2024-11-29 07:51:40,832 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-29 07:51:55,807 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-29 07:55:36,887 WARNING Not Found: /files/3/
+2024-11-29 07:55:48,666 INFO Key pair found
+2024-11-29 07:56:10,575 INFO Key pair found
+2024-11-29 07:59:41,092 INFO F:\Do_An\web1\file\models.py changed, reloading.
+2024-11-29 07:59:50,227 INFO F:\Do_An\web1\file\forms.py changed, reloading.
+2024-11-29 08:03:05,386 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-29 08:03:12,263 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-11-29 08:10:52,824 INFO Key pair found
+2024-11-29 08:11:35,480 INFO Key pair found
+2024-11-29 09:51:34,505 INFO Key pair found
+2024-11-29 10:32:37,449 INFO Key pair found
+2024-12-01 10:28:35,105 WARNING Not Found: /favicon.ico
+2024-12-01 10:28:39,089 INFO Key pair found
+2024-12-01 10:28:41,876 INFO type hash_value: <class 'bytes'>
+2024-12-01 10:28:41,877 INFO type keypair private key: <class 'str'>
+2024-12-01 10:28:41,952 INFO signature type: <class 'bytes'>
+2024-12-01 10:28:41,953 INFO signature: b'0\x81\x87\x02Al\xc6\xaf\xce"\xb4\x9c\xe8\x82o\xce\x87\x89\x02:\x8a\x9b\x8b\x12\x1d\xd9y\x99*\x05\xf3u\x88\x82>2\x170b\xe8\xb8\xce\x0eM\x1e\xb6\x9e\xed\xa0\x8f/A\x02\x12\xb5l\xa1\x07\x1c\xac\xea\x89(\x9afO |\xc4\xde\x02B\x01\x195\xb7\xfa|<\xbf\xa6\xbc\x1d*\n\xcf\xbb\xb9\xca\xa1L\x81;es-\xcc\x91\xcb\xc8H\x12`g\x102\xa6\x7f\x9cO\x97W\x1a\x96\x9e\x7f#3\xc4V\xe2\xfbQ\xd9\xc4Pn\xef\xde\xd5\x80\xc5\x9c\x98\xf2\xee\xa4\xbc'
+2024-12-01 10:28:42,053 ERROR Internal Server Error: /files/download/42/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 215, in download_file
+    user_full_name = f"{request.user.lastname} {request.user.firstname}"
+                        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'lastname'. Did you mean: 'last_name'?
+2024-12-01 10:29:22,548 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-12-01 10:29:28,186 INFO type hash_value: <class 'bytes'>
+2024-12-01 10:29:28,187 INFO type keypair private key: <class 'str'>
+2024-12-01 10:29:28,198 INFO signature type: <class 'bytes'>
+2024-12-01 10:29:28,198 INFO signature: b"0\x81\x87\x02B\x00\xd3B\xdc\xc5\xda K\xe6ui\xff30\x035?\xcf\x95\xf4\x00U\x06\xce\x1ey\xfc\x08\xaf\x99!\xa98\xc2\xe6\xbd\xc1:sz\r\xd7\xad\xda'\x15Ys\xbb?N;J8\xae\x99\x98\x8b\xe9\xc3u} \x98\xbb\xea\x02A\x1a%\x8a\xfa\x8b\x1a7\xd7\xa3Y/\x87\xa0\xee\xfb\xf8\xf9\x932\xc2\x9d(U\xb2\xcd`\xc5\x97\xdep\xd0\xaa\xeb\x16s\x1b^\x8eK-\xad!@\xc4\xb2\xeb\x81\x90y&\xc3\x7f\xac\x02H=\xce\x86\xb1\x01\x84\xed\x85\\\xff"
+2024-12-01 10:29:28,770 DEBUG STREAM b'IHDR' 16 13
+2024-12-01 10:29:28,770 DEBUG STREAM b'IDAT' 41 6377
+2024-12-01 10:33:49,494 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-12-01 10:33:57,004 INFO Key pair found
+2024-12-01 10:33:59,218 INFO type hash_value: <class 'bytes'>
+2024-12-01 10:33:59,219 INFO type keypair private key: <class 'str'>
+2024-12-01 10:33:59,246 INFO signature type: <class 'bytes'>
+2024-12-01 10:33:59,247 INFO signature: b'0\x81\x88\x02B\x01\xc2F\xd1*\xdb\xeeJ \x83H\xe0\x8bAjl\xef\x08\x9e\xcaMA\x8c\xa4\xe9\xe83C\xa9\xbc\x06M\xe4\x87\xee\xbcA\xf8\xa73\xa4FM\x8e\xab%\x1b\x18U\xcb8\xd9\xd4\x06cgV\x0bh\r)C\x16\xce\xa4\xd0\x02B\x00\xc6\xea\xb2\x80\xfe\x89\x96\x0b)=u\xc31x\x002D\xc9\xf9fEdK\xcbb4\xd8\xd5\x99\x8a\xc9\xf0B\xbe\xe6_\xe6\x91\xac^\xda\xf8\x1b\x83\x92\x91Yp\x92\xe6G\xa4\x81_\x83y4&\xb8y\x80S\x1c\x10\xf9'
+2024-12-01 10:33:59,929 DEBUG STREAM b'IHDR' 16 13
+2024-12-01 10:33:59,929 DEBUG STREAM b'IDAT' 41 5832
+2024-12-01 10:34:01,011 INFO type hash_value: <class 'bytes'>
+2024-12-01 10:34:01,012 INFO type keypair private key: <class 'str'>
+2024-12-01 10:34:01,018 INFO signature type: <class 'bytes'>
+2024-12-01 10:34:01,019 INFO signature: b'0\x81\x88\x02B\x01\xbdi\x19\xda\xe9r"\xf9g\xec\x90\x14\xb2\x9e\xb6\xa9#\xab\xd7\xf00\xb5T\x9d\x89\xb1\xda\x07,\xcb8U\xbb\xa4o,\x91\xcc\x89}\x8b\x01\xe8\t\n\xa8\xf4\x0b\xa7\x9as\x19\xf7\xb0\xdcX\xef\r\xe4G\xf2\xcc\xa9\xaa\xca\x02B\x01\x15\xfe\x16\xcd\xe5\xc6\xf6c\xba\xf6\xd8\x9f\xe4Ry\x1a\xd5-\xa5\xe2K\x8dy\xda\xf5\xcf\x96L(\\\x95<\x98\xc9MdC\xfd\x9d/\xcf\xfb\xaf\x0f6\xf4\x86jR\xfb\xe7z\xe0\xbfT`\xcf}\x1e\x81\xa9p.\x80s'
+2024-12-01 10:34:01,056 DEBUG STREAM b'IHDR' 16 13
+2024-12-01 10:34:01,057 DEBUG STREAM b'IDAT' 41 5832
+2024-12-01 10:34:26,508 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-12-01 10:35:12,597 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-12-01 10:47:31,667 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-01 10:48:16,714 INFO F:\Do_An\web1\keypair\views.py changed, reloading.

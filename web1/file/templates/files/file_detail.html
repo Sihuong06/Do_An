@@ -5,7 +5,14 @@
 
         <div class="file-header">
             <h2>Tên Văn Bản: {{ file_obj.file_name }}</h2>
-            <p>Trạng Thái: {{ file_obj.status }}</p>
+            <p>Trạng Thái: 
+                {% if file_obj.status == "Unsigned" %}
+                    Chưa Kí
+                {% else %}
+                    Đã Kí
+                {% endif %}
+            </p>
+            
             <div class="download-button-container">
                 <a href="{% url 'file:download_file' file_obj.id %}">
                     <button type="button" class="download-button">Kí Văn Bản</button>

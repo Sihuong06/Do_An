@@ -9,6 +9,7 @@ from .forms import FileUploadForm  # Tạo form upload file
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required, user_passes_test
 import hashlib
+from PIL import Image, ImageDraw, ImageFont
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import padding
@@ -29,6 +30,8 @@ from PIL import Image, ImageDraw, ImageFont
 import fitz
 from cryptography.hazmat.primitives.serialization import load_pem_public_key, load_pem_private_key
 from .signature_utils import sign_rsa, verify_rsa, sign_dsa, verify_dsa, sign_ecdsa, verify_ecdsa, sign_eddsa, verify_eddsa 
+from datetime import datetime
+
 logging.basicConfig(
     level=logging.DEBUG,  # Adjust the level to DEBUG, INFO, WARNING, etc.
     format='%(asctime)s %(levelname)s %(message)s',
@@ -49,11 +52,11 @@ def upload_file(request):
             uploaded_file = form.save(commit=False)
             uploaded_file.user = request.user
             uploaded_file.status = 'Unsigned' 
+            uploaded_file.file_name = uploaded_file.file_path.name
             uploaded_file.save()
-            picture = Picture.objects.all()
             file_obj = get_object_or_404(File, id=uploaded_file.id)
             file_url = file_obj.file_path.url
-            return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj,'picture':picture})
+            return render(request, 'files/file_detail.html', {'file_url': file_url, 'file_obj': file_obj})
     else:
         form = FileUploadForm()
     return render(request, 'files/upload_file.html', {'form': form})
@@ -93,6 +96,44 @@ def list_files(request):
 
     return render(request, 'files/file_list.html', {'files': files, 'status': status})
 
+
+
+def text_to_image(text, font_size=13, image_size=(250, 100), background_color=(255, 255, 255), text_color=(0, 0, 139), border_color=(0, 128, 0), border_width=3):
+    # Tạo ảnh với kích thước và màu nền yêu cầu
+    img = Image.new("RGB", image_size, background_color)
+    draw = ImageDraw.Draw(img)
+
+    # Tải font chữ
+    font = ImageFont.truetype("times.ttf", font_size)
+
+    # Tính toán vị trí của văn bản để căn lề trái và ở giữa theo chiều dọc
+    text_bbox = draw.textbbox((0, 0), text, font=font)
+    text_height = text_bbox[3] - text_bbox[1]
+    text_x = 0  # Đặt x = 0 để căn sát mép bên trái
+    text_y = (image_size[1] - text_height) // 2  # Căn giữa theo chiều dọc
+
+    # Thêm viền màu xanh lá cây xung quanh hình ảnh
+    bordered_img = Image.new("RGB", (image_size[0] + 2 * border_width, image_size[1] + 2 * border_width), border_color)
+    bordered_img.paste(img, (border_width, border_width))
+
+    # Vẽ văn bản với màu chữ dark blue vào ảnh
+    draw = ImageDraw.Draw(bordered_img)
+    draw.multiline_text((text_x + border_width, text_y + border_width), text, fill=text_color, font=font, align="left")
+    # Thêm dấu tick xanh lá cây đậm và mờ
+    tick_color = (0, 128, 0, 150)  # Xanh lá cây đậm với độ mờ alpha = 150
+    tick_layer = Image.new("RGBA", bordered_img.size, (255, 255, 255, 0))  # Tạo layer trong suốt
+    tick_draw = ImageDraw.Draw(tick_layer)
+
+    # Vẽ dấu tick hình chữ V
+    tick_coords = [(150, 80), (170, 100), (210, 60)]  # Tọa độ cho hình tick
+    tick_draw.line(tick_coords, fill=tick_color, width=10)
+
+    # Ghép layer chứa dấu tick lên ảnh chính
+    bordered_img = Image.alpha_composite(bordered_img.convert("RGBA"), tick_layer)
+    # Hiển thị hoặc lưu ảnh
+    bordered_img.save("F:/Do_An/web1/media/image.png")  # Để lưu ảnh
+    # bordered_img.show()  # Để hiển thị ảnh
+    # bordered_img.save("output_image.png")  # Để lưu ảnh
 
 def get_image_size(image_path):
     # Open the image file
@@ -168,6 +209,21 @@ def download_file(request, file_id):
     signature = gen_sig(key_pair, hash_value)
     logger.info(f'signature type: {type(signature)}')
     logger.info(f'signature: {signature}')
+     
+    # Lấy thông tin từ người dùng và ngày hiện tại
+    user_full_name = f"{request.user.username}"
+    current_date = datetime.now().strftime('%d/%m/%Y')
+
+    # Tạo đoạn văn bản cần chuyển đổi
+    text = f"""Signature Valid:
+    Ký bởi(Signed By): {user_full_name}
+    Ký ngày(Signing Date): {current_date}"""
+
+    # Gọi hàm để chuyển đổi text thành ảnh
+    text_to_image(
+        text,
+        background_color=(220, 255, 220)  # Xanh lá cực nhạt
+    )
     image_path = os.path.join(settings.MEDIA_ROOT, 'image.png')
     pdf_buffer = insert_image_in_pdf(file.file_path.path, image_path, 4)
 

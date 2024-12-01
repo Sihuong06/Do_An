@@ -4,4 +4,4 @@ from .models import File
 class FileUploadForm(forms.ModelForm):
     class Meta:
         model = File
-        fields = ['file_name', 'file_path']  # Các trường bạn muốn hiển thị trong form
+        fields = ['file_path']  # Các trường bạn muốn hiển thị trong form

@@ -7,6 +7,9 @@ from users.models import UserProfile
 from cryptography.hazmat.primitives.asymmetric import dsa, ed25519, ec, rsa
 from cryptography.hazmat.primitives import serialization
 import base64
+from django.http import HttpResponse
+from io import BytesIO
+
 # DSA keypair generation
 def generate_dsa_keypair(bit_size):
     private_key = dsa.generate_private_key(key_size=bit_size)
@@ -36,25 +39,76 @@ def generate_rsa_keypair(bit_size):
     )
     public_key = private_key.public_key()
     return private_key, public_key
-# EdDSA keypair generation (Ed25519)
-def generate_eddsa_keypair():
-    private_key = ed25519.Ed25519PrivateKey.generate()
-    public_key = private_key.public_key()
+# @login_required(login_url='users:login')
+# @user_passes_test(lambda user: user.is_superuser)
+# def generate_keypair(request):
+#     if request.method == "POST":
+#         verification_code = request.POST['verification_code']
+#         user_profile = UserProfile.objects.filter(verification_code=verification_code).first()
 
-    # Serialize private key and public key as raw bytes (not PEM format)
-    private_key_bytes = private_key.private_bytes(
-        encoding=serialization.Encoding.Raw,
-        format=serialization.PrivateFormat.Raw,
-        encryption_algorithm=serialization.NoEncryption()
-    )
-    
-    public_key_bytes = public_key.public_bytes(
-        encoding=serialization.Encoding.Raw,
-        format=serialization.PublicFormat.Raw
-    )
+#         # Check if user profile exists
+#         if not user_profile:
+#             messages.error(request, 'User with this verification code does not exist.')
+#             return redirect('keypair:generate_keypair')
 
-    # Return private and public key as base64 encoded strings
-    return base64.b64encode(private_key_bytes).decode('utf-8'), base64.b64encode(public_key_bytes).decode('utf-8')
+#         # Check if an active keypair already exists for this user
+#         if KeyPair.objects.filter(user=user_profile.user, status='Active').exists():
+#             messages.error(request, 'An active key pair already exists for this user.')
+#             return redirect('keypair:generate_keypair')
+
+#         # Get the selected algorithm and bit size
+#         algorithm = request.POST['algorithm']
+#         bit_size = int(request.POST['bit_size'])
+
+#         if algorithm == 'EdDSA':
+#             private_key_pem, public_key_pem = generate_eddsa_keypair()  # EdDSA key pair
+#         else: 
+#         # Generate the keypair based on the selected algorithm and bit size
+#             if algorithm == 'RSA':
+#                 private_key, public_key = generate_rsa_keypair(bit_size)
+#             elif algorithm == 'DSA':
+#                 private_key, public_key = generate_dsa_keypair(bit_size)
+#             elif algorithm == 'ECDSA':
+#                 private_key, public_key = generate_ecdsa_keypair(bit_size)  # EdDSA key pair
+#             else:
+#                 messages.error(request, 'Unsupported algorithm.')
+#                 return redirect('keypair:generate_keypair')
+
+#             # Serialize keys to PEM format
+#             private_key_pem = private_key.private_bytes(
+#                 encoding=serialization.Encoding.PEM,
+#                 format=serialization.PrivateFormat.TraditionalOpenSSL,
+#                 encryption_algorithm=serialization.NoEncryption()
+#             ).decode('utf-8')
+
+#             public_key_pem = public_key.public_bytes(
+#                 encoding=serialization.Encoding.PEM,
+#                 format=serialization.PublicFormat.SubjectPublicKeyInfo
+#             ).decode('utf-8')
+
+#         # Set created_at and expire fields
+#         created_at = timezone.now()
+#         expire = created_at + timezone.timedelta(days=365)  # 1 year expiration
+
+#         # Save the keypair to the database
+#         KeyPair.objects.create(
+#             user=user_profile.user,
+#             type=algorithm,
+#             public_key=public_key_pem,
+#             private_key=private_key_pem,
+#             created_at=created_at,
+#             expire=expire,
+#             status='Active'
+#         )
+
+#         # Add success message
+#         messages.success(request, 'Key pair generated successfully!')
+#         return redirect('keypair:generate_keypair')
+
+#     return render(request, 'keypair_form.html')
+
+from django.http import HttpResponse
+from io import BytesIO
 
 @login_required(login_url='users:login')
 @user_passes_test(lambda user: user.is_superuser)
@@ -77,53 +131,53 @@ def generate_keypair(request):
         algorithm = request.POST['algorithm']
         bit_size = int(request.POST['bit_size'])
 
-        if algorithm == 'EdDSA':
-            private_key_pem, public_key_pem = generate_eddsa_keypair()  # EdDSA key pair
-        else: 
         # Generate the keypair based on the selected algorithm and bit size
-            if algorithm == 'RSA':
-                private_key, public_key = generate_rsa_keypair(bit_size)
-            elif algorithm == 'DSA':
-                private_key, public_key = generate_dsa_keypair(bit_size)
-            elif algorithm == 'ECDSA':
-                private_key, public_key = generate_ecdsa_keypair(bit_size)  # EdDSA key pair
-            else:
-                messages.error(request, 'Unsupported algorithm.')
-                return redirect('keypair:generate_keypair')
+        if algorithm == 'RSA':
+            private_key, public_key = generate_rsa_keypair(bit_size)
+        elif algorithm == 'DSA':
+            private_key, public_key = generate_dsa_keypair(bit_size)
+        elif algorithm == 'ECDSA':
+            private_key, public_key = generate_ecdsa_keypair(bit_size)
+        else:
+            messages.error(request, 'Unsupported algorithm.')
+            return redirect('keypair:generate_keypair')
 
             # Serialize keys to PEM format
-            private_key_pem = private_key.private_bytes(
-                encoding=serialization.Encoding.PEM,
-                format=serialization.PrivateFormat.TraditionalOpenSSL,
-                encryption_algorithm=serialization.NoEncryption()
-            ).decode('utf-8')
-
-            public_key_pem = public_key.public_bytes(
-                encoding=serialization.Encoding.PEM,
-                format=serialization.PublicFormat.SubjectPublicKeyInfo
-            ).decode('utf-8')
+        private_key_pem = private_key.private_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PrivateFormat.TraditionalOpenSSL,
+            encryption_algorithm=serialization.NoEncryption()
+        )
+        public_key_pem = public_key.public_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PublicFormat.SubjectPublicKeyInfo
+        ).decode('utf-8')
 
         # Set created_at and expire fields
         created_at = timezone.now()
         expire = created_at + timezone.timedelta(days=365)  # 1 year expiration
 
         # Save the keypair to the database
-        KeyPair.objects.create(
+        keypair = KeyPair.objects.create(
             user=user_profile.user,
             type=algorithm,
             public_key=public_key_pem,
-            private_key=private_key_pem,
+            private_key=private_key_pem.decode('utf-8'),
             created_at=created_at,
             expire=expire,
             status='Active'
         )
 
+        # Create a response to send the private key as a download
+        response = HttpResponse(private_key_pem, content_type='application/pem')
+        response['Content-Disposition'] = f'attachment; filename="private_key_{keypair.type}.pem"'
+
         # Add success message
         messages.success(request, 'Key pair generated successfully!')
-        return redirect('keypair:generate_keypair')
+
+        return response  # Return private key file as download
 
     return render(request, 'keypair_form.html')
-
 
 
 @login_required(login_url='users:login')
