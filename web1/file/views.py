@@ -29,7 +29,7 @@ from django.conf import settings
 from PIL import Image, ImageDraw, ImageFont
 import fitz
 from cryptography.hazmat.primitives.serialization import load_pem_public_key, load_pem_private_key
-from .signature_utils import sign_rsa, verify_rsa, sign_dsa, verify_dsa, sign_ecdsa, verify_ecdsa, sign_eddsa, verify_eddsa 
+from .signature_utils import sign_rsa, verify_rsa, sign_dsa, verify_dsa, sign_ecdsa, verify_ecdsa
 from datetime import datetime
 
 logging.basicConfig(
@@ -96,9 +96,7 @@ def list_files(request):
 
     return render(request, 'files/file_list.html', {'files': files, 'status': status})
 
-
-
-def text_to_image(text, font_size=13, image_size=(250, 100), background_color=(255, 255, 255), text_color=(0, 0, 139), border_color=(0, 128, 0), border_width=3):
+def text_to_image(text, font_size=13, image_size=(270, 100), background_color=(255, 255, 255), text_color=(0, 0, 139), border_color=(0, 128, 0), border_width=3):
     # Tạo ảnh với kích thước và màu nền yêu cầu
     img = Image.new("RGB", image_size, background_color)
     draw = ImageDraw.Draw(img)
@@ -176,15 +174,13 @@ def get_content_file(file):
     return hash_value
 
 
-def gen_sig(keypair,hash_value):
-    if keypair.type=='RSA':
-        return sign_rsa(keypair,hash_value)
-    elif keypair.type=='DSA':
-        return sign_dsa(keypair,hash_value)
-    elif keypair.type=='ECDSA':
-        return sign_ecdsa(keypair,hash_value)
-    elif keypair.type=='Ed25519':
-        return sign_eddsa(keypair,hash_value)
+def gen_sig(private_key,hash_value,type):
+    if type=='RSA':
+        return sign_rsa(private_key,hash_value)
+    elif type=='DSA':
+        return sign_dsa(private_key,hash_value)
+    elif type=='ECDSA':
+        return sign_ecdsa(private_key,hash_value)
     # Load the private key from the PEM-encoded string
 def verify(keypair, hash_value, signature):
     if keypair.type == 'RSA':
@@ -193,26 +189,37 @@ def verify(keypair, hash_value, signature):
         return verify_dsa(keypair, hash_value, signature)
     elif keypair.type == 'ECDSA':   
         return verify_ecdsa(keypair, hash_value, signature)
-    elif keypair.type == 'Ed25519':
-        return verify_eddsa(keypair, hash_value, signature)
+    return False
 
 @login_required(login_url='users:login')
 def download_file(request, file_id):
     # Get the file object from the database
     file = get_object_or_404(File, id=file_id)
     key_pair = KeyPair.objects.filter(user=request.user, status='Active').first()
+    if 'private_key' in request.FILES:
+        private_key_file = request.FILES['private_key']
+        
+        # Đọc private key từ file
+        private_key_pem = private_key_file.read().decode('utf-8')
+        
+        try:
+            private_key = serialization.load_pem_private_key(
+                private_key_pem.encode('utf-8'),
+                password=None
+            )
+        except ValueError:
+            return redirect('your_redirect_url')  # Chuyển hướng nếu private key không hợp lệ
     logger = logging.getLogger('applog')
     hash_value = get_content_file(file)
     logger.info(f'type hash_value: {type(hash_value)}')
     # Generate the signature
-    logger.info(f"type keypair private key: {type(key_pair.private_key)}")
-    signature = gen_sig(key_pair, hash_value)
+    signature = gen_sig(private_key, hash_value,key_pair.type)
     logger.info(f'signature type: {type(signature)}')
     logger.info(f'signature: {signature}')
      
     # Lấy thông tin từ người dùng và ngày hiện tại
     user_full_name = f"{request.user.username}"
-    current_date = datetime.now().strftime('%d/%m/%Y')
+    current_date = datetime.now().strftime('%H:%M:%S %d/%m/%Y')  # Thêm giờ, phút, giây
 
     # Tạo đoạn văn bản cần chuyển đổi
     text = f"""Signature Valid:
@@ -240,10 +247,7 @@ def download_file(request, file_id):
     pdf_writer.add_metadata({
         '/Signature': signature.hex()  # Store signature as hexadecimal
     })
-    # else:
-    #     pdf_writer.add_metadata({
-    #         '/Signature': signature  # Store signature as base64
-    #     })
+
 
     # Tạo một BytesIO buffer cho file PDF đã ký cuối cùng
     signed_pdf_buffer = io.BytesIO()

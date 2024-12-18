@@ -7,13 +7,8 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
 import base64
 # DSA chuẩn rồi
-def sign_dsa(keypair, hashed_message):
+def sign_dsa(private_key, hashed_message):
     # Load the private key from the PEM-encoded string
-    private_key = serialization.load_pem_private_key(
-        keypair.private_key.encode('utf-8'),
-        password=None,
-        backend=default_backend()
-    )
 
     # DSA sử dụng phương thức sign để tạo chữ ký
     return private_key.sign(
@@ -39,13 +34,8 @@ def verify_dsa(keypair, hashed_message, signature):
         return False
 
 # ECDSA chuẩn rồi
-def sign_ecdsa(keypair, hashed_message):
+def sign_ecdsa(private_key, hashed_message):
     # Load the private key from the PEM-encoded string
-    private_key = serialization.load_pem_private_key(
-        keypair.private_key.encode('utf-8'),
-        password=None,
-        backend=default_backend()
-    )
 
     # ECDSA ký với SHA256 hash
     return private_key.sign(
@@ -71,12 +61,7 @@ def verify_ecdsa(keypair, hashed_message, signature):
         return False  # Chữ ký không hợp lệ
 
 # RSA chuẩn rồi 
-def sign_rsa(keypair, hashed_message):
-    private_key = serialization.load_pem_private_key(
-        keypair.private_key.encode('utf-8'),
-        password=None,
-        backend=default_backend()
-    )
+def sign_rsa(private_key, hashed_message):
     return private_key.sign(
         hashed_message,
         padding.PSS(
@@ -104,18 +89,3 @@ def verify_rsa(keypair, hashed_message, signature):
         return True
     except:
         return False
-
-# EdDSA đang lỗi phần tạo keypair
-def sign_eddsa(keypair, message_hash):
-    private_key = keypair.private_key
-    signature = private_key.sign(message_hash)  # Sign the hash (bytes) directly
-    # return base64.b64encode(signature).decode('utf-8')  # Return signature in Base64
-    return signature
-
-def verify_eddsa(keypair, hashed_message, signature):
-    # Load the public key from the PEM-encoded string
-    public_key = base64.b64decode(keypair.public_key)
-    public_key = ed25519.Ed25519PublicKey.from_public_bytes(public_key)
-    signature = base64.b64decode(signature)
-
-    return public_key.verify(signature, hashed_message)

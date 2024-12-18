@@ -7,8 +7,11 @@
     {% endif %}
 
     {% if verification_status %}
-    <p class="status-message">{{ verification_status }}</p>
+        <p class="status-message {% if verification_status == 'Văn Bản Không Hợp Lệ' %}status-error{% else %}status-success{% endif %}">
+            {{ verification_status }}
+        </p>
     {% endif %}
+
 
     <div class="verify-content">
         <form action="{% url 'file:upload_verify' %}" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
@@ -53,17 +56,44 @@
         margin-bottom: 20px;
     }
 
+    /* Style for error message */
     .error-message {
         color: red;
+        font-size: 1.2rem; /* Chữ to hơn */
+        font-weight: bold;
         text-align: center;
         margin-bottom: 20px;
+        padding: 10px;
+        background-color: rgba(255, 0, 0, 0.1); /* Nền đỏ nhạt */
+        border: 1px solid red;
+        border-radius: 5px;
     }
 
+    /* Style for status message (success) */
+/* Style for general status message */
     .status-message {
-        color: green;
+        font-size: 1.2rem; /* Chữ to hơn */
+        font-weight: bold;
         text-align: center;
         margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 5px;
     }
+
+    /* Style for success messages (green text) */
+    .status-success {
+        color: green; /* Màu chữ xanh */
+        background-color: rgba(0, 255, 0, 0.1); /* Nền xanh nhạt */
+        border: 1px solid green; /* Viền xanh */
+    }
+
+    /* Style for error messages (red text) */
+    .status-error {
+        color: red; /* Màu chữ đỏ */
+        background-color: rgba(255, 0, 0, 0.1); /* Nền đỏ nhạt */
+        border: 1px solid red; /* Viền đỏ */
+    }
+
 
     .verify-content {
         display: flex;

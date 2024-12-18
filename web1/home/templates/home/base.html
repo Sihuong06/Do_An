@@ -32,6 +32,7 @@
       </div>
       <nav>
         <ul class="nav-menu">
+          {% if not user.is_superuser %}
           <li>
             <a class="color-active" href="/">TRANG CHỦ</a>
           </li>
@@ -44,6 +45,15 @@
           <li>
             <a href="/#contact-part">LIÊN HỆ</a>
           </li>
+          {% endif %}
+          {% if user.is_superuser %}
+          <li>
+            <a href="/keypair/generate-keypair/">TẠO KHÓA</a>
+          </li>
+          <li>
+            <a href="/keypair/expire-keypair/">HỦY KHÓA</a>
+          </li>
+          {% endif %}
         </ul>
       </nav>
       <div class="header-icon">
