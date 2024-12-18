@@ -3256,3 +3256,8 @@ UnboundLocalError: cannot access local variable 'logger' where it is not associa
 2024-12-06 14:16:34,540 INFO Hash value (hex): eaa3b25257cbcee0c276760d646910ab6ffe8a5e136d989aa9b0c9b775c1fffa
 2024-12-06 14:16:34,545 ERROR Signature verification failed.
 2024-12-06 14:17:36,197 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-12-17 20:41:59,213 WARNING Not Found: /favicon.ico
+2024-12-17 20:42:33,133 INFO Key pair found
+2024-12-17 20:42:50,138 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-12-17 20:42:50,207 ERROR Signature verification failed.
+2024-12-17 20:42:54,792 INFO Key pair found

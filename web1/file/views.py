@@ -259,7 +259,6 @@ def download_file(request, file_id):
     response = FileResponse(signed_pdf_buffer, as_attachment=True, filename=f'signed_{file.file_path.name}')
     return response
 
-
 @login_required(login_url='users:login')
 def upload_and_verify(request):
     if request.method == 'POST':
