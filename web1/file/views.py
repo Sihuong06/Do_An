@@ -172,8 +172,6 @@ def get_content_file(file):
     content_bytes = content.encode('utf-8')
     hash_value = hashlib.sha256(content_bytes).digest()
     return hash_value
-
-
 def gen_sig(private_key,hash_value,type):
     if type=='RSA':
         return sign_rsa(private_key,hash_value)
@@ -190,6 +188,13 @@ def verify(keypair, hash_value, signature):
     elif keypair.type == 'ECDSA':   
         return verify_ecdsa(keypair, hash_value, signature)
     return False
+def get_last_page_index(pdf_path):
+    # Đọc file PDF
+    pdf_reader = PdfReader(pdf_path)
+    # Lấy tổng số trang
+    total_pages = len(pdf_reader.pages)
+    # Chỉ số trang cuối (bắt đầu từ 0)
+    return total_pages - 1
 
 @login_required(login_url='users:login')
 def download_file(request, file_id):
@@ -232,10 +237,7 @@ def download_file(request, file_id):
         background_color=(220, 255, 220)  # Xanh lá cực nhạt
     )
     image_path = os.path.join(settings.MEDIA_ROOT, 'image.png')
-    pdf_buffer = insert_image_in_pdf(file.file_path.path, image_path, 4)
-
-        # Sử dụng PdfReader để đọc từ pdf_buffer thay vì file gốc
-        # Sử dụng PdfReader để đọc từ pdf_buffer thay vì file gốc
+    pdf_buffer = insert_image_in_pdf(file.file_path.path, image_path, get_last_page_index(file.file_path))
     pdf_buffer.seek(0)  # Đảm bảo con trỏ ở đầu buffer
     pdf_reader = PdfReader(pdf_buffer)
     pdf_writer = PdfWriter()

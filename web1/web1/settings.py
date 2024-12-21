@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'keypair',
     'picture',
     'file.apps.FileConfig',
+    'rest_framework',
 ]
 
 

@@ -88,3 +88,25 @@ def search_by_verification_code(request):
 def all_users(request):
     user_profiles = UserProfile.objects.all()
     return render(request, 'users/all_users.html', {'user_profiles': user_profiles})
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth import authenticate, login, logout
+
+class LoginAPIView(APIView):
+    def post(self, request):
+        username = request.data.get("username")
+        password = request.data.get("password")
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)  # Tạo session nếu cần
+            return Response({"message": "Login successful", "username": user.username})
+        return Response({"error": "Invalid username or password"}, status=400)
+
+class LogoutAPIView(APIView):
+    permission_classes = [IsAuthenticated]  # Chỉ cho phép người đã đăng nhập
+
+    def post(self, request):
+        logout(request)
+        return Response({"message": "Logout successful"})

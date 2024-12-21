@@ -9,6 +9,7 @@ from cryptography.hazmat.primitives import serialization
 import base64
 from django.http import HttpResponse
 from io import BytesIO
+from django.views.decorators.csrf import csrf_exempt
 
 # DSA keypair generation
 def generate_dsa_keypair(bit_size):
@@ -39,77 +40,8 @@ def generate_rsa_keypair(bit_size):
     )
     public_key = private_key.public_key()
     return private_key, public_key
-# @login_required(login_url='users:login')
-# @user_passes_test(lambda user: user.is_superuser)
-# def generate_keypair(request):
-#     if request.method == "POST":
-#         verification_code = request.POST['verification_code']
-#         user_profile = UserProfile.objects.filter(verification_code=verification_code).first()
 
-#         # Check if user profile exists
-#         if not user_profile:
-#             messages.error(request, 'User with this verification code does not exist.')
-#             return redirect('keypair:generate_keypair')
-
-#         # Check if an active keypair already exists for this user
-#         if KeyPair.objects.filter(user=user_profile.user, status='Active').exists():
-#             messages.error(request, 'An active key pair already exists for this user.')
-#             return redirect('keypair:generate_keypair')
-
-#         # Get the selected algorithm and bit size
-#         algorithm = request.POST['algorithm']
-#         bit_size = int(request.POST['bit_size'])
-
-#         if algorithm == 'EdDSA':
-#             private_key_pem, public_key_pem = generate_eddsa_keypair()  # EdDSA key pair
-#         else: 
-#         # Generate the keypair based on the selected algorithm and bit size
-#             if algorithm == 'RSA':
-#                 private_key, public_key = generate_rsa_keypair(bit_size)
-#             elif algorithm == 'DSA':
-#                 private_key, public_key = generate_dsa_keypair(bit_size)
-#             elif algorithm == 'ECDSA':
-#                 private_key, public_key = generate_ecdsa_keypair(bit_size)  # EdDSA key pair
-#             else:
-#                 messages.error(request, 'Unsupported algorithm.')
-#                 return redirect('keypair:generate_keypair')
-
-#             # Serialize keys to PEM format
-#             private_key_pem = private_key.private_bytes(
-#                 encoding=serialization.Encoding.PEM,
-#                 format=serialization.PrivateFormat.TraditionalOpenSSL,
-#                 encryption_algorithm=serialization.NoEncryption()
-#             ).decode('utf-8')
-
-#             public_key_pem = public_key.public_bytes(
-#                 encoding=serialization.Encoding.PEM,
-#                 format=serialization.PublicFormat.SubjectPublicKeyInfo
-#             ).decode('utf-8')
-
-#         # Set created_at and expire fields
-#         created_at = timezone.now()
-#         expire = created_at + timezone.timedelta(days=365)  # 1 year expiration
-
-#         # Save the keypair to the database
-#         KeyPair.objects.create(
-#             user=user_profile.user,
-#             type=algorithm,
-#             public_key=public_key_pem,
-#             private_key=private_key_pem,
-#             created_at=created_at,
-#             expire=expire,
-#             status='Active'
-#         )
-
-#         # Add success message
-#         messages.success(request, 'Key pair generated successfully!')
-#         return redirect('keypair:generate_keypair')
-
-#     return render(request, 'keypair_form.html')
-
-from django.http import HttpResponse
-from io import BytesIO
-
+@csrf_exempt
 @login_required(login_url='users:login')
 @user_passes_test(lambda user: user.is_superuser)
 def generate_keypair(request):
@@ -179,7 +111,7 @@ def generate_keypair(request):
 
     return render(request, 'keypair_form.html')
 
-
+@csrf_exempt
 @login_required(login_url='users:login')
 @user_passes_test(lambda user: user.is_superuser)
 def expire_keypair(request):

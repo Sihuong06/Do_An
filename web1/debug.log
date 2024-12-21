@@ -3261,3 +3261,389 @@ UnboundLocalError: cannot access local variable 'logger' where it is not associa
 2024-12-17 20:42:50,138 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
 2024-12-17 20:42:50,207 ERROR Signature verification failed.
 2024-12-17 20:42:54,792 INFO Key pair found
+2024-12-18 11:19:08,136 WARNING Not Found: /favicon.ico
+2024-12-18 11:25:45,333 WARNING Forbidden: /users/api/logout/
+2024-12-18 11:25:57,469 WARNING Bad Request: /users/api/login/
+2024-12-18 11:28:01,736 WARNING Bad Request: /users/api/login/
+2024-12-18 11:28:05,544 WARNING Forbidden: /users/api/logout/
+2024-12-18 11:28:55,363 WARNING Bad Request: /users/api/login/
+2024-12-18 11:29:01,331 WARNING Bad Request: /users/api/login/
+2024-12-18 11:29:14,082 WARNING Forbidden: /users/api/logout/
+2024-12-18 13:27:51,932 WARNING Forbidden: /users/api/logout/
+2024-12-18 13:30:03,533 WARNING Forbidden (CSRF cookie not set.): /keypair/generate-keypair/
+2024-12-18 13:42:31,930 WARNING Not Found: /api/login/
+2024-12-18 13:42:42,503 WARNING Not Found: /api/expire-keypair/
+2024-12-18 13:42:58,216 WARNING Not Found: /api/login/
+2024-12-18 13:57:36,765 WARNING Forbidden (CSRF cookie not set.): /keypair/generate-keypair/
+2024-12-18 13:58:28,628 WARNING Forbidden (CSRF cookie not set.): /keypair/generate-keypair/
+2024-12-18 14:02:37,256 WARNING Forbidden (CSRF cookie not set.): /keypair/generate-keypair/
+2024-12-18 14:08:21,014 WARNING Forbidden (CSRF cookie not set.): /keypair/expire-keypair/
+2024-12-18 14:12:52,127 WARNING Forbidden (CSRF cookie not set.): /keypair/expire-keypair/
+2024-12-18 14:15:34,027 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 187, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-12-18 14:16:06,217 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 187, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-12-18 14:19:32,819 WARNING Forbidden (CSRF cookie not set.): /keypair/expire-keypair/
+2024-12-18 14:20:05,748 WARNING Forbidden (CSRF cookie not set.): /keypair/expire-keypair/
+2024-12-18 14:20:27,743 WARNING Forbidden (CSRF cookie not set.): /keypair/expire-keypair/
+2024-12-18 14:22:24,796 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 187, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-12-18 14:22:40,921 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 187, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-12-18 14:23:50,591 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 187, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-12-18 14:30:26,705 WARNING Forbidden: /users/api/logout/
+2024-12-18 14:31:03,795 WARNING Method Not Allowed: /users/api/logout/
+2024-12-18 14:31:16,710 WARNING Not Found: /favicon.ico
+2024-12-20 08:00:43,765 WARNING Not Found: /favicon.ico
+2024-12-20 11:02:37,809 ERROR No active key pair found
+2024-12-20 11:07:42,576 INFO type hash_value: <class 'bytes'>
+2024-12-20 11:07:42,788 ERROR Internal Server Error: /files/download/46/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 216, in download_file
+    signature = gen_sig(private_key, hash_value,key_pair.type)
+                                                ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'type'
+2024-12-20 11:09:16,756 INFO type hash_value: <class 'bytes'>
+2024-12-20 11:09:16,798 INFO signature type: <class 'bytes'>
+2024-12-20 11:09:16,800 INFO signature: b'x[\xc7C\xd4\xf7\xff&\xde\xd5[0\x97\x05\xf3\x02\x1a0\xe4\xea\xc5;tN3\x02\'\xea+\xcb\x9e\x11z\xc2\xd8n@Y\xbd\x07\x8c\x82\xae<\xc2\x90\x9d\x90\x8e\x9fk!\xae6\xcbjc\r/\xd3\xc8\xa7\x8clk\xe7b\x8b\x80\x0c]h\xae\xa9\x08\x83\xe1%M\x18\x05\xc1\x1f\x04u\x05N\xf9w\x91+h\x9f\x12\xd8p\x98c\xd5:\xdf2\\w\x94\xde\x13V\x95\xee?\xdf\xe41\x89\x15)\xac\xd8E%_TM4G$Em\xf5\x06\xc1Z\x82.\xc7\xbcAq\xad\x84y\xff\x16{\x10\xb4\x8fm\\\xf1"{\x96\x96\x9e\xad\xf4\x0b?\xbb6\x1f\x03xT\xf4r{\xbd\x8c\x1a\xf4\x9a\x1c\x11\xcf\x0b`M\xb6>\xef90\xde\xb7\x88\xbd\xce{\x95/\xe1\x90\xb1N\x1fX\x0ec;\xe7(\xe2\x86\xb4\xb7\x82\xe4\xd4\xaeUZY\xa3\xb0G\t\xbc\x9e\x17o\xb3\xf6V\x9f\xf6\x0eX\xa5@\x07\xfa\xbaW\x8d\xbcf-\x13\xa4\xa5,\x06\xc5\xf2\xb2\xea\xdf\xc7L\xe97\xee2'
+2024-12-20 11:09:17,160 DEBUG STREAM b'IHDR' 16 13
+2024-12-20 11:09:17,161 DEBUG STREAM b'IDAT' 41 6252
+2024-12-20 11:18:45,392 INFO Hash value (hex): d26797c2695ab3fd2cb4761dd286c174bb352dceb0d58730cd4d39e734111ef5
+2024-12-20 11:18:45,433 ERROR Signature verification failed.
+2024-12-20 11:19:16,118 INFO Hash value (hex): d26797c2695ab3fd2cb4761dd286c174bb352dceb0d58730cd4d39e734111ef5
+2024-12-20 11:19:16,121 ERROR Signature verification failed.
+2024-12-20 11:19:19,866 INFO Key pair found
+2024-12-20 11:19:32,164 INFO type hash_value: <class 'bytes'>
+2024-12-20 11:19:32,167 INFO signature type: <class 'bytes'>
+2024-12-20 11:19:32,168 INFO signature: b'o\x07\x90=&\xe0\xbeER\xffRM\xbd\xb7\xd2|\x18\x98\xb6\xc6\\\xd1\xe4\x9d\x84\xfaM\xcb\xbd\xddXI\xc87\x01\xbd\xe2&\x80\xe68\xf2\x8a2\xd8:mN\xc4P\x8b\xb8Y[\xf9\xc1\xea\xb5\xc6]c\xa8\xc6\x1d\xf5&N2\xc8\xbeE\xa2\xcdj\xe7\xd6\x0f"\xd8?YUXk\x01\xae\xdc\x85\xfb\x13=+J\x94\xd6\xc3Z4\xa2+\xd7\xd09\xcf\x7f\xd6\x0b\x16\xafZ%\x99\x1b\x03d\xae\xbf\xb0G!>\xf4\xca\xac#C\xfa\xef?\xbay\x87\x00"\xfe\x8f\xea\x8c\x1a\x1c\xab\xb2\xaf\xcd\xd3\xc8\x14\xf1l\x08w\xc9\x05\xb8\xb1\x85|}CD\x83\xbb\x1e#\xef\x9d\xed\x1dU\xc3E\xd4\xb7Q\xbc\x17WS1\xab\xe3@\xaeb\xe9}\x1e\xc7\xd9L\xbbVOH w\x8b\'K6\x17;\x93f\xea%\x1c\xa9\x99a\xb5r\xee`$[\xc1\xae1\x15e?\x06\xf0^:<\x95\xb4B\x0f\xab\xd9\xc0\x18\x9b\xfe];L\xdf\xd0?\x0f\x0e\x1e\xc4OW"A+\x81e\xf7O'
+2024-12-20 11:19:32,217 DEBUG STREAM b'IHDR' 16 13
+2024-12-20 11:19:32,219 DEBUG STREAM b'IDAT' 41 6260
+2024-12-20 11:19:46,449 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-12-20 11:19:46,450 INFO Signature verification succeeded.
+2024-12-20 11:21:21,516 INFO Hash value (hex): d26797c2695ab3fd2cb4761dd286c174bb352dceb0d58730cd4d39e734111ef5
+2024-12-20 11:21:21,518 ERROR Signature verification failed.
+2024-12-20 13:26:51,392 WARNING Not Found: /keypair/
+2024-12-20 13:28:03,953 WARNING Not Found: /kh
+2024-12-20 13:28:05,147 WARNING Not Found: /favicon.ico
+2024-12-20 13:33:26,700 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-12-20 13:33:45,823 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-12-20 13:34:16,259 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-12-20 13:34:28,208 ERROR No active key pair found
+2024-12-20 13:34:39,561 INFO type hash_value: <class 'bytes'>
+2024-12-20 13:34:39,608 ERROR Internal Server Error: /files/download/44/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 221, in download_file
+    signature = gen_sig(private_key, hash_value,key_pair.type)
+                                                ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'type'
+2024-12-20 13:36:12,851 INFO Key pair found
+2024-12-20 13:36:24,884 INFO type hash_value: <class 'bytes'>
+2024-12-20 13:36:24,887 INFO signature type: <class 'bytes'>
+2024-12-20 13:36:24,888 INFO signature: b'b\xdcu|\x81I\xd2\xe1\x81\x8b"\xf5\x9b\x80\x04\xf1b>H\x18\r\x02\xae\x9bwK\xc9\xc8\x9eq\xf3,t\xb6\x13\xc5SnL4US@A\x88\xd7\xd8Xc\xd3\xfe\x0e\xb4\x14\x83\xe3a\xda)G\xb8\x98)\xf7\xe4\xe7\x0ff\xffrv\xcc\r\xb2t\xac\x16\xbae\x9ak\xe6\xf9.O/\xd2\x82\xa3\x18\xb8F\xf7"\x0e\xa8\xa4\x1e\xf9nS\xb6\x05\x88\x00`\x87c\x08v\xe8\'\x19#\x10\xd0\xd4\x85r7\xc5\xd19\x01\x11"\x8d\xca\xc6*WTFi\xd9\xf4\xfd\xc5\x04\x8a\x86\xfb\xc4\xf6\x1b\xd0Zcc~\x8d\xc6>g\xcf\xd3\x81.\xf0\xb9\xc9\xf9q\x0b\x0e?\xff\x81|6\xe1\xfb{\xdf}i\xb4\xde\n\x94\xba\x8aO\xfd\xe2\xb9\xc0\xd0\x8a\xbe&\xfd:\x9f&\xc3\xe2\'a\xddx\xd3\xf2\xee\xc3N)\x04c\'\x1f\xfe\xbdj\xbb\xa6y\xaa\xd4#\x8c\x1f\xc9\xe7}\xc7\x99\xe8\xce\xf3C\x9b\x05K\xf1\xd0\r\xf9\x14C\xa9m,)\xec0Z\x02A\x83\xad\xc1ucS\x94\xa7\xa8\x0bN!\x12\xe5\x1dY\xb5\x14\xd7\r\'\xe8C\xc9\xca\x8f\x01R*\xff\'\xa3vg\xa1\\_\x02\xedM\xd0\x82,^K\x1a\x8d\xc9\xd0\xc1mz\x90\xba\xcb\x8a\xa4u\x94wQ\xf0\x05m\xa7\x08\xc6\xf8$\x96\xb3\x845|G\x1e/\xda\xb4x\xb9[\x1f\xdb\xe4\x8eU?\n\xfa\x01f\x08\xcc\x16\xfa\xfe6\x8948\xfd\x94\x02\xf9\xf8\x12\xcf\x0c\xa7\x83\xca \x11\xfe\xfe?\xef1\xd2\x0b\xa7,I\xa0\xc8\xf9.u[\xa7\xbcf~F'
+2024-12-20 13:36:24,957 ERROR Internal Server Error: /files/download/44/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 240, in download_file
+    pdf_buffer = insert_image_in_pdf(file.file_path.path, image_path,get_last_page_index(file) )
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 193, in get_last_page_index
+    pdf_reader = PdfReader(pdf_path)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_reader.py", line 319, in __init__
+    self.read(stream)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_reader.py", line 1414, in read
+    self._basic_validation(stream)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_reader.py", line 1453, in _basic_validation
+    stream.seek(0, os.SEEK_END)
+    ^^^^^^^^^^^
+AttributeError: 'File' object has no attribute 'seek'
+2024-12-20 13:37:12,827 INFO Key pair found
+2024-12-20 13:37:20,016 INFO type hash_value: <class 'bytes'>
+2024-12-20 13:37:20,021 INFO signature type: <class 'bytes'>
+2024-12-20 13:37:20,022 INFO signature: b'\x1d\xd4\xf5\xcc`\x12\xff\x0eE\x04&\xbc\x84\xecT\x94\xda\x1c\xc4\x97\xebL}\x00\xd0\\\x90\x9d\x81\xa3DM\xa1\xed\x8e\xbb\xe7\x04\x89\xd8\xeb\xcb\x85\xbf\x01\x96\xc4\x11\xff\xc8\x86\x1d\x85.ko$\'\xb0A\xf9\xeb\x1dR\xb7\xcc1w\xef\x8c\xb6\x1e\xf6\x93\xf6\xdc\xb9\xec\xca\n\xa1\xa9^\x05Y\xd4\xa6\x94\xbd_v@U\x86s\xa9\xb2bZr\xc3d\x92\x83\xeaH\xe53m9H6-Q?\x9a9H\xdcT\xcf\x1fP{\xc78\xd8K\xf4`\x89\x98\x9f\xd2T8\xab\x7f\xa3\xfb4\xf0\xa0\xd2Ek=\x8e\xc7}a{u\x18\rC\xc1\x11\x90\x8f\xba\xe83 \xd0Q\xf9\xd6\xb6e\x18,\xf1X\xead\x19\x1dbY>i(\xd9fy\xbf\xc2y\x06FTY\x92\xdaq\x90G\x92:2\r0m\xa8\xec\xdfpD\xb3\xba\xd4\xb6V\x1c\x87j\xd7\xe4\x85u\xf7~/\xb7foW\xde\xf2\xf9\x9d\x8a\xcc\xc8"G\xad\xc0\xce\x9eY\xde\xbb\xaeB\tyY\xd0D\x90\xaf-\x90A\x1dV\n\xf8\xf6D\x90\x0c\xaat\xb6\x8fC\x16\x1e\xed\xd1\r\'\xe0b\xf9xZ\x0b5\x9c\xbf\x83\xebOoJs\xd9jS\x92\x1e\x89\xb5\xa1+\x0b\xe4\xb5d\xb7\x9f\xdb\xec\xf9t\x11\x91^>eK\x0c\x97\n\xa40\xcb2\x9e!E/\xb6`\xf0\x03\xd7\xe4\x9fd\xf5\xbc#\x13\x1d\xac\xf0Tg\xed\xfa&\xf9}\x03\x04\x03\xbat\xcbS[\x8a+\xb8\xd3\xc4\xa2\xc5\x13~\xdfEl\x07\xd3\x1c\x05q\xa8*i\x86\x96\xc0\x0e\xd6\'\x05\x92'
+2024-12-20 13:37:20,059 ERROR Internal Server Error: /files/download/44/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 240, in download_file
+    pdf_buffer = insert_image_in_pdf(file.file_path.path, image_path,get_last_page_index(file) )
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\file\views.py", line 193, in get_last_page_index
+    pdf_reader = PdfReader(pdf_path)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_reader.py", line 319, in __init__
+    self.read(stream)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_reader.py", line 1414, in read
+    self._basic_validation(stream)
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyPDF2\_reader.py", line 1453, in _basic_validation
+    stream.seek(0, os.SEEK_END)
+    ^^^^^^^^^^^
+AttributeError: 'File' object has no attribute 'seek'
+2024-12-20 13:38:11,778 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-12-20 13:38:22,795 INFO type hash_value: <class 'bytes'>
+2024-12-20 13:38:22,801 INFO signature type: <class 'bytes'>
+2024-12-20 13:38:22,801 INFO signature: b'\xa6\xc5\xfa=Ao?\x8a\xb8J\x87\xde\xa5T^>\xd9ZZ$?-\xf1\xeb\xe0\x00\xb84H\xb2.7J\xe0W\x1f$\x00F .\xfd@\xe0\x8e\x13bC\xa2\'\x7fF7\r\xc2\xf1\xe1\xe6iB\xb7\xfc\xa5}\x91l\x1e\x9b\xbdzx\x95L\xb2\x80#k\x94\x102\xed\xe3\xa3\xe6>\xec\xfdjV\xd8\xb6C\x1eM\x97\xcf\xc9p#\t\xa8\xbft\'Hr\x7f\x96\x991\x1b\xd2\xe2\r\xcc\x80>\xb0*\x12\x13i\xa7\x18=\xbau\x99\x8d\xb3i\xa0j\x99\x97h\xe2Xd3l4\xc8\xbf\xd5\x97\xd04\xe0\x93\x1at\xe9x\xb9=6\xb4\xfaF\xae\tu\xb5\xf2\x18\xd5\xe7L\xfa\xbe\'\x7f\x1c\x1c\x92qR\xc2\xeb\x18%\xb9Vn,\xa09\xad\no\xc1\x16\xe1\x89X\xda\xa3\xa0\xc3We\x07\x81\xfd\xe5^\xad\x90Q\xb3\x044\'\xfb^+\x87\xc8\xe7\x13R\x00\xb8\x1c\xffNL\x02k\xfa\xf9\xee\x9eT\x8f\xcf8\xbbK!\xa6\xc1\xe28\x01\x1e\xd5?>\x10\xd1\n\xdcGc\x04Z\xbd\x9e\xd1\x88N\xc4{Jo\x18W\xa6\xa6"\xfcK\xee\xad\x95\xd5\xb3%\x173#\xa7\xabi;N\xfa\x8b\xbep\xfbD_\xcf\x05D"y\xb7i\xa0]\xf7\xe5\xd4\xcd\xe8\xd3\xa9\xab5\xc7\xa5\xe2\xd7\xbd\xbfT\x82\xc2\xefR\x0eQ\xb93\xa2\xcbd\xb9\xdbQy\xff\xbb\xafg\x8bqQ\xda\x8f\xea\xdcx\nYVL(\xdeo\x01\xab\x1bL\xa9\x01&,\x08\x99Cc#\x9d\x11e\xca3\xa4\x06\x08\xd8\xda1\x86jVs\xe4\x9d'
+2024-12-20 13:38:22,846 DEBUG STREAM b'IHDR' 16 13
+2024-12-20 13:38:22,847 DEBUG STREAM b'IDAT' 41 6269
+2024-12-20 13:38:48,654 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-12-20 13:38:48,669 INFO Signature verification succeeded.
+2024-12-20 13:41:36,424 INFO Key pair found
+2024-12-20 13:42:00,016 INFO type hash_value: <class 'bytes'>
+2024-12-20 13:42:00,022 INFO signature type: <class 'bytes'>
+2024-12-20 13:42:00,023 INFO signature: b'\xb0\xa1\xb0\xbd\x95E\xa8k\x11\xc1\x91i\x9bM\x19\x15\x9d8v\x8bR\x82\xa6\xba\xcf\xf6r\xc8J\xc3V\n$\xed\xa9\x01\xa7\x0b\x1bR\xea\x9b \n({~\x854\xf0\xe9*\xfdIL\x01y\rG=\x07\x8d\xccN\x0f\x989\x10\x07\xb1\x01\xf4\xd4E\xe4\xbf\xf5dSA?\x99\xca\xca\x00w\xbaq\xf7\x1bsl\xe1\x91\xff{\x04\xeaWT\x87rc\x86Wc; r\xf4\xb9\xc7"\x8f\xa6/\x99\x97t\x0f\xa9\xd1\x01\x9a4\x97$t\xc6\xe8\x9c: \n\x15\x13\xe8\x13v\xcf\x1c2\xee\xc4p:H$\xf6\x848\x80Y\xa1\xc3+q\x83\xb5:\xb0}\x15\x06\x94\xc4\xb6\xea\xefQ\t\x9b\xf2\x9c\x85d\x88y\xbea\xaf:z\x0c\xb5b z(\xdb\xd7\x86r\x9d\xcf\x80oI\x13r7yj\xda\xaf\xfe&\x039HT\x86\x9b\xb4\xde\xd5\xfe\xd1\x9e\xdb\xddSY\x13dZ\xd1C.\xc8A|C0\xf6\x928\x16\x11\xa0\xef \xcf(@r\xe2\xb1\xa5\x80\x04\xe3\xa8\x0c\xa5;\x81^\xb5\x19\x8e\xbd\xdb\xde\x9c:?\xbdS\xf1\xa8\x1b\x08)\xa460\x00*\x1b\xaf\xcd\x11W\xdc{\xebO\xbbd\x13\xc4\xfef\x97\xc96\x03\xc7\x079\xaf\x90\xe3|j)\x1aV\xe5J\xad;w\xaf\xc8\xec\xccx\x08\xc9\xf8\x93J\xaaX\xaeo\xd28\x0e\xba\x97\x9f+f*.\x950\xfd\xc1"\x8c$N5{9\xbfW\x03w/ _{\xdd\xc7T(\xe8\xc5\xc5\x8f\xc2\xf8"\x1d\x15\x9c\xac\xd8\xe1!)\x89\t\xecP^A`I'
+2024-12-20 13:42:00,054 DEBUG STREAM b'IHDR' 16 13
+2024-12-20 13:42:00,054 DEBUG STREAM b'IDAT' 41 6188
+2024-12-20 13:42:49,292 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-12-20 13:42:49,292 INFO Signature verification succeeded.
+2024-12-20 13:46:48,198 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 187, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-12-20 13:47:35,229 INFO F:\Do_An\web1\file\views.py changed, reloading.
+2024-12-21 10:06:40,295 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 187, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-12-21 10:07:42,754 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:07:53,809 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:07:56,589 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 117, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-12-21 10:12:41,705 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
