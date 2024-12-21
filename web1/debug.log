@@ -3647,3 +3647,80 @@ Traceback (most recent call last):
     raise MultiValueDictKeyError(key)
 django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
 2024-12-21 10:12:41,705 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:17:59,254 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:18:25,183 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:22:10,889 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:22:49,509 WARNING Bad Request: /keypair/expire-keypair/
+2024-12-21 10:23:24,635 WARNING Bad Request: /keypair/expire-keypair/
+2024-12-21 10:30:52,654 WARNING Not Found: /favicon.ico
+2024-12-21 10:32:03,039 WARNING Method Not Allowed: /keypair/expire-keypair/
+2024-12-21 10:32:29,073 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:32:41,340 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:33:27,787 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'verification_code_expire'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Do_An\web1\keypair\views.py", line 120, in expire_keypair
+    verification_code = request.POST['verification_code_expire']
+                        ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'verification_code_expire'
+2024-12-21 10:34:56,885 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:36:35,591 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:36:42,663 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:37:05,823 INFO Verification code: None
+2024-12-21 10:37:05,838 WARNING Bad Request: /keypair/expire-keypair/
+2024-12-21 10:39:55,044 INFO Verification code: None
+2024-12-21 10:39:55,047 WARNING Bad Request: /keypair/expire-keypair/
+2024-12-21 10:40:27,942 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:44:34,140 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:46:44,662 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 10:47:14,569 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expire_keypair() missing 1 required positional argument: 'request'
+2024-12-21 10:47:19,326 ERROR Internal Server Error: /keypair/expire-keypair/
+Traceback (most recent call last):
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\SiDT\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expire_keypair() missing 1 required positional argument: 'request'
