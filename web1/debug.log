@@ -3724,3 +3724,66 @@ Traceback (most recent call last):
     return bound_method(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: expire_keypair() missing 1 required positional argument: 'request'
+2024-12-21 11:11:31,125 WARNING Not Found: /favicon.ico
+2024-12-21 11:12:14,029 WARNING Forbidden (CSRF cookie not set.): /keypair/expire-keypair/
+2024-12-21 11:12:35,751 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 11:12:40,678 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 11:12:49,699 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 11:12:54,066 WARNING Forbidden (CSRF cookie not set.): /keypair/expire-keypair/
+2024-12-21 11:13:56,611 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 11:14:04,304 WARNING Forbidden (CSRF cookie not set.): /keypair/expire-keypair/
+2024-12-21 16:07:13,886 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 16:07:25,109 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 16:10:13,551 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 16:11:50,271 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 16:13:14,850 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 16:26:12,249 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 16:26:28,651 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 16:26:30,723 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 16:26:32,789 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 16:27:32,620 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 16:27:40,742 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 16:27:54,354 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 16:30:43,132 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 16:37:45,547 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 16:40:21,123 INFO Key pair found
+2024-12-21 16:40:30,625 INFO type hash_value: <class 'bytes'>
+2024-12-21 16:40:30,639 INFO signature type: <class 'bytes'>
+2024-12-21 16:40:30,639 INFO signature: b't\xb6W\xaa"F\xce\xc6\xb1\xc3\x84\xd1m\x9b\xa1G\x90\xb1<\xb3\xaf\x8f\x17\xe6(\x95\x9f\x12O\x8b\xaf\t\xb8\xe8\xa9\xae \x9b\xaf\xda\x9d\xdc\x12\xd92\x99\xad\x1cPB\n\x9d\xb1\xc2\xd3\x05-Q{\xd6\xcc|u\xdc\xb6Fpj*\x11]= \x08\xc0m\xa4\x85T\xc5\xcf\xfbu\x89\xf1\xe3\x80\x8b\x1a\xad:\no:\xa9\xac\xc0\xda`\xcf \xd8\xe8I\x12\xc68d\xe8h\x18\xd3\xaf\xaf\xa5B\xf3\n\xba\x15iILD\xe9j\xf40\x1b\x82<%[\xbe\xa9\xd5\x91\x96\xc4?\xdd\xf7\xd9E\x9d:v\xd7\xcc<{\x19\xbe\xcbj\xee\x1d\xff\xc0\xf5\xc8\x9ey@hE=\xc6\x9dL\xb8\xda\x99!\xe7\xc0\x8b\xcf\xd0\xfb\x0f\xadIi\xd7\x00\x95\xbc*\xcb\xd6\xddu\x98\xab\xf1\xcb\xba7E\xf14w\xacU&\x80\xc2\xbc\x009\xe7g\x14\x9e\x12\x18\xd9P\x8f\x92M\xb05Z\xcf\x9a\x94?\x9b*\r\x13\x1e\xaa9\x84\xe9\xd7\xe1\xcdh\xd8&\xbb\xc5\x9d\x8b\xba^\xa04\x15\x81\xf8\x9b'
+2024-12-21 16:40:30,818 DEBUG STREAM b'IHDR' 16 13
+2024-12-21 16:40:30,819 DEBUG STREAM b'IDAT' 41 6311
+2024-12-21 16:40:53,608 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-12-21 16:40:53,651 INFO Signature verification succeeded.
+2024-12-21 16:55:00,748 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 16:55:55,752 INFO Key pair found
+2024-12-21 16:56:03,395 INFO type hash_value: <class 'bytes'>
+2024-12-21 16:56:03,397 INFO signature type: <class 'bytes'>
+2024-12-21 16:56:03,398 INFO signature: b'h\x92O&\xd5\x92\xc9\xc7\x8e\x8e\x03D\xd3\x95E"3u\xe0\r\xa2N$W\x1d\x96\xeb\xf5\xde\xed\xc6\xa0\xa6\x19\x82\xe8\xaf\xc4\xb9\\\xa9\xbe6\xac\xcd\xee~yWG4\xc8f\x01\xd2\xa6\x82\x894\xf7\x93nz\xadJ\x9b\xac\xf3\xc1KW\x05\xf1\x0b\x0ca\xfas\x89\x93\xae.fJ\xc7\x15!\x94-N\xd0\xd8\xf5\xbc\xe3\xb2\x11\xb4b\xbc\xa2O\xd5C\xe9\x0c-\xe7Z\x8a\xdaj\xa0*l35+\x04\xb9\xd9\xe0 \x1cg\x92n/\xaf\x01\x10\x86\xcav\xe2\xe5\x86\xdf\xb5\xba\xcf;l\xa0\xd8I1\xaf\xb52\x012\xc0\xfb\x1aaqX@\x16\x90I\xe3J\x85Pr\xf8\x8b\xc4\xd5k\xd8\x84\xa6\x12k\xba\xb0\x9d\x8c\x15\xd2\xcbK\xa8\xc2O\xa1\x85@\x13UZ|\xd5\xf6\xa7:\xde8\n3\xfc\xf9C\xef\t\xc8\x04^|\x9b\xaf\xa4ywl\n\x1f\xd1!A\xbd\xd9\xce\x06\xa72;\xe4\xa7\xbc\x99A3Nz\x18\x02.\x88\x91\xc3\xc0\xb8\xa5\x9a\x9f\x8c\xa1\x07\xea\xf4\xb6\xcc'
+2024-12-21 16:56:03,437 DEBUG STREAM b'IHDR' 16 13
+2024-12-21 16:56:03,438 DEBUG STREAM b'IDAT' 41 6321
+2024-12-21 16:56:20,521 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-12-21 16:56:20,525 ERROR Signature verification failed.
+2024-12-21 16:56:34,953 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-12-21 16:56:34,954 ERROR Signature verification failed.
+2024-12-21 16:56:49,451 WARNING Method Not Allowed: /keypair/expire-keypair/
+2024-12-21 16:57:12,509 INFO Key pair found
+2024-12-21 16:59:00,197 INFO type hash_value: <class 'bytes'>
+2024-12-21 16:59:00,198 INFO signature type: <class 'bytes'>
+2024-12-21 16:59:00,198 INFO signature: b'jy}bB\xe0U\xc3\xec=>\xb9\n\xfaW\x8c\x9b\x15\xb2}\x9c\x12-\xb4\xa5<,\xff\xf63?~\x8dq\x97o9\xaf\x155S\xa5\xcap\x86\xc7x\xd1\x18\x85\xac4\x82\xa9?\xc9\x9d\x10\xa4\x1e\xa4\x02^|xC\xc56\xee\x9dB\xb9a\x9e\xc4\x7f\x9aV\x86\xe6Q\xbfC\x9d\xdf\xa4\x86R4\xc4\x97\xfb\xee\xa8[\xe7\xb5\x8d\xfe9\xe7\xb1\x17x\xf6\xab2\xa8\xbf\xc3\x8a\x00\x1a\x19\x7f\x88(\xf5+G\n\xb7 \xb8g\xaf\xe8\xd8\r\x93\xa7E\xe5\x10\xbc\x0c\xfc<N\xf9k\x8a\xa6,\xdc\x1f\x82\xbd\xef\xa3\x0c\xc0\x82\xfe\x808\x8d\xf3\xb4^\xfd8\xb7\xfe\x9eD\x89\t\xbdObE3&#\xf6w\x87OEr^\x96[X\x9f\xceM\xe5\x17\r\x15\x81\x0f\xa0*\x7fhK\xea\xeb\x0c\x88\xa9u\xb3\xccU\xe4d\xa2\xcb\xec9skZ(q\x18\xffR"\x00\xe0\xd5\xc8?\xfc\xd5d\x9b\x07\x94)C54\xfe?o\xb3P\x01\x86\x91\xd0\x95I\x8bfN~\xe3g>'
+2024-12-21 16:59:00,217 DEBUG STREAM b'IHDR' 16 13
+2024-12-21 16:59:00,218 DEBUG STREAM b'IDAT' 41 6447
+2024-12-21 16:59:08,416 INFO Hash value (hex): aa339cad51a6da1fb89278882b482e200760dbf9474c2267de8a25e7f1afb483
+2024-12-21 16:59:08,417 INFO Signature verification succeeded.
+2024-12-21 17:16:01,956 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 17:16:33,427 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 21:39:06,665 WARNING Method Not Allowed: /users/api/logout/
+2024-12-21 21:39:41,828 WARNING Not Found: /favicon.ico
+2024-12-21 21:48:01,521 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 21:52:55,883 WARNING Bad Request: /keypair/generate-keypair/
+2024-12-21 21:58:54,519 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 21:59:13,104 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 21:59:26,411 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 22:06:11,512 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-21 22:06:30,367 INFO F:\Do_An\web1\keypair\views.py changed, reloading.
+2024-12-22 14:42:47,643 WARNING Not Found: /favicon.ico
+2024-12-22 15:40:16,758 ERROR No active key pair found

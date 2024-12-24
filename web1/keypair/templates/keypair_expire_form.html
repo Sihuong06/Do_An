@@ -12,7 +12,7 @@
 <body>
 
     <div class="container mt-5">
-        <h2>Expire Key Pair</h2>
+        <h2>Thu Hồi Khóa</h2>
         {% for message in messages %}
             {% if forloop.last %}
                 <div class="alert alert-{{ message.tags }}">
@@ -24,10 +24,10 @@
         <form method="post" action="{% url 'keypair:expire_keypair' %}">
             {% csrf_token %}
             <div class="form-group">
-                <label for="verification_code_expire">Verification Code</label>
+                <label for="verification_code_expire">Nhập Mã Người Bị Thu Hồi</label>
                 <input type="text" id="verification_code_expire" name="verification_code_expire" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-danger">Expire Key Pair</button>
+            <button type="submit" class="btn btn-danger">Thu Hồi Khóa</button>
         </form>
     </div>
 </body>
